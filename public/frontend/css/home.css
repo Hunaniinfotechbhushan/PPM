@@ -1,0 +1,133 @@
+/******G L O B A L********/
+ ul{
+ 	margin: 0px;
+ 	padding: 0px;
+ }
+ body{
+ 	margin: 0px;
+ 	color: #000000;
+ 	font-family: 'Jost', sans-serif;
+ }
+ .web-btn {
+    background-color: #f41c1c;
+    border: none;
+    padding: 7px 18px;
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px -3px black;
+}
+section{
+	padding: 50px 0px;
+}
+/********F O N T*************/
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Michroma&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/*****H E A D E R*********/
+
+nav.navbar{
+    padding: 10px 0px;
+}
+.navbar-light .navbar-nav .nav-link{
+	font-size: 18px;
+	margin: 0px 10px;
+}
+.login-btn{
+	margin: 0px 10px;
+}
+
+/*******B A N N A R***********/
+
+.banner{
+	min-height: 539px;
+	background-image: url(./image/banner-bg.jpg);
+	background-size: cover;
+	display: flex;
+    align-items: center;
+}
+
+.banner-title{
+	font-weight: bold;
+}
+.banner-image{
+	box-shadow: 3px 10px 37px -9px grey;
+	border-radius: 27px 36px 29px 36px;
+}
+
+/* S T E P */
+.box-title{
+	margin: 10px 0px;
+}
+.step:before{
+	content: '';
+	position: absolute;
+	background-repeat: no-repeat;
+	background-image: url(./image/step-glob.png);
+	background-size: contain;
+	width: 150px;
+	height: 300px;
+}
+
+
+/* F O O T E R */
+footer {
+    box-shadow: -12px 0px 18px -10px grey;
+    padding: 13px 0px;
+}
+li.footer-item {
+    display: contents;
+   padding: 0px 10px;
+}
+li.footer-item a{
+	color: #000000;
+	margin: 0px 10px;
+}
+footer .row {
+    align-items: center;
+}
+.icon-group{
+	text-align: right;
+}
+
+
+
+
+
+@media screen and (max-width: 767px) {
+/*.banner .row {*/
+/*    flex-direction: column-reverse;*/
+/*}*/
+
+.banner-right{
+	margin: 20px 0px 30px;
+}
+.banner-title{
+	font-size:32px;
+}
+section {
+    padding: 20px 0px;
+}
+.icon-group{
+	text-align: left;
+}
+li.footer-item a {
+    margin: 0px 5px;
+}
+ul.footer-menu {
+    margin: 16px 0px;
+}
+header .nav-link {
+    padding: 0.5rem 0px;
+}
+header .login-btn {
+    margin: 0px 3px;
+}
+header .web-btn {
+      padding: 7px 10px;
+    font-size: 16px;
+}
+header a.nav-link {
+    font-size: 14px;
+}
+}

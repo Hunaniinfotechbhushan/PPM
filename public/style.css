@@ -1,0 +1,457 @@
+/*custom font*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+* {margin: 0; padding: 0;}
+
+html {
+	height: 100%;
+	background: #e2e2e2;
+}
+a{
+	color:#F51B1C !important ;
+}
+i{
+	margin: 0px 5px	;
+}
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Michroma&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+ body{
+ 	font-family: 'Jost', sans-serif;
+ }
+ button{
+ 	font-family: 'Jost', sans-serif;
+ }
+
+ .web-btn {
+    background-color: #f41c1c;
+    border: none;
+    padding: 7px 18px;
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px -3px black;
+    margin:0px 5px;
+}
+
+/*step one*/
+#msform .image{
+	height: 250px;
+	width: 200px;
+	background-color: #e6e6e6;
+	margin:10px auto;
+	border-radius: 5px;
+
+}
+#msform .image-dis{
+	width: 90%;
+	margin: 10px auto;
+	line-height: 21px;
+}
+#msform .step-1-input{
+	display: flex;
+}
+#msform .left-input{
+	width: 80% !important;
+}
+#msform .right-input{
+	width: 20% !important;
+	 background-color: transparent;
+}
+#msform .head input{
+    margin:0px  5px;
+    padding: 10px;
+}
+
+/*S T E P 2*/
+.loaction-field {
+    position: relative;
+}
+.loaction-field  i.location {
+    position: absolute;
+    right: 7px;
+    top: 9px;
+    font-size: 10px;
+    color: #a3a3a3;
+}
+#msform .head .fs-subtitle-label{
+	text-align: center !important;
+}
+#msform .box-body .fs-subtitle-label {
+    text-align: left;
+    margin: 16px 0px;
+}
+#msform .ex-accordion_container {
+  width: 100%;
+}
+
+#msform .ex-accordion_head {
+  cursor: pointer;
+  font-size: 14px;
+  margin: 10 0 10px 0;
+  padding: 15px 11px;
+  text-align: left;
+
+}
+#msform .ex-accordion_head {
+    border-bottom: 1px solid #dddddd;
+    display: flex;
+    justify-content: space-between;
+}
+#msform .ex-accordion_body {
+  padding: 0px 12px;
+  text-align: left;
+}
+
+#msform .ex-accordion_body p {
+  padding: 18px 5px;
+  margin: 0px;
+}
+
+#msform .ex-plusminus {
+  float: right;
+}
+ #msform .ex-accordion_container i {
+   transition: 0.5s;
+    transform: rotate(deg);
+}
+#msform .arrow-cus i {
+    transform: rotate(180deg);
+    transition: 0.5s;
+}
+.step-3 .box-body{
+	 padding:0px;
+}
+
+#msform .step-3 .ex-accordion_head{
+    padding: 30px 30px;
+}
+.step-3 .ex-accordion_body {
+    padding: 16px 30px !important;
+}
+button.select-option-button {
+    min-width: 15%;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 4px;
+}
+
+
+
+/*S T E P 5*/
+#msform button.tag {
+    border: none;
+    padding: 5px 18px;
+    border-radius: 100px;
+    font-size: 12px;
+    margin: 5px;
+    cursor: pointer;
+}
+#msform .tag-group {
+    text-align: left;
+    padding: 30px 0px;
+}
+#msform button.tag i {
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+/*S T E P 6*/
+#msform .textarea-group {
+    margin: 30px 0px 0px;
+}
+
+/*PAYMENT*/
+
+/*payment*/
+.tab-group {
+    width:100%;
+    display:flex;
+}
+.pay-tab {
+    width: 50%;
+    padding: 10px;
+    font-weight: 500;
+    background-color: #f1f1f1;
+}
+p.about-card {
+    width: 50;
+    width: 81%;
+    margin: auto;
+    margin: 10px auto;
+    line-height: 30px;
+}
+.sub-box {
+    text-align: center;
+    width: 92%;
+    margin: auto;
+    text-align: left;
+    align-items: center;
+    padding: 30px 50px;
+    display: flex;
+}
+.pay-table {
+    border: 2px solid red;
+    padding: 10px;
+    background-color: #ff00000a;
+}
+.pay-table-black {
+    border: 2px solid #121212;
+    padding: 10px;
+    background-color: #00000029;
+}
+.pay-tab p {
+    margin-bottom: 0px;
+}
+.pay-tab.pay-tab-active {
+    color: #f41c1c;
+    border-bottom: 2px solid #f41c1c;
+}
+
+
+
+
+
+
+
+/*R A G I S T E R*/
+.rg-form-box  p.head-option {
+    text-align: left;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 15px 20px;
+}
+.rg-form-box .rg-form{
+	padding: 0px !important;
+}
+.rg-form-box .box-body {
+    text-align: left;
+    padding: 30px 20px ;
+}
+.rg-form-box input{
+    margin-bottom: 30px !important;
+}
+.rg-form-box p {
+    margin-bottom: 10px;
+}
+.text-center{
+	text-align: center;
+}
+.rg-form-box .facebook-btn{
+	background-color: #3b5998 !important; 
+}
+.rg-button{
+	min-width: 45% !important;
+}
+.rg-form-box .facebook-btn i{
+	font-size: 11px;
+}
+
+
+
+
+/*form styles*/
+.head{
+    padding: 20px 80px;
+}
+.head, .box-body {
+    box-sizing: border-box;
+    background-color: white;
+     padding: 20px 80px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+}
+.box-body {
+    padding: 50px 80px;
+}
+.box-body{
+	margin-top: 10px;
+	text-align: center;
+	min-height: 400px;
+}
+
+#msform {
+	width: 60%;
+	margin: 50px auto 20px;
+	text-align: center;
+	position: relative;
+}
+#msform fieldset {
+	border: 0 none;
+	border-radius: 3px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	/*stacking fieldsets above each other*/
+	position: relative;
+}
+.continue {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+/*inputs*/
+#msform input, #msform textarea {
+	padding: 6px 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	color: #2C3E50;
+	font-size: 13px;
+}
+#msform textarea {
+	width: 100% !important;
+}
+/*buttons*/
+#msform .action-button {
+	width:fit-content;
+	background:#F51B1C;
+	font-weight: bold;
+	color: white;
+	border:0 none;
+	border-radius: 5px;
+	cursor: pointer;
+	padding: 10px 20px;
+	margin: 10px 5px;
+}
+#msform .action-button:hover, #msform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+/*headings*/
+.fs-title {
+    font-size: 24px;
+    color: #2C3E50;
+    font-weight: 500;
+    margin: 10px 0px;
+} 
+.head .fs-subtitle {
+    text-align: left;
+}
+.fs-subtitle {
+	font-weight: 600;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 10px;
+	
+}
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+#progressbar li {
+	list-style-type: none;
+	color: black;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 16%;
+	float: left;
+	position: relative;
+}
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 24px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 100px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 83%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -42%;
+	top: 11px;
+	z-index: 1; /*put it behind the numbers*/
+}
+
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #F51B1C;
+	color: white;
+}
+#progressbar li.active:before{
+	border: 2px solid;
+}
+
+@media screen and ( max-width: 1024px){
+#msform {
+    width: 80%;
+}
+.head, .box-body {
+   padding: 20px;
+}
+}
+@media screen and ( max-width: 1024px){
+#msform {
+    width: 100%;
+}
+.head, .box-body {
+    padding: 20px 10px;
+}
+.step-1-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.right-input {
+    width: 50% !important;
+}
+.tag-group {
+    text-align: left;
+    padding: 10px 0px;
+}
+.fs-title {
+    font-size: 18px;
+}
+.head .fs-subtitle {
+    text-align: center;
+}
+}
+
+@media screen and ( max-width: 767px){
+ .web-btn {
+    margin:0px 3px;
+    padding:10px;
+}
+#msform .head input {
+    margin: 5px  5px;
+}
+#progressbar li:after {
+    width: 62%;
+    left: -32%;
+    top: 11px;
+}
+.sub-box {
+    text-align: center;
+    width: 64%;
+    margin: auto;
+    padding: 20px 0px;
+}
+p.text-center.about-card {
+    font-size: 12px;
+    width: 100%;
+    line-height: 18px;
+}
+}

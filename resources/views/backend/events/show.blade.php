@@ -1,0 +1,137 @@
+@extends('layouts.backend.master')
+@section('content')
+<div class="nk-content ">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="nk-block-head nk-block-head-sm">
+                    <div class="nk-block-between g-3">
+                        <div class="nk-block-head-content">
+                            <h3 class="nk-block-title page-title">Event / <strong class="text-primary small">{{ $events->title }}</strong></h3>
+                            <div class="nk-block-des text-soft">
+                                <ul class="list-inline">
+                                    <li>Event ID: <span class="text-base">UD - {{ $events->_id }}</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="nk-block-head-content">
+                            <a href="{{ url('admin/events') }}" class="btn btn-outline-light bg-white d-none d-sm-inline-flex"><em class="icon ni ni-arrow-left"></em><span>Back</span></a>
+                            <a href="html/user-list-regular.html" class="btn btn-icon btn-outline-light bg-white d-inline-flex d-sm-none"><em class="icon ni ni-arrow-left"></em></a>
+                        </div>
+                    </div>
+                </div><!-- .nk-block-head -->
+                {!! Form::model($events, ['method' => 'PATCH', 'action' => ['backend\EventsController@update',$events->_id],'files'=>true]) !!}
+
+                <div class="nk-block">
+                    <div class="card">
+                        <div class="card-aside-wrap">
+                            <div class="card-content">                                              
+                                <div class="card-inner">
+                                    <div class="nk-block">
+                                        <div class="nk-block-head">
+                                            <h5 class="title">Event Information</h5>
+                                            <!-- <p>Basic info, like your name and email.</p> -->
+                                        </div><!-- .nk-block-head -->
+                                        <div class="profile-ud-list">
+                                                       <!--      <div class="profile-ud-item">
+                                                                <div class="profile-ud wider">
+                                                                    <span class="profile-ud-label">Title</span>
+                                                                    <span class="profile-ud-value">Mr.</span>
+                                                                </div>
+                                                            </div> -->
+                                                   <!--          <div class="profile-ud-item">
+                                                                <div class="profile-ud wider">
+                                                                    <span class="profile-ud-label">Username</span>
+                                                                    <span class="profile-ud-value"> {!! Form::text('username', null, ['class' => 'form-control', 'id' => 'username', 'readonly' => 'true']) !!}</span>
+                                                                </div>
+                                                            </div> -->
+                                                            <div class="profile-ud-item">
+                                                                <div class="profile-ud wider">
+                                                                    <span class="profile-ud-label">Event Title</span>
+                                                                    <span class="profile-ud-value">{!! Form::text('title', null, ['class' => 'form-control', 'id' => 'title']) !!}
+
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="profile-ud-item">
+                                                                    <div class="profile-ud wider">
+                                                                        <span class="profile-ud-label">Event Date</span>
+                                                                        <span class="profile-ud-value">{!! Form::text('event_date', null, ['class' => 'form-control', 'id' => 'event_date']) !!}</span>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="profile-ud-item">
+                                                                    <div class="profile-ud wider">
+                                                                        <span class="profile-ud-label">Date Even was Created</span>
+                                                                        <span class="profile-ud-value">{!! Form::text('created_at', null, ['class' => 'form-control', 'id' => 'created_at']) !!}</span>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="profile-ud-item">
+                                                                    <div class="profile-ud wider">
+                                                                        <span class="profile-ud-label">Event Type</span>
+                                                                        <span class="profile-ud-value">{!! Form::select('meet_type',array(
+                                                                            'Dinner/Lunch date' => 'Dinner/Lunch date',
+                                                                            'Meet at your place' => 'Meet at your place',
+                                                                            'Social meetup' => 'Social meetup',
+                                                                            'Meet at my place' => 'Meet at my place',
+                                                                            'Night out' => 'Night out',
+                                                                            'Anything, anywhere' => 'Anything, anywhere',
+                                                                            'Hotel meet' => 'Hotel meet',
+                                                                            'Club meet' => 'Club meet'), null,  ['class' => 'form-control']) !!}</span>
+                                                                            
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                    <div class="profile-ud-item">
+                                                                        <div class="profile-ud wider">
+                                                                            <span class="profile-ud-label">Event Location</span>
+                                                                            <span class="profile-ud-value">{!! Form::text('location', null, ['class' => 'form-control', 'id' => 'location']) !!}
+
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="profile-ud-item">
+                                                                            <div class="profile-ud wider">
+                                                                                <span class="profile-ud-label">Event Description</span>
+                                                                                <span class="profile-ud-value">{!! Form::textarea('description', null, ['class' => 'form-control', 'id' => 'description']) !!}
+
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="profile-ud-item">
+                                                                                <div class="profile-ud wider">
+                                                                                    <span class="profile-ud-label">Approval</span>
+                                                                                    <span class="profile-ud-value">                 {!! Form::select('status',['Awaiting Approval','Approved','Rejected'], null,  ['class' => 'form-control']) !!}
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="profile-ud-item">
+                                                                                <div class="profile-ud wider">
+                                                                                    <span class="profile-ud-label"></span>
+                                                                                    <span class="profile-ud-value text-center">       {!! Form::submit('Submit', ['class' => 'btn btn-primary waves-effect','id'=>'pagesubmit']) !!}
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+
+
+                                                                        </div><!-- .profile-ud-list -->
+                                                                    </div><!-- .nk-block -->
+
+
+                                                                </div><!-- .card-inner -->
+                                                            </div><!-- .card-content -->
+
+                                                        </div><!-- .card-aside-wrap -->
+                                                    </div><!-- .card -->
+                                                </div><!-- .nk-block -->
+                                                {!! Form::close() !!}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @stop
+

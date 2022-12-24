@@ -1,0 +1,4530 @@
+msgid ""
+msgstr ""
+"Language: detch\n"
+"Last-Translator: loveria Admin\n"
+"PO-Revision-Date: 2022-02-07 05:48:54\n"
+"Project-Id-Version: loveria\n"
+"X-Domain: messages\n"
+
+#: ../app\Http\Middleware\AdminAuthenticate.php:38
+#: ../app\Http\Middleware\Authenticate.php:64
+msgid "Saving functionality is disabled in this demo."
+msgstr ""
+
+#: ../app\Http\Middleware\ApiAuthenticateMiddleware.php:45
+msgid "Your Account seems to Inactive or Deleted or Not Activated, Please contact Administrator."
+msgstr ""
+
+#: ../app\Http\Middleware\ApiAuthenticateMiddleware.php:63
+msgid "Please login to complete request."
+msgstr ""
+
+#: ../app\Http\Middleware\Authenticate.php:32
+#: ../app\Http\Middleware\Authenticate.php:47
+msgid "Your account does not seems to be active, please contact administrator."
+msgstr ""
+
+#: ../app\Http\Middleware\Authenticate.php:95
+msgid "Please fill your profile information."
+msgstr ""
+
+#: ../app\Exp\Components\AbuseReport\ManageAbuseReportEngine.php:99
+msgid "Report does not exist"
+msgstr ""
+
+#: ../app\Exp\Components\AbuseReport\ManageAbuseReportEngine.php:131
+#: ../app\Exp\Components\AbuseReport\ManageAbuseReportEngine.php:134
+msgid "Report moderated successfully"
+msgstr ""
+
+#: ../app\Exp\Components\AbuseReport\ManageAbuseReportEngine.php:138
+msgid "Report not moderated."
+msgstr ""
+
+#: ../app\Exp\Components\Configuration\ConfigurationEngine.php:62
+#: ../app\Exp\Components\Configuration\ConfigurationEngine.php:147
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:75
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:120
+msgid "Invalid page type."
+msgstr ""
+
+#: ../app\Exp\Components\Configuration\ConfigurationEngine.php:217
+msgid "Configuration updated successfully."
+msgstr ""
+
+#: ../app\Exp\Components\Configuration\ConfigurationEngine.php:220
+#: ../app\Exp\Components\User\ManageUserEngine.php:315
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:200
+msgid "Nothing updated."
+msgstr ""
+
+#: ../app\Exp\Components\Configuration\ConfigurationEngine.php:223
+#: ../app\Exp\Components\CreditPackage\CreditPackageEngine.php:125
+#: ../app\Exp\Components\Item\ManageGiftEngine.php:130
+#: ../app\Exp\Components\Item\ManageStickerEngine.php:134
+#: ../app\Exp\Components\Item\ManageStickerEngine.php:186
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:435
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:500
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:556
+#: ../app\Exp\Components\Translation\TranslationEngine.php:93
+#: ../app\Exp\Components\Translation\TranslationEngine.php:140
+#: ../app\Exp\Components\Translation\TranslationEngine.php:181
+#: ../app\Exp\Components\User\ManageUserEngine.php:244
+#: ../app\Exp\Components\User\ManageUserEngine.php:343
+#: ../app\Exp\Components\User\ManageUserEngine.php:370
+#: ../app\Exp\Components\User\ManageUserEngine.php:398
+#: ../app\Exp\Components\User\ManageUserEngine.php:426
+#: ../app\Exp\Components\User\ManageUserEngine.php:454
+#: ../app\Exp\Components\User\ManageUserEngine.php:729
+#: ../app\Exp\Components\User\ManageUserEngine.php:855
+#: ../app\Exp\Components\User\SocialAccessEngine.php:118
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:202
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:266
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:317
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:407
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:564
+msgid "Something went wrong on server."
+msgstr ""
+
+#: ../app\Exp\Components\CreditPackage\CreditPackageEngine.php:103
+#: ../app\Exp\Components\Item\ManageGiftEngine.php:103
+#: ../app\Exp\Components\Item\ManageStickerEngine.php:103
+#: ../app\Exp\Components\Item\ManageStickerEngine.php:152
+msgid "User not exist."
+msgstr ""
+
+#: ../app\Exp\Components\CreditPackage\CreditPackageEngine.php:123
+msgid "Package added successfully."
+msgstr ""
+
+#: ../app\Exp\Components\CreditPackage\CreditPackageEngine.php:128
+msgid "Package not added."
+msgstr ""
+
+#: ../app\Exp\Components\CreditPackage\CreditPackageEngine.php:143
+#: ../app\Exp\Components\CreditPackage\CreditPackageEngine.php:180
+#: ../app\Exp\Components\CreditPackage\CreditPackageEngine.php:230
+msgid "Package does not exist"
+msgstr ""
+
+#: ../app\Exp\Components\CreditPackage\CreditPackageEngine.php:211
+msgid "Package updated successfully."
+msgstr ""
+
+#: ../app\Exp\Components\CreditPackage\CreditPackageEngine.php:214
+msgid "Package not updated."
+msgstr ""
+
+#: ../app\Exp\Components\CreditPackage\CreditPackageEngine.php:237
+msgid "Package deleted successfully."
+msgstr ""
+
+#: ../app\Exp\Components\CreditPackage\CreditPackageEngine.php:241
+msgid "Package not deleted."
+msgstr ""
+
+#: ../app\Exp\Components\Filter\FilterEngine.php:71
+#: ../app\Exp\Components\Filter\FilterEngine.php:211
+msgid "Something went wrong on server, please try again later."
+msgstr ""
+
+#: ../app\Exp\Components\FinancialTransaction\FinancialTransactionEngine.php:92
+msgid "Transaction does not exist"
+msgstr ""
+
+#: ../app\Exp\Components\FinancialTransaction\FinancialTransactionEngine.php:100
+msgid "Delete all test transactions successfully."
+msgstr ""
+
+#: ../app\Exp\Components\FinancialTransaction\FinancialTransactionEngine.php:103
+msgid "Transactions not deleted."
+msgstr ""
+
+#: ../app\Exp\Components\Home\Controllers\HomeController.php:89
+msgid "Invalid Request"
+msgstr ""
+
+#: ../app\Exp\Components\Item\ManageGiftEngine.php:127
+msgid "Gift added successfully."
+msgstr ""
+
+#: ../app\Exp\Components\Item\ManageGiftEngine.php:133
+msgid "Gift not added."
+msgstr ""
+
+#: ../app\Exp\Components\Item\ManageGiftEngine.php:148
+#: ../app\Exp\Components\Item\ManageGiftEngine.php:185
+#: ../app\Exp\Components\Item\ManageGiftEngine.php:236
+msgid "Gift does not exist"
+msgstr ""
+
+#: ../app\Exp\Components\Item\ManageGiftEngine.php:217
+msgid "Gift updated successfully."
+msgstr ""
+
+#: ../app\Exp\Components\Item\ManageGiftEngine.php:220
+msgid "Gift not updated."
+msgstr ""
+
+#: ../app\Exp\Components\Item\ManageGiftEngine.php:243
+msgid "Gift deleted successfully."
+msgstr ""
+
+#: ../app\Exp\Components\Item\ManageGiftEngine.php:246
+msgid "Gift not deleted."
+msgstr ""
+
+#: ../app\Exp\Components\Item\ManageStickerEngine.php:79
+#: ../resources\views\configuration\user.blade.php:15
+#: ../resources\views\configuration\user.blade.php:35
+msgid "Yes"
+msgstr ""
+
+#: ../app\Exp\Components\Item\ManageStickerEngine.php:79
+#: ../app\Exp\Components\UserSetting\Config\specification.php:266
+#: ../resources\views\configuration\user.blade.php:21
+#: ../resources\views\configuration\user.blade.php:41
+msgid "No"
+msgstr ""
+
+#: ../app\Exp\Components\Item\ManageStickerEngine.php:128
+msgid "Sticker uploaded successfully"
+msgstr ""
+
+#: ../app\Exp\Components\Item\ManageStickerEngine.php:158
+msgid "Normal price may not be greater than premium price."
+msgstr ""
+
+#: ../app\Exp\Components\Item\ManageStickerEngine.php:183
+msgid "Sticker added successfully."
+msgstr ""
+
+#: ../app\Exp\Components\Item\ManageStickerEngine.php:189
+msgid "Sticker not added."
+msgstr ""
+
+#: ../app\Exp\Components\Item\ManageStickerEngine.php:204
+#: ../app\Exp\Components\Item\ManageStickerEngine.php:242
+#: ../app\Exp\Components\Item\ManageStickerEngine.php:295
+msgid "Sticker does not exist"
+msgstr ""
+
+#: ../app\Exp\Components\Item\ManageStickerEngine.php:276
+msgid "Sticker updated successfully."
+msgstr ""
+
+#: ../app\Exp\Components\Item\ManageStickerEngine.php:279
+msgid "Sticker not updated."
+msgstr ""
+
+#: ../app\Exp\Components\Item\ManageStickerEngine.php:302
+msgid "Sticker deleted successfully."
+msgstr ""
+
+#: ../app\Exp\Components\Item\ManageStickerEngine.php:305
+msgid "Sticker not deleted."
+msgstr ""
+
+#: ../app\Exp\Components\Media\MediaEngine.php:62
+#: ../app\Exp\Components\Media\MediaEngine.php:270
+msgid "Only __ex__ images accepted."
+msgstr ""
+
+#: ../app\Exp\Components\Media\MediaEngine.php:93
+msgid "File uploaded successfully."
+msgstr ""
+
+#: ../app\Exp\Components\Media\MediaEngine.php:96
+msgid "Something went wrong, Please try again."
+msgstr ""
+
+#: ../app\Exp\Components\Media\MediaEngine.php:122
+msgid "File does not exists."
+msgstr ""
+
+#: ../app\Exp\Components\Media\MediaEngine.php:153
+msgid "Something went wrong while move file."
+msgstr ""
+
+#: ../app\Exp\Components\Media\MediaEngine.php:249
+msgid "Uploaded file does not exists"
+msgstr ""
+
+#: ../app\Exp\Components\Media\MediaEngine.php:256
+msgid "invalid uploaded file."
+msgstr ""
+
+#: ../app\Exp\Components\Media\MediaEngine.php:284
+msgid "File Uploaded Successfully."
+msgstr ""
+
+#: ../app\Exp\Components\Media\MediaEngine.php:287
+msgid "Something went wrong while file uploading."
+msgstr ""
+
+#: ../app\Exp\Components\Media\MediaEngine.php:308
+#: ../app\Exp\Components\Media\MediaEngine.php:364
+#: ../app\Exp\Components\Media\MediaEngine.php:385
+#: ../app\Exp\Components\Media\MediaEngine.php:409
+msgid "Something went wrong while file moving."
+msgstr ""
+
+#: ../app\Exp\Components\Media\MediaEngine.php:360
+msgid "File Uploaded successfully."
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:160
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:293
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:690
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:780
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:839
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:915
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:946
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:975
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:1004
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:1033
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:1062
+#: ../app\Exp\Components\User\ManageUserEngine.php:261
+#: ../app\Exp\Components\User\ManageUserEngine.php:294
+#: ../app\Exp\Components\User\ManageUserEngine.php:329
+#: ../app\Exp\Components\User\ManageUserEngine.php:357
+#: ../app\Exp\Components\User\ManageUserEngine.php:384
+#: ../app\Exp\Components\User\ManageUserEngine.php:412
+#: ../app\Exp\Components\User\ManageUserEngine.php:440
+#: ../app\Exp\Components\User\ManageUserEngine.php:468
+#: ../app\Exp\Components\User\ManageUserEngine.php:704
+#: ../app\Exp\Components\User\ManageUserEngine.php:802
+#: ../app\Exp\Components\User\UserEncounterEngine.php:160
+#: ../app\Exp\Components\User\UserEngine.php:575
+#: ../app\Exp\Components\User\UserEngine.php:898
+#: ../app\Exp\Components\User\UserEngine.php:1208
+#: ../app\Exp\Components\User\UserEngine.php:1301
+#: ../app\Exp\Components\User\UserEngine.php:1339
+#: ../app\Exp\Components\User\UserEngine.php:1437
+#: ../app\Exp\Components\User\UserEngine.php:1711
+#: ../app\Exp\Components\User\UserEngine.php:1933
+#: ../app\Exp\Components\User\UserEngine.php:2162
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:227
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:288
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:374
+msgid "User does not exists."
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:343
+msgid "Message request decline."
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:425
+msgid "New message received from __fullName__."
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:432
+msgid "Message sent."
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:465
+msgid "Message request accepted, now you can chat with each other."
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:469
+msgid "Message request rejected. "
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:489
+msgid "Message request accepted by __fullName__."
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:492
+msgid "Message request declined by __fullName__."
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:515
+msgid "Message does not exists."
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:526
+msgid "Message deleted successfully."
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:529
+msgid "Message not deleted."
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:553
+msgid "All messages deleted successfully."
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:620
+msgid "Sticker does not exists."
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:626
+msgid "You are already purchase this sticker."
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:639
+#: ../app\Exp\Components\User\PremiumPlanEngine.php:121
+msgid "Your credit ballance is too low, please purchase credits."
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:668
+msgid "Sticker purchased successfully."
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:671
+msgid "Sticker not purchased."
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:697
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:846
+msgid "User seems to be offline."
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:723
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:861
+#: ../app\Exp\Components\User\PremiumPlanEngine.php:168
+#: ../app\Exp\Components\User\SocialAccessEngine.php:112
+msgid "Something went wrong, please contact to administrator."
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:805
+msgid "User Call"
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:810
+msgid " is Calling You. "
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:811
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:927
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:958
+#: ../app\Exp\Components\User\UserEngine.php:169
+#: ../app\Exp\Components\User\UserEngine.php:758
+msgid "success"
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:924
+msgid "Caller Reject Call"
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:926
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:957
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:986
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:1015
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:1044
+msgid "Disconnect Call."
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:955
+msgid "Receiver Reject Call"
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:984
+msgid "Caller Errors"
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:987
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:1016
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:1045
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:1074
+msgid "errors"
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:1013
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:1042
+msgid "Receiver Errors"
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:1071
+msgid "Receiver Accept Call"
+msgstr ""
+
+#: ../app\Exp\Components\Messenger\MessengerEngine.php:1073
+msgid "Call Already Connected."
+msgstr ""
+
+#: ../app\Exp\Components\Notification\NotificationEngine.php:101
+msgid "Notification does not exists."
+msgstr ""
+
+#: ../app\Exp\Components\Notification\NotificationEngine.php:118
+msgid "Notification read successfully."
+msgstr ""
+
+#: ../app\Exp\Components\Notification\NotificationEngine.php:121
+msgid "Notification not read."
+msgstr ""
+
+#: ../app\Exp\Components\Pages\ManagePagesEngine.php:81
+msgid "Page added successfully"
+msgstr ""
+
+#: ../app\Exp\Components\Pages\ManagePagesEngine.php:84
+msgid "Page not added."
+msgstr ""
+
+#: ../app\Exp\Components\Pages\ManagePagesEngine.php:99
+#: ../app\Exp\Components\Pages\ManagePagesEngine.php:135
+msgid "Page does not exist"
+msgstr ""
+
+#: ../app\Exp\Components\Pages\ManagePagesEngine.php:147
+msgid "Page updated successfully"
+msgstr ""
+
+#: ../app\Exp\Components\Pages\ManagePagesEngine.php:150
+msgid "Page not updated."
+msgstr ""
+
+#: ../app\Exp\Components\Pages\ManagePagesEngine.php:166
+msgid "Page does not exist."
+msgstr ""
+
+#: ../app\Exp\Components\Pages\ManagePagesEngine.php:173
+msgid "Page deleted successfully."
+msgstr ""
+
+#: ../app\Exp\Components\Pages\ManagePagesEngine.php:176
+msgid "Page not deleted."
+msgstr ""
+
+#: ../app\Exp\Components\Translation\Requests\LanguageAddRequest.php:73
+#: ../app\Exp\Components\Translation\Requests\LanguageAddRequest.php:74
+#: ../app\Exp\Components\Translation\Requests\LanguageUpdateRequest.php:70
+msgid "The :attribute has already been taken"
+msgstr ""
+
+#: ../app\Exp\Components\Translation\TranslationEngine.php:106
+#: ../app\Exp\Components\Translation\TranslationEngine.php:152
+msgid "Translation language stored successfully."
+msgstr ""
+
+#: ../app\Exp\Components\Translation\TranslationEngine.php:109
+#: ../app\Exp\Components\Translation\TranslationEngine.php:155
+#: ../app\Exp\Components\Translation\TranslationEngine.php:200
+msgid "Translation language not stored."
+msgstr ""
+
+#: ../app\Exp\Components\Translation\TranslationEngine.php:126
+#: ../app\Exp\Components\Translation\TranslationEngine.php:172
+#: ../app\Exp\Components\Translation\TranslationEngine.php:278
+msgid "Translation language does not exists."
+msgstr ""
+
+#: ../app\Exp\Components\Translation\TranslationEngine.php:197
+msgid "Translation language deleted successfully."
+msgstr ""
+
+#: ../app\Exp\Components\Translation\TranslationEngine.php:269
+msgid "Translation languages does not exists."
+msgstr ""
+
+#: ../app\Exp\Components\Translation\TranslationEngine.php:342
+msgid "Source files scanned & PO/MO files updated successfully"
+msgstr ""
+
+#: ../app\Exp\Components\Translation\TranslationEngine.php:345
+msgid "Source files scanned & PO/MO files generated successfully"
+msgstr ""
+
+#: ../app\Exp\Components\Translation\TranslationEngine.php:349
+msgid "PO/MO files updated successfully"
+msgstr ""
+
+#: ../app\Exp\Components\Translation\TranslationEngine.php:352
+msgid "PO/MO files generated successfully"
+msgstr ""
+
+#: ../app\Exp\Components\Translation\TranslationEngine.php:403
+msgid "Translation has been cleared"
+msgstr ""
+
+#: ../app\Exp\Components\Translation\TranslationEngine.php:406
+msgid "Translation updated successfully"
+msgstr ""
+
+#: ../app\Exp\Components\Translation\TranslationEngine.php:587
+msgid "Messages translated successfully."
+msgstr ""
+
+#: ../app\Exp\Components\Translation\TranslationEngine.php:589
+msgid "Something went wrong while processing your request"
+msgstr ""
+
+#: ../app\Exp\Components\User\Controllers\CreditWalletController.php:104
+msgid "Payment successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\Controllers\CreditWalletController.php:109
+#: ../app\Exp\Components\User\Controllers\CreditWalletController.php:123
+#: ../app\Exp\Components\User\CreditWalletEngine.php:429
+msgid "Payment failed."
+msgstr ""
+
+#: ../app\Exp\Components\User\Controllers\SocialAccessController.php:57
+msgid "Something went wrong, Please contact with administrator."
+msgstr ""
+
+#: ../app\Exp\Components\User\Controllers\SocialAccessController.php:85
+msgid "App not found please contact administrator"
+msgstr ""
+
+#: ../app\Exp\Components\User\Controllers\SocialAccessController.php:94
+msgid "You have denied access to from __provider__"
+msgstr ""
+
+#: ../app\Exp\Components\User\Controllers\SocialAccessController.php:107
+msgid "Welcome, you are logged in successfully"
+msgstr ""
+
+#: ../app\Exp\Components\User\Controllers\SocialAccessController.php:116
+#: ../app\Exp\Components\User\SocialAccessEngine.php:56
+msgid "Authentication failed. Please check your  email/password & try again."
+msgstr ""
+
+#: ../app\Exp\Components\User\Controllers\UserController.php:247
+#: ../app\Exp\Components\User\UserEngine.php:556
+msgid "Your account has been activated successfully. Login with your email ID and password."
+msgstr ""
+
+#: ../app\Exp\Components\User\Controllers\UserController.php:255
+#: ../app\Exp\Components\User\UserEngine.php:548
+#: ../app\Exp\Components\User\UserEngine.php:559
+msgid "Account Activation link invalid."
+msgstr ""
+
+#: ../app\Exp\Components\User\Controllers\UserController.php:275
+msgid "Your new email activated successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\Controllers\UserController.php:281
+#: ../app\Exp\Components\User\UserEngine.php:414
+#: ../app\Exp\Components\User\UserEngine.php:440
+#: ../app\Exp\Components\User\UserEngine.php:2149
+msgid "Email not updated."
+msgstr ""
+
+#: ../app\Exp\Components\User\CreditWalletEngine.php:307
+#: ../app\Exp\Components\User\CreditWalletEngine.php:341
+#: ../app\Exp\Components\User\CreditWalletEngine.php:422
+#: ../app\Exp\Components\User\CreditWalletEngine.php:495
+msgid "Payment Complete"
+msgstr ""
+
+#: ../app\Exp\Components\User\CreditWalletEngine.php:311
+#: ../app\Exp\Components\User\CreditWalletEngine.php:317
+#: ../app\Exp\Components\User\CreditWalletEngine.php:345
+#: ../app\Exp\Components\User\CreditWalletEngine.php:351
+#: ../app\Exp\Components\User\CreditWalletEngine.php:425
+#: ../app\Exp\Components\User\CreditWalletEngine.php:499
+#: ../app\Exp\Components\User\CreditWalletEngine.php:505
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:321
+#: ../config\__tech.php:103
+msgid "Payment Failed"
+msgstr ""
+
+#: ../app\Exp\Components\User\CreditWalletEngine.php:371
+#: ../app\Exp\Components\User\CreditWalletEngine.php:445
+#: ../app\Exp\Components\User\CreditWalletEngine.php:522
+#: ../app\Exp\Components\User\CreditWalletEngine.php:594
+#: ../app\Exp\Components\User\CreditWalletEngine.php:621
+msgid "Package does not exist."
+msgstr ""
+
+#: ../app\Exp\Components\User\CreditWalletEngine.php:394
+#: ../app\Exp\Components\User\StripeEngine.php:98
+msgid "Success"
+msgstr ""
+
+#: ../app\Exp\Components\User\CreditWalletEngine.php:399
+#: ../app\Exp\Components\User\PaypalEngine.php:74
+#: ../app\Exp\Components\User\StripeEngine.php:70
+msgid "Failed"
+msgstr ""
+
+#: ../app\Exp\Components\User\CreditWalletEngine.php:404
+msgid "Something went wrong, please contact to system administrator"
+msgstr ""
+
+#: ../app\Exp\Components\User\CreditWalletEngine.php:470
+#: ../app\Exp\Components\User\CreditWalletEngine.php:574
+msgid "Transaction store successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\CreditWalletEngine.php:474
+#: ../app\Exp\Components\User\CreditWalletEngine.php:577
+msgid "Transaction not stored."
+msgstr ""
+
+#: ../app\Exp\Components\User\ManageUserEngine.php:233
+#: ../app\Exp\Components\User\UserEngine.php:272
+msgid "User not added."
+msgstr ""
+
+#: ../app\Exp\Components\User\ManageUserEngine.php:241
+msgid "User added successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\ManageUserEngine.php:312
+msgid "User updated successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\ManageUserEngine.php:340
+msgid "User soft deleted successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\ManageUserEngine.php:361
+msgid "To delete user permanently you have to soft delete first."
+msgstr ""
+
+#: ../app\Exp\Components\User\ManageUserEngine.php:367
+msgid "User permanent deleted successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\ManageUserEngine.php:395
+msgid "User restore successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\ManageUserEngine.php:423
+msgid "User blocked successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\ManageUserEngine.php:451
+msgid "User unblocked successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\ManageUserEngine.php:681
+msgid "Fake users added successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\ManageUserEngine.php:685
+msgid "Fake users not added."
+msgstr ""
+
+#: ../app\Exp\Components\User\ManageUserEngine.php:726
+msgid "User verified successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\ManageUserEngine.php:743
+msgid "User does not exist."
+msgstr ""
+
+#: ../app\Exp\Components\User\ManageUserEngine.php:814
+#: ../app\Exp\Components\User\ManageUserEngine.php:832
+#: ../app\Exp\Components\User\ManageUserEngine.php:851
+msgid "Photo removed successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\PaypalEngine.php:68
+#: ../app\Exp\Components\User\RazorpayEngine.php:51
+msgid "Complete"
+msgstr ""
+
+#: ../app\Exp\Components\User\PremiumPlanEngine.php:107
+msgid "Your are already buy premium plan."
+msgstr ""
+
+#: ../app\Exp\Components\User\PremiumPlanEngine.php:164
+msgid "Buy Premium Plan successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\PremiumPlanEngine.php:171
+msgid "Selected plan not exists."
+msgstr ""
+
+#: ../app\Exp\Components\User\PremiumPlanEngine.php:175
+msgid "Please select plan first."
+msgstr ""
+
+#: ../app\Exp\Components\User\SocialAccessEngine.php:51
+msgid "Something is wrong form social account, Please contact with administrator."
+msgstr ""
+
+#: ../app\Exp\Components\User\SocialAccessEngine.php:71
+msgid "The email is required for user login."
+msgstr ""
+
+#: ../app\Exp\Components\User\SocialAccessEngine.php:144
+msgid "User not exists."
+msgstr ""
+
+#: ../app\Exp\Components\User\SocialAccessEngine.php:149
+#: ../app\Exp\Components\User\UserEngine.php:143
+msgid "Your account currently __status__, Please contact to administrator."
+msgstr ""
+
+#: ../app\Exp\Components\User\SocialAccessEngine.php:160
+#: ../app\Exp\Components\User\UserEngine.php:195
+msgid "Welcome, you are logged in successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\SocialAccessEngine.php:164
+#: ../app\Exp\Components\User\UserEngine.php:201
+msgid "Authentication failed, please check your credentials & try again."
+msgstr ""
+
+#: ../app\Exp\Components\User\StripeEngine.php:89
+msgid "Session data does not exist."
+msgstr ""
+
+#: ../app\Exp\Components\User\StripeEngine.php:107
+#: ../app\Exp\Components\User\StripeEngine.php:116
+msgid "Failed Payment"
+msgstr ""
+
+#: ../app\Exp\Components\User\StripeEngine.php:203
+msgid "Your card was denied, please provide a new payment method"
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEncounterEngine.php:172
+msgid "Skip user successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEncounterEngine.php:175
+#: ../app\Exp\Components\User\UserEngine.php:1028
+msgid "Something went wrong."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:132
+msgid "You are not a member of the system, Please go and register first , then you can proceed for login."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:167
+msgid "User Logged In successfully"
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:168
+msgid " is Logged In. "
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:232
+msgid "User logout failed."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:291
+msgid "User credits not stored."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:320
+#: ../app\Exp\Components\User\UserEngine.php:332
+msgid "Your account created successfully, to activate your account please check your email."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:336
+msgid "Your account created successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:341
+msgid "Something went wrong on server, please contact to administrator."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:359
+#: ../app\Exp\Components\User\UserEngine.php:1715
+msgid "Current password is incorrect."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:364
+msgid "Password updated successfully"
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:367
+#: ../app\Exp\Components\User\UserEngine.php:533
+#: ../app\Exp\Components\User\UserEngine.php:1920
+msgid "Password not updated."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:382
+msgid "Please check your password."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:398
+msgid "New email activation link has been sent to your new email address, please check your email."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:410
+#: ../app\Exp\Components\User\UserEngine.php:437
+msgid "Update email successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:429
+msgid "User data not exists."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:457
+#: ../app\Exp\Components\User\UserEngine.php:474
+#: ../app\Exp\Components\User\UserEngine.php:516
+#: ../app\Exp\Components\User\UserEngine.php:524
+#: ../app\Exp\Components\User\UserEngine.php:1908
+#: ../app\Exp\Components\User\UserEngine.php:2133
+msgid "Invalid Request."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:490
+msgid "We have e-mailed your password reset link."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:493
+msgid "Something went wrong on server"
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:529
+#: ../app\Exp\Components\User\UserEngine.php:1916
+msgid "Password reset successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:756
+msgid "Profile visited successfully"
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:757
+msgid "Profile visited by"
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:764
+msgid "Profile visitors not created."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:784
+#: ../app\Exp\Components\User\UserEngine.php:787
+#: ../app\Exp\Components\User\UserEngine.php:788
+msgid "credits"
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:924
+msgid "User Liked Removed Successfully"
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:933
+msgid "User Disliked Removed Successfully"
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:953
+#: ../app\Exp\Components\User\UserEngine.php:1001
+msgid "User liked successfully"
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:954
+#: ../app\Exp\Components\User\UserEngine.php:1002
+msgid "Profile liked by"
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:965
+#: ../app\Exp\Components\User\UserEngine.php:1014
+msgid "User liked successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:975
+#: ../app\Exp\Components\User\UserEngine.php:1024
+msgid "User Disliked successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1216
+msgid "Gift data does not exists."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1227
+msgid "Your credit balance is too low, please purchase credits."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1269
+msgid "Gift send successfully"
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1270
+msgid "Gift send by"
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1279
+msgid "Gift send successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1283
+msgid "Gift not send."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1309
+msgid "User already abuse reported."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1321
+msgid "User abuse reported successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1325
+msgid "User failed to abuse report."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1348
+msgid "You are already block this user."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1368
+msgid "Blocked user successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1371
+msgid "User not block."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1445
+msgid "Block user does not exists."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1460
+msgid "User has been unblock successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1464
+msgid "Failed to unblock user."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1499
+msgid "Enough credits are not available. Please buy some credits"
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1535
+msgid "Booster activated successfully"
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1540
+msgid "Failed to boost profile."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1632
+msgid "Wizard completed successfully"
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1635
+msgid "Failed to complete profile"
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1677
+msgid "Mail has been sent successfully, we contact soon."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1680
+msgid "Failed to send mail."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1725
+msgid "Your account has been deleted successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1728
+msgid "Account not deleted."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1744
+#: ../app\Exp\Components\User\UserEngine.php:1795
+#: ../app\Exp\Components\User\UserEngine.php:1852
+msgid "You are not a member of this system."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1749
+msgid "Account already activated."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1771
+msgid "Activation mail sent successfully, to activate your account please check your email."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1774
+msgid "Failed to send activation mail"
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1806
+#: ../app\Exp\Components\User\UserEngine.php:1833
+msgid "Invalid OTP"
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1816
+#: ../app\Exp\Components\User\UserEngine.php:1828
+msgid "Otp verified successfully."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1859
+msgid "Your account might be Inactive, Blocked or Not Activated."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1881
+msgid "OTP sent successfully, to reset password use OTP sent to your email."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:1884
+msgid "Failed to send OTP"
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:2138
+msgid "Authentication Failed. Please Check Your Password."
+msgstr ""
+
+#: ../app\Exp\Components\User\UserEngine.php:2145
+msgid "Email updated successfully."
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:5
+msgid "Looks"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:9
+msgid "Ethnicity"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:12
+#: ../app\Exp\Components\UserSetting\Config\specification.php:128
+msgid "White"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:13
+#: ../app\Exp\Components\UserSetting\Config\specification.php:127
+msgid "Black"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:14
+msgid "Middle Eastern"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:15
+msgid "North African"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:16
+msgid "Latin American"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:17
+msgid "Mixed"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:18
+msgid "Asian"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:19
+#: ../app\Exp\Components\UserSetting\Config\specification.php:32
+#: ../app\Exp\Components\UserSetting\Config\specification.php:139
+#: ../app\Exp\Components\UserSetting\Config\specification.php:236
+#: ../app\Exp\Components\UserSetting\Config\specification.php:248
+#: ../config\__tech.php:268
+#: ../config\__tech.php:276
+msgid "Other"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:23
+msgid "Body Type"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:26
+msgid "Slim"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:27
+msgid "Sporty"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:28
+msgid "Curvy"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:29
+msgid "Round"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:30
+msgid "Supermodel"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:31
+msgid "Average"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:36
+msgid "Height"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:123
+msgid "Hair Color"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:126
+msgid "Brown"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:129
+msgid "Sandy"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:130
+msgid "Gray or Partially Gray"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:131
+msgid "Red/Auburn"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:132
+msgid "Blond/Strawberry"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:133
+msgid "Blue"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:134
+msgid "Green"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:135
+msgid "Orange"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:136
+msgid "Pink"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:137
+msgid "Purple"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:138
+msgid "Partly or Completely Bald"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:145
+msgid "Personality"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:149
+msgid "Nature"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:152
+msgid "Accommodating"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:153
+msgid "Adventurous"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:154
+msgid "Calm"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:155
+msgid "Careless"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:156
+msgid "Cheerful"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:157
+msgid "Demanding"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:158
+msgid "Extroverted"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:159
+msgid "Honest"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:160
+msgid "Generous"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:161
+msgid "Humorous"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:162
+msgid "Introverted"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:163
+msgid "Liberal"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:164
+msgid "Lively"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:165
+msgid "Loner"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:166
+msgid "Nervous"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:167
+msgid "Possessive"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:168
+msgid "Quiet"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:169
+msgid "Reserved"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:170
+msgid "Sensitive"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:171
+msgid "Shy"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:172
+msgid "Social"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:173
+msgid "Spontaneous"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:174
+msgid "Stubborn"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:175
+msgid "Suspicious"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:176
+msgid "Thoughtful"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:177
+msgid "Proud"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:178
+msgid "Considerate"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:179
+msgid "Friendly"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:180
+msgid "Polite"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:181
+msgid "Reliable"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:182
+msgid "Careful"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:183
+msgid "Helpful"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:184
+msgid "Patient"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:185
+msgid "Optimistic"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:189
+#: ../app\Exp\Components\UserSetting\Config\specification.php:245
+msgid "Friends"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:192
+msgid "No friends"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:193
+msgid "Some friends"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:194
+msgid "Many friends"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:195
+msgid "Only good friends"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:199
+#: ../app\Exp\Components\UserSetting\Config\specification.php:247
+msgid "Children"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:202
+msgid "No, never"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:203
+msgid "Someday, maybe"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:204
+msgid "Expecting"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:205
+msgid "already have kids"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:206
+msgid "have kids and don't want more"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:210
+msgid "Pets"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:213
+#: ../app\Exp\Components\UserSetting\Config\specification.php:255
+msgid "None"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:214
+msgid "Have pets"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:220
+msgid "Lifestyle"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:224
+msgid "Religion"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:227
+msgid "Muslim"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:228
+msgid "Atheist"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:229
+msgid "Buddhist"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:230
+msgid "Catholic"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:231
+msgid "Christian"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:232
+msgid "Hindu"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:233
+msgid "Jewish"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:234
+msgid "Agnostic"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:235
+msgid "Sikh"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:240
+msgid "I live with"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:243
+msgid "Alone"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:244
+msgid "Parents"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:246
+msgid "Partner"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:252
+msgid "Car"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:256
+msgid "My Own Car"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:260
+msgid "Travel"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:263
+msgid "Yes, all the time"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:264
+msgid "Yes, sometimes"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:265
+msgid "Not very much"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:270
+msgid "Smoke"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:273
+#: ../app\Exp\Components\UserSetting\Config\specification.php:282
+msgid "Never"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:274
+msgid "I Smoke Sometimes"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:275
+msgid "Chain Smoker"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:279
+msgid "Drink"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:283
+msgid "I Drink Sometimes"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:289
+msgid "Favorites"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:293
+msgid "Music Genre"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:297
+msgid "Singer"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:301
+msgid "Song"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:305
+msgid "Hobby"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:309
+msgid "Sport"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:313
+msgid "Book"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:317
+msgid "Dish"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:321
+msgid "Color"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:325
+msgid "Movie"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:329
+msgid "Show"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\Config\specification.php:333
+msgid "Inspired From"
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:198
+msgid "User setting updated successfully."
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:263
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:314
+msgid "Your basic information updated successfully."
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:336
+msgid "Invalid data proceed."
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:365
+msgid "Something went wrong on server while processing."
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:404
+msgid "Location stored successfully."
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:460
+msgid "Profile picture updated successfully."
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:515
+msgid "Profile cover picture updated successfully."
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:561
+msgid "Profile updated successfully."
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:605
+msgid "You cannot upload more than 10 photos."
+msgstr ""
+
+#: ../app\Exp\Components\UserSetting\UserSettingEngine.php:626
+msgid "Photos uploaded successfully."
+msgstr ""
+
+#: ../app\Exp\Support\Utils.php:79
+msgid "Keys not found"
+msgstr ""
+
+#: ../app\Exp\__Laraware\Core\CoreRequest.php:137
+msgid "Invalid Request Inputs ... !!"
+msgstr ""
+
+#: ../resources\views\abuse-report\manage\list.blade.php:13
+msgid "Manage Abuse Reports"
+msgstr ""
+
+#: ../resources\views\abuse-report\manage\list.blade.php:25
+#: ../config\__tech.php:160
+msgid "Awaiting"
+msgstr ""
+
+#: ../resources\views\abuse-report\manage\list.blade.php:33
+#: ../config\__tech.php:161
+msgid "Accepted"
+msgstr ""
+
+#: ../resources\views\abuse-report\manage\list.blade.php:41
+#: ../resources\views\abuse-report\manage\list.blade.php:158
+#: ../config\__tech.php:162
+msgid "Rejected"
+msgstr ""
+
+#: ../resources\views\abuse-report\manage\list.blade.php:51
+msgid "Reported User"
+msgstr ""
+
+#: ../resources\views\abuse-report\manage\list.blade.php:52
+#: ../resources\views\abuse-report\manage\list.blade.php:125
+#: ../resources\views\credit-package\manage\list.blade.php:26
+#: ../resources\views\financial-transaction\manage\list.blade.php:50
+#: ../resources\views\items\gift\manage\list.blade.php:26
+#: ../resources\views\items\sticker\manage\list.blade.php:26
+#: ../resources\views\translation\languages_list.blade.php:63
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:204
+#: ../resources\views\user\manage\list.blade.php:69
+#: ../resources\views\user\photos\list.blade.php:31
+#: ../resources\views\user\premium-plan\premium.blade.php:21
+msgid "Created On"
+msgstr ""
+
+#: ../resources\views\abuse-report\manage\list.blade.php:53
+msgid "Total Report"
+msgstr ""
+
+#: ../resources\views\abuse-report\manage\list.blade.php:54
+#: ../resources\views\credit-package\manage\list.blade.php:29
+#: ../resources\views\items\gift\manage\list.blade.php:29
+#: ../resources\views\items\sticker\manage\list.blade.php:29
+#: ../resources\views\pages\manage\list.blade.php:27
+#: ../resources\views\translation\languages_list.blade.php:94
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:216
+msgid "Status"
+msgstr ""
+
+#: ../resources\views\abuse-report\manage\list.blade.php:55
+#: ../resources\views\credit-package\manage\list.blade.php:30
+#: ../resources\views\items\gift\manage\list.blade.php:30
+#: ../resources\views\items\sticker\manage\list.blade.php:31
+#: ../resources\views\pages\manage\list.blade.php:28
+#: ../resources\views\translation\languages_list.blade.php:64
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:153
+#: ../resources\views\user\manage\list.blade.php:70
+#: ../resources\views\user\photos\list.blade.php:32
+msgid "Action"
+msgstr ""
+
+#: ../resources\views\abuse-report\manage\list.blade.php:73
+msgid "Moderate"
+msgstr ""
+
+#: ../resources\views\abuse-report\manage\list.blade.php:86
+#: ../resources\views\credit-package\manage\list.blade.php:62
+#: ../resources\views\items\gift\manage\list.blade.php:62
+#: ../resources\views\items\sticker\manage\list.blade.php:64
+msgid "There are no records."
+msgstr ""
+
+#: ../resources\views\abuse-report\manage\list.blade.php:108
+msgid "Report Moderation"
+msgstr ""
+
+#: ../resources\views\abuse-report\manage\list.blade.php:124
+msgid "Reported By"
+msgstr ""
+
+#: ../resources\views\abuse-report\manage\list.blade.php:126
+#: ../resources\views\user\profile.blade.php:651
+msgid "Reason"
+msgstr ""
+
+#: ../resources\views\abuse-report\manage\list.blade.php:143
+msgid "Remarks"
+msgstr ""
+
+#: ../resources\views\abuse-report\manage\list.blade.php:151
+#: ../resources\views\messenger\audio-video.blade.php:55
+#: ../resources\views\messenger\user-conversation.blade.php:139
+msgid "Accept"
+msgstr ""
+
+#: ../resources\views\abuse-report\manage\list.blade.php:163
+#: ../resources\views\user\contact.blade.php:56
+#: ../resources\views\user\manage\add.blade.php:92
+msgid "Submit"
+msgstr ""
+
+#: ../resources\views\configuration\advertisement.blade.php:2
+msgid "Manage Advertisement"
+msgstr ""
+
+#: ../resources\views\configuration\advertisement.blade.php:34
+#: ../resources\views\configuration\advertisement.blade.php:76
+#: ../resources\views\configuration\advertisement.blade.php:118
+msgid "Enable"
+msgstr ""
+
+#: ../resources\views\configuration\advertisement.blade.php:40
+#: ../resources\views\configuration\advertisement.blade.php:82
+#: ../resources\views\configuration\advertisement.blade.php:124
+msgid "Content"
+msgstr ""
+
+#: ../resources\views\configuration\advertisement.blade.php:135
+#: ../resources\views\configuration\booster.blade.php:31
+#: ../resources\views\configuration\email.blade.php:151
+#: ../resources\views\configuration\general.blade.php:66
+#: ../resources\views\configuration\integration.blade.php:31
+#: ../resources\views\configuration\integration.blade.php:91
+#: ../resources\views\configuration\integration.blade.php:142
+#: ../resources\views\configuration\integration.blade.php:182
+#: ../resources\views\configuration\integration.blade.php:205
+#: ../resources\views\configuration\payment.blade.php:36
+#: ../resources\views\configuration\payment.blade.php:76
+#: ../resources\views\configuration\payment.blade.php:132
+#: ../resources\views\configuration\payment.blade.php:172
+#: ../resources\views\configuration\payment.blade.php:228
+#: ../resources\views\configuration\payment.blade.php:268
+#: ../resources\views\configuration\payment.blade.php:301
+#: ../resources\views\configuration\premium-feature.blade.php:51
+#: ../resources\views\configuration\premium-plans.blade.php:32
+#: ../resources\views\configuration\social-login.blade.php:26
+#: ../resources\views\configuration\social-login.blade.php:77
+#: ../resources\views\configuration\social-login.blade.php:112
+#: ../resources\views\configuration\user.blade.php:77
+#: ../resources\views\credit-package\manage\edit.blade.php:58
+#: ../resources\views\items\gift\manage\edit.blade.php:68
+#: ../resources\views\items\sticker\manage\edit.blade.php:77
+#: ../resources\views\pages\manage\edit.blade.php:59
+#: ../resources\views\translation\languages_list.blade.php:100
+#: ../resources\views\user\manage\edit.blade.php:68
+#: ../resources\views\user\settings\notification.blade.php:73
+msgid "Update"
+msgstr ""
+
+#: ../resources\views\configuration\booster.blade.php:2
+msgid "Booster Settings"
+msgstr ""
+
+#: ../resources\views\configuration\booster.blade.php:10
+msgid "Booster Period (in Minutes)"
+msgstr ""
+
+#: ../resources\views\configuration\booster.blade.php:18
+msgid "Booster Price For Standard Users (in Credits)"
+msgstr ""
+
+#: ../resources\views\configuration\booster.blade.php:24
+msgid "Booster Price For Premium Users (in Credits)"
+msgstr ""
+
+#: ../resources\views\configuration\currency.blade.php:2
+#: ../resources\views\configuration\settings.blade.php:30
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:212
+msgid "Currency"
+msgstr ""
+
+#: ../resources\views\configuration\currency.blade.php:13
+msgid "Select Currency"
+msgstr ""
+
+#: ../resources\views\configuration\currency.blade.php:25
+msgid "Currency Code"
+msgstr ""
+
+#: ../resources\views\configuration\currency.blade.php:32
+msgid "Currency Symbol"
+msgstr ""
+
+#: ../resources\views\configuration\currency.blade.php:51
+msgid "Round Zero Decimal Currency"
+msgstr ""
+
+#: ../resources\views\configuration\currency.blade.php:57
+msgid "All the price and amount will be rounded. e.g : 10.25 It will become 10 , 10.57 It will become 11."
+msgstr ""
+
+#: ../resources\views\configuration\currency.blade.php:63
+msgid "This currency doesn't support Decimal values it may create error at payment."
+msgstr ""
+
+#: ../resources\views\configuration\currency.blade.php:71
+#: ../resources\views\translation\languages_list.blade.php:44
+#: ../resources\views\translation\list.blade.php:120
+#: ../resources\views\translation\list.blade.php:140
+msgid "Save"
+msgstr ""
+
+#: ../resources\views\configuration\email.blade.php:2
+msgid "Email Settings"
+msgstr ""
+
+#: ../resources\views\configuration\email.blade.php:13
+msgid "Use .env Default Settings"
+msgstr ""
+
+#: ../resources\views\configuration\email.blade.php:23
+msgid "Mail From Address"
+msgstr ""
+
+#: ../resources\views\configuration\email.blade.php:29
+msgid "Mail From Name"
+msgstr ""
+
+#: ../resources\views\configuration\email.blade.php:37
+#: ../resources\views\configuration\email.blade.php:38
+msgid "Mail Driver"
+msgstr ""
+
+#: ../resources\views\configuration\email.blade.php:56
+msgid "Mail Host"
+msgstr ""
+
+#: ../resources\views\configuration\email.blade.php:63
+msgid "Mail Port"
+msgstr ""
+
+#: ../resources\views\configuration\email.blade.php:70
+#: ../resources\views\configuration\email.blade.php:71
+msgid "Mail Encryption"
+msgstr ""
+
+#: ../resources\views\configuration\email.blade.php:84
+msgid "Mail Username"
+msgstr ""
+
+#: ../resources\views\configuration\email.blade.php:90
+msgid "Mail Password/Api Key"
+msgstr ""
+
+#: ../resources\views\configuration\email.blade.php:106
+msgid "Sparkpost Key"
+msgstr ""
+
+#: ../resources\views\configuration\email.blade.php:125
+msgid "Mailgun Domain"
+msgstr ""
+
+#: ../resources\views\configuration\email.blade.php:132
+msgid "Mailgun Endpoint"
+msgstr ""
+
+#: ../resources\views\configuration\email.blade.php:140
+msgid "Mailgun Secret"
+msgstr ""
+
+#: ../resources\views\configuration\general.blade.php:2
+msgid "General Settings"
+msgstr ""
+
+#: ../resources\views\configuration\general.blade.php:9
+msgid "Upload Logo"
+msgstr ""
+
+#: ../resources\views\configuration\general.blade.php:15
+msgid "Upload Small Logo"
+msgstr ""
+
+#: ../resources\views\configuration\general.blade.php:19
+msgid "Upload Favicon"
+msgstr ""
+
+#: ../resources\views\configuration\general.blade.php:26
+#: ../config\__settings.php:500
+#: ../config\__settings.php:512
+#: ../config\__settings.php:524
+msgid "Your Website Name"
+msgstr ""
+
+#: ../resources\views\configuration\general.blade.php:32
+msgid "Business Email"
+msgstr ""
+
+#: ../resources\views\configuration\general.blade.php:38
+msgid "Contact Email"
+msgstr ""
+
+#: ../resources\views\configuration\general.blade.php:45
+msgid "Select Timezone"
+msgstr ""
+
+#: ../resources\views\configuration\general.blade.php:56
+msgid "Distance Measurement"
+msgstr ""
+
+#: ../resources\views\configuration\general.blade.php:58
+msgid "KM"
+msgstr ""
+
+#: ../resources\views\configuration\general.blade.php:59
+msgid "Miles"
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:2
+msgid "Integration Settings"
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:19
+msgid "Allow Pusher"
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:30
+msgid "Pusher keys are installed."
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:42
+msgid "Pusher App ID"
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:43
+msgid "Add Your Pusher App ID"
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:49
+msgid "Pusher App Key"
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:50
+msgid "Add Your Pusher App Key"
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:56
+msgid "Pusher App Secret"
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:57
+msgid "Add Your Pusher App Secret"
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:63
+msgid "Pusher App Cluster Key"
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:64
+msgid "Add Your Pusher App Cluster Key"
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:79
+msgid "Allow Agora ( Audio / Video Call )"
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:90
+msgid "Agora keys are installed."
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:103
+msgid "Agora App ID"
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:104
+msgid "Add Your Agora App ID"
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:110
+msgid "Agora App Certificate Key"
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:111
+msgid "Add Your Agora App Certificate Key"
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:134
+msgid "Allow Google Map"
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:141
+msgid "Google Map keys are installed."
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:153
+msgid "Google Map Key"
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:154
+msgid "Add Your Google Map Key"
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:174
+msgid "Allow Giphy"
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:181
+msgid "Giphy keys are installed."
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:193
+msgid "Giphy Key"
+msgstr ""
+
+#: ../resources\views\configuration\integration.blade.php:194
+msgid "Add Your Giphy Key"
+msgstr ""
+
+#: ../resources\views\configuration\payment.blade.php:2
+msgid "Payment Settings"
+msgstr ""
+
+#: ../resources\views\configuration\payment.blade.php:11
+msgid "Paypal"
+msgstr ""
+
+#: ../resources\views\configuration\payment.blade.php:17
+msgid "Enable Paypal Checkout"
+msgstr ""
+
+#: ../resources\views\configuration\payment.blade.php:28
+#: ../resources\views\configuration\payment.blade.php:124
+#: ../resources\views\configuration\payment.blade.php:220
+msgid "Use Testing"
+msgstr ""
+
+#: ../resources\views\configuration\payment.blade.php:35
+msgid "Testing Paypal Checkout keys are installed."
+msgstr ""
+
+#: ../resources\views\configuration\payment.blade.php:47
+#: ../resources\views\configuration\payment.blade.php:48
+#: ../resources\views\configuration\payment.blade.php:87
+#: ../resources\views\configuration\payment.blade.php:88
+msgid "Client Id"
+msgstr ""
+
+#: ../resources\views\configuration\payment.blade.php:54
+#: ../resources\views\configuration\payment.blade.php:55
+#: ../resources\views\configuration\payment.blade.php:94
+#: ../resources\views\configuration\payment.blade.php:95
+#: ../resources\views\configuration\payment.blade.php:143
+#: ../resources\views\configuration\payment.blade.php:144
+#: ../resources\views\configuration\payment.blade.php:183
+#: ../resources\views\configuration\payment.blade.php:184
+msgid "Secret Key"
+msgstr ""
+
+#: ../resources\views\configuration\payment.blade.php:68
+#: ../resources\views\configuration\payment.blade.php:164
+#: ../resources\views\configuration\payment.blade.php:260
+msgid "Use Live"
+msgstr ""
+
+#: ../resources\views\configuration\payment.blade.php:75
+msgid "Live Paypal Checkout keys are installed."
+msgstr ""
+
+#: ../resources\views\configuration\payment.blade.php:107
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:124
+msgid "Stripe"
+msgstr ""
+
+#: ../resources\views\configuration\payment.blade.php:113
+msgid "Enable Stripe Checkout"
+msgstr ""
+
+#: ../resources\views\configuration\payment.blade.php:131
+msgid "Testing Stripe Checkout keys are installed."
+msgstr ""
+
+#: ../resources\views\configuration\payment.blade.php:150
+#: ../resources\views\configuration\payment.blade.php:151
+#: ../resources\views\configuration\payment.blade.php:190
+#: ../resources\views\configuration\payment.blade.php:191
+msgid "Publish Key"
+msgstr ""
+
+#: ../resources\views\configuration\payment.blade.php:171
+msgid "Live Stripe Checkout keys are installed."
+msgstr ""
+
+#: ../resources\views\configuration\payment.blade.php:203
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:128
+msgid "Razorpay"
+msgstr ""
+
+#: ../resources\views\configuration\payment.blade.php:209
+msgid "Enable Razorpay Checkout"
+msgstr ""
+
+#: ../resources\views\configuration\payment.blade.php:227
+msgid "Testing Razorpay Checkout keys are installed."
+msgstr ""
+
+#: ../resources\views\configuration\payment.blade.php:239
+#: ../resources\views\configuration\payment.blade.php:240
+#: ../resources\views\configuration\payment.blade.php:279
+#: ../resources\views\configuration\payment.blade.php:280
+msgid "Razorpay Key"
+msgstr ""
+
+#: ../resources\views\configuration\payment.blade.php:246
+#: ../resources\views\configuration\payment.blade.php:247
+#: ../resources\views\configuration\payment.blade.php:286
+#: ../resources\views\configuration\payment.blade.php:287
+msgid "Razorpay Secret Key"
+msgstr ""
+
+#: ../resources\views\configuration\payment.blade.php:267
+msgid "Live Razorpay Checkout keys are installed."
+msgstr ""
+
+#: ../resources\views\configuration\premium-feature.blade.php:2
+msgid "Feature Settings"
+msgstr ""
+
+#: ../resources\views\configuration\premium-feature.blade.php:36
+msgid "Daily Encounter limit for Normal Users"
+msgstr ""
+
+#: ../resources\views\configuration\premium-feature.blade.php:37
+msgid "Daily Encounter User"
+msgstr ""
+
+#: ../resources\views\configuration\premium-plans.blade.php:2
+msgid "Premium Plan Settings"
+msgstr ""
+
+#: ../resources\views\configuration\premium-plans.blade.php:21
+#: ../resources\views\configuration\premium-plans.blade.php:22
+#: ../resources\views\credit-package\manage\add.blade.php:36
+#: ../resources\views\credit-package\manage\edit.blade.php:37
+#: ../resources\views\credit-package\manage\list.blade.php:27
+#: ../resources\views\user\premium-plan\premium.blade.php:29
+msgid "Price"
+msgstr ""
+
+#: ../resources\views\configuration\settings.blade.php:13
+#: ../resources\views\includes\public-top-bar.blade.php:190
+#: ../resources\views\includes\sidebar.blade.php:67
+msgid "Settings"
+msgstr ""
+
+#: ../resources\views\configuration\settings.blade.php:22
+msgid "General"
+msgstr ""
+
+#: ../resources\views\configuration\settings.blade.php:26
+#: ../resources\views\includes\sidebar.blade.php:55
+msgid "Users"
+msgstr ""
+
+#: ../resources\views\configuration\settings.blade.php:34
+msgid "Payment Gateways"
+msgstr ""
+
+#: ../resources\views\configuration\settings.blade.php:38
+msgid "Social Logins"
+msgstr ""
+
+#: ../resources\views\configuration\settings.blade.php:42
+msgid "Integrations"
+msgstr ""
+
+#: ../resources\views\configuration\settings.blade.php:46
+msgid "Premium Plans"
+msgstr ""
+
+#: ../resources\views\configuration\settings.blade.php:50
+#: ../resources\views\outer-home.blade.php:41
+msgid "Features"
+msgstr ""
+
+#: ../resources\views\configuration\settings.blade.php:54
+#: ../resources\views\outer-home.blade.php:214
+#: ../resources\views\user\contact.blade.php:36
+#: ../resources\views\user\manage\add.blade.php:39
+#: ../resources\views\user\manage\details.blade.php:17
+#: ../resources\views\user\manage\edit.blade.php:38
+#: ../resources\views\user\manage\list.blade.php:68
+msgid "Email"
+msgstr ""
+
+#: ../resources\views\configuration\settings.blade.php:58
+msgid "Booster"
+msgstr ""
+
+#: ../resources\views\configuration\settings.blade.php:62
+msgid "Advertisement"
+msgstr ""
+
+#: ../resources\views\configuration\social-login.blade.php:2
+msgid "Social Login Settings"
+msgstr ""
+
+#: ../resources\views\configuration\social-login.blade.php:18
+msgid "Allow Facebook Login"
+msgstr ""
+
+#: ../resources\views\configuration\social-login.blade.php:25
+msgid "Facebook keys are installed."
+msgstr ""
+
+#: ../resources\views\configuration\social-login.blade.php:37
+msgid "Facebook App ID"
+msgstr ""
+
+#: ../resources\views\configuration\social-login.blade.php:38
+msgid "Add Your Facebook App ID"
+msgstr ""
+
+#: ../resources\views\configuration\social-login.blade.php:44
+msgid "Facebook App Secret"
+msgstr ""
+
+#: ../resources\views\configuration\social-login.blade.php:45
+msgid "Add Your Facebook App Secret"
+msgstr ""
+
+#: ../resources\views\configuration\social-login.blade.php:51
+#: ../resources\views\configuration\social-login.blade.php:102
+msgid "Callback URL"
+msgstr ""
+
+#: ../resources\views\configuration\social-login.blade.php:69
+msgid "Allow Google Login"
+msgstr ""
+
+#: ../resources\views\configuration\social-login.blade.php:76
+msgid "Google keys are installed."
+msgstr ""
+
+#: ../resources\views\configuration\social-login.blade.php:88
+msgid "Google Client ID"
+msgstr ""
+
+#: ../resources\views\configuration\social-login.blade.php:89
+msgid "Add Your Google Client ID"
+msgstr ""
+
+#: ../resources\views\configuration\social-login.blade.php:95
+msgid "Google Client Secret"
+msgstr ""
+
+#: ../resources\views\configuration\social-login.blade.php:96
+msgid "Add Your Google Client Secret"
+msgstr ""
+
+#: ../resources\views\configuration\user.blade.php:2
+msgid "User Settings"
+msgstr ""
+
+#: ../resources\views\configuration\user.blade.php:10
+msgid "Activation required for new user"
+msgstr ""
+
+#: ../resources\views\configuration\user.blade.php:30
+msgid "Activation required for change email"
+msgstr ""
+
+#: ../resources\views\configuration\user.blade.php:53
+msgid "Allocate Bonus Credits"
+msgstr ""
+
+#: ../resources\views\configuration\user.blade.php:59
+msgid "No. of Credits"
+msgstr ""
+
+#: ../resources\views\configuration\user.blade.php:69
+msgid "URL for Terms And Conditions"
+msgstr ""
+
+#: ../resources\views\credit-package\manage\add.blade.php:3
+msgid "Add Credit Package"
+msgstr ""
+
+#: ../resources\views\credit-package\manage\add.blade.php:6
+#: ../resources\views\credit-package\manage\edit.blade.php:6
+msgid "Back to Credit Packages"
+msgstr ""
+
+#: ../resources\views\credit-package\manage\add.blade.php:29
+#: ../resources\views\credit-package\manage\edit.blade.php:30
+#: ../resources\views\credit-package\manage\edit.blade.php:31
+#: ../resources\views\credit-package\manage\list.blade.php:25
+#: ../resources\views\items\gift\manage\add.blade.php:28
+#: ../resources\views\items\gift\manage\edit.blade.php:30
+#: ../resources\views\items\gift\manage\edit.blade.php:31
+#: ../resources\views\items\gift\manage\list.blade.php:25
+#: ../resources\views\items\sticker\manage\add.blade.php:31
+#: ../resources\views\items\sticker\manage\edit.blade.php:31
+#: ../resources\views\items\sticker\manage\list.blade.php:25
+#: ../resources\views\pages\manage\add.blade.php:29
+#: ../resources\views\pages\manage\edit.blade.php:38
+#: ../resources\views\pages\manage\list.blade.php:24
+msgid "Title"
+msgstr ""
+
+#: ../resources\views\credit-package\manage\add.blade.php:43
+#: ../resources\views\credit-package\manage\edit.blade.php:44
+#: ../resources\views\credit-package\manage\list.blade.php:28
+#: ../resources\views\items\gift\manage\add.blade.php:40
+#: ../resources\views\items\gift\manage\add.blade.php:51
+#: ../resources\views\items\gift\manage\edit.blade.php:41
+#: ../resources\views\items\gift\manage\edit.blade.php:53
+#: ../resources\views\items\sticker\manage\add.blade.php:43
+#: ../resources\views\items\sticker\manage\add.blade.php:55
+#: ../resources\views\items\sticker\manage\edit.blade.php:43
+#: ../resources\views\items\sticker\manage\edit.blade.php:55
+#: ../resources\views\user\premium-plan\premium.blade.php:30
+#: ../resources\views\user\premium-plan\premium.blade.php:34
+msgid "Credits"
+msgstr ""
+
+#: ../resources\views\credit-package\manage\add.blade.php:51
+#: ../resources\views\credit-package\manage\edit.blade.php:53
+#: ../resources\views\items\gift\manage\add.blade.php:61
+#: ../resources\views\items\gift\manage\edit.blade.php:63
+#: ../resources\views\items\sticker\manage\add.blade.php:72
+#: ../resources\views\items\sticker\manage\edit.blade.php:72
+#: ../resources\views\pages\manage\add.blade.php:44
+#: ../resources\views\pages\manage\edit.blade.php:53
+#: ../resources\views\user\manage\add.blade.php:87
+#: ../resources\views\user\manage\edit.blade.php:62
+#: ../resources\views\user\manage\list.blade.php:22
+#: ../config\__tech.php:46
+msgid "Active"
+msgstr ""
+
+#: ../resources\views\credit-package\manage\add.blade.php:57
+#: ../resources\views\items\gift\manage\add.blade.php:66
+#: ../resources\views\items\sticker\manage\add.blade.php:78
+#: ../resources\views\pages\manage\add.blade.php:49
+msgid "Add"
+msgstr ""
+
+#: ../resources\views\credit-package\manage\edit.blade.php:3
+msgid "Edit Credit Package"
+msgstr ""
+
+#: ../resources\views\credit-package\manage\list.blade.php:13
+msgid "Manage Credit Packages"
+msgstr ""
+
+#: ../resources\views\credit-package\manage\list.blade.php:14
+msgid "Add New Package"
+msgstr ""
+
+#: ../resources\views\credit-package\manage\list.blade.php:24
+#: ../resources\views\items\gift\manage\list.blade.php:24
+#: ../resources\views\items\sticker\manage\list.blade.php:24
+#: ../resources\views\user\photos\list.blade.php:28
+msgid "Image"
+msgstr ""
+
+#: ../resources\views\credit-package\manage\list.blade.php:51
+#: ../resources\views\items\gift\manage\list.blade.php:51
+#: ../resources\views\items\sticker\manage\list.blade.php:53
+#: ../resources\views\pages\manage\list.blade.php:54
+#: ../resources\views\translation\languages_list.blade.php:127
+#: ../resources\views\user\manage\list.blade.php:121
+msgid "Edit"
+msgstr ""
+
+#: ../resources\views\credit-package\manage\list.blade.php:52
+#: ../resources\views\items\gift\manage\list.blade.php:52
+#: ../resources\views\items\sticker\manage\list.blade.php:54
+#: ../resources\views\pages\manage\list.blade.php:62
+#: ../resources\views\translation\languages_list.blade.php:130
+#: ../resources\views\user\manage\list.blade.php:136
+#: ../resources\views\user\photos\list.blade.php:75
+msgid "Delete"
+msgstr ""
+
+#: ../resources\views\dashboard\dashboard.blade.php:12
+#: ../resources\views\includes\sidebar.blade.php:19
+msgid "Dashboard"
+msgstr ""
+
+#: ../resources\views\dashboard\dashboard.blade.php:24
+msgid "Users Online"
+msgstr ""
+
+#: ../resources\views\dashboard\dashboard.blade.php:25
+msgid "__onlineUsersCount__"
+msgstr ""
+
+#: ../resources\views\dashboard\dashboard.blade.php:44
+msgid "Active Users"
+msgstr ""
+
+#: ../resources\views\dashboard\dashboard.blade.php:45
+msgid "__activeUsersCount__"
+msgstr ""
+
+#: ../resources\views\dashboard\dashboard.blade.php:64
+msgid "Inactive Users"
+msgstr ""
+
+#: ../resources\views\dashboard\dashboard.blade.php:65
+msgid "__inactiveUsersCount__"
+msgstr ""
+
+#: ../resources\views\dashboard\dashboard.blade.php:84
+#: ../resources\views\includes\public-sidebar.blade.php:160
+#: ../resources\views\user\block-user\list.blade.php:14
+msgid "Blocked Users"
+msgstr ""
+
+#: ../resources\views\dashboard\dashboard.blade.php:85
+msgid "__blockedUsersCount__"
+msgstr ""
+
+#: ../resources\views\dashboard\dashboard.blade.php:103
+msgid "Awaiting Abuse Reports"
+msgstr ""
+
+#: ../resources\views\dashboard\dashboard.blade.php:104
+msgid "__awaitingAbuseReportsCount__"
+msgstr ""
+
+#: ../resources\views\dashboard\dashboard.blade.php:122
+msgid "Current Month Earnings"
+msgstr ""
+
+#: ../resources\views\dashboard\dashboard.blade.php:124
+msgid "__currencyCode__ __currentMonthIncome__"
+msgstr ""
+
+#: ../resources\views\dashboard\dashboard.blade.php:145
+msgid "Earnings Overview"
+msgstr ""
+
+#: ../resources\views\dashboard\dashboard.blade.php:168
+msgid "Current Year Registrations"
+msgstr ""
+
+#: ../resources\views\fake-data-generator\fake-users.blade.php:13
+#: ../resources\views\fake-data-generator\fake-users.blade.php:104
+#: ../resources\views\includes\sidebar.blade.php:85
+msgid "Generate Fake Users"
+msgstr ""
+
+#: ../resources\views\fake-data-generator\fake-users.blade.php:29
+msgid "Number of users"
+msgstr ""
+
+#: ../resources\views\fake-data-generator\fake-users.blade.php:36
+msgid "Select a Country"
+msgstr ""
+
+#: ../resources\views\fake-data-generator\fake-users.blade.php:52
+msgid "Select a Gender"
+msgstr ""
+
+#: ../resources\views\fake-data-generator\fake-users.blade.php:65
+msgid "Select a Language"
+msgstr ""
+
+#: ../resources\views\fake-data-generator\fake-users.blade.php:81
+msgid "Default Password"
+msgstr ""
+
+#: ../resources\views\fake-data-generator\fake-users.blade.php:88
+#: ../resources\views\outer-home.blade.php:88
+msgid "Age from"
+msgstr ""
+
+#: ../resources\views\fake-data-generator\fake-users.blade.php:95
+msgid "Age to"
+msgstr ""
+
+#: ../resources\views\filter\filter.blade.php:15
+#: ../resources\views\includes\public-sidebar.blade.php:95
+#: ../resources\views\includes\public-top-bar.blade.php:11
+msgid "Find Matches"
+msgstr ""
+
+#: ../resources\views\filter\filter.blade.php:37
+#: ../resources\views\includes\public-top-bar.blade.php:32
+msgid "Looking For"
+msgstr ""
+
+#: ../resources\views\filter\filter.blade.php:39
+#: ../resources\views\includes\public-top-bar.blade.php:34
+#: ../resources\views\outer-home.blade.php:82
+msgid "All"
+msgstr ""
+
+#: ../resources\views\filter\filter.blade.php:48
+#: ../resources\views\includes\public-top-bar.blade.php:43
+msgid "Age Between"
+msgstr ""
+
+#: ../resources\views\filter\filter.blade.php:51
+#: ../resources\views\filter\filter.blade.php:58
+#: ../resources\views\outer-home.blade.php:90
+#: ../resources\views\outer-home.blade.php:98
+msgid "__translatedAge__"
+msgstr ""
+
+#: ../resources\views\filter\filter.blade.php:67
+msgid "Distance in __distanceUnit__"
+msgstr ""
+
+#: ../resources\views\filter\filter.blade.php:69
+#: ../resources\views\includes\public-top-bar.blade.php:60
+msgid "Anywhere"
+msgstr ""
+
+#: ../resources\views\filter\filter.blade.php:73
+#: ../resources\views\includes\public-top-bar.blade.php:64
+#: ../resources\views\outer-home.blade.php:104
+msgid "Search"
+msgstr ""
+
+#: ../resources\views\filter\filter.blade.php:74
+msgid "Show Advance Filter"
+msgstr ""
+
+#: ../resources\views\filter\filter.blade.php:75
+msgid "Hide Advance Filter"
+msgstr ""
+
+#: ../resources\views\filter\filter.blade.php:92
+msgid "Personal"
+msgstr ""
+
+#: ../resources\views\filter\filter.blade.php:119
+msgid "Language"
+msgstr ""
+
+#: ../resources\views\filter\filter.blade.php:135
+#: ../resources\views\user\profile.blade.php:359
+#: ../resources\views\user\profile.blade.php:451
+msgid "Relationship Status"
+msgstr ""
+
+#: ../resources\views\filter\filter.blade.php:151
+#: ../resources\views\user\profile.blade.php:367
+#: ../resources\views\user\profile.blade.php:462
+msgid "Work Status"
+msgstr ""
+
+#: ../resources\views\filter\filter.blade.php:167
+#: ../resources\views\user\profile.blade.php:377
+#: ../resources\views\user\profile.blade.php:475
+msgid "Education"
+msgstr ""
+
+#: ../resources\views\filter\filter.blade.php:195
+msgid "Select Min Height"
+msgstr ""
+
+#: ../resources\views\filter\filter.blade.php:201
+msgid "Select Max Height"
+msgstr ""
+
+#: ../resources\views\filter\filter.blade.php:231
+msgid "Apply Filters"
+msgstr ""
+
+#: ../resources\views\filter\filter.blade.php:238
+msgid "__filterCount__ Match Found"
+msgid_plural "__filterCount__ Matches Found"
+msgstr[0] ""
+
+#: ../resources\views\filter\filter.blade.php:247
+msgid "Load More"
+msgstr ""
+
+#: ../resources\views\filter\find-matches.blade.php:38
+#: ../resources\views\home.blade.php:109
+msgid "There are no matches found."
+msgstr ""
+
+#: ../resources\views\financial-transaction\manage\list.blade.php:13
+#: ../resources\views\includes\sidebar.blade.php:73
+msgid "Financial Transactions"
+msgstr ""
+
+#: ../resources\views\financial-transaction\manage\list.blade.php:25
+msgid "Live Transaction"
+msgstr ""
+
+#: ../resources\views\financial-transaction\manage\list.blade.php:33
+msgid "Test Transaction"
+msgstr ""
+
+#: ../resources\views\financial-transaction\manage\list.blade.php:40
+msgid "Delete All"
+msgstr ""
+
+#: ../resources\views\financial-transaction\manage\list.blade.php:49
+msgid "User"
+msgstr ""
+
+#: ../resources\views\financial-transaction\manage\list.blade.php:51
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:208
+msgid "Amount"
+msgstr ""
+
+#: ../resources\views\financial-transaction\manage\list.blade.php:52
+msgid "Payment Method"
+msgstr ""
+
+#: ../resources\views\financial-transaction\manage\list.blade.php:53
+msgid "Package"
+msgstr ""
+
+#: ../resources\views\financial-transaction\manage\list.blade.php:67
+#: ../resources\views\pages\manage\list.blade.php:41
+#: ../resources\views\translation\languages_list.blade.php:146
+#: ../resources\views\user\manage\list.blade.php:86
+#: ../resources\views\user\manage\list.blade.php:93
+#: ../resources\views\user\photos\list.blade.php:47
+#: ../resources\views\user\premium-plan\premium.blade.php:133
+#: ../resources\views\user\profile.blade.php:735
+msgid "Are You Sure!"
+msgstr ""
+
+#: ../resources\views\financial-transaction\manage\list.blade.php:68
+msgid "You want to delete all test transactions."
+msgstr ""
+
+#: ../resources\views\home.blade.php:14
+#: ../resources\views\outer-home.blade.php:163
+msgid "Encounter"
+msgstr ""
+
+#: ../resources\views\home.blade.php:23
+#: ../resources\views\user\profile.blade.php:160
+#: ../resources\views\user\profile.blade.php:751
+msgid "Premium User"
+msgstr ""
+
+#: ../resources\views\home.blade.php:82
+msgid "Your daily limit for encounters may exceed or there are no users to show."
+msgstr ""
+
+#: ../resources\views\home.blade.php:89
+msgid "This is a premium feature, to view encounter you need to buy premium plan first."
+msgstr ""
+
+#: ../resources\views\home.blade.php:98
+msgid "Random Users"
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:5
+msgid "Copyright © __storeName__ __copyrightYear__"
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:9
+#: ../resources\views\outer-home.blade.php:44
+#: ../resources\views\user\contact.blade.php:22
+msgid "Contact"
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:24
+msgid "Chat"
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:25
+#: ../resources\views\messenger\audio-video.blade.php:23
+#: ../resources\views\messenger\audio-video.blade.php:63
+#: ../resources\views\messenger\user-conversation.blade.php:176
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:233
+msgid "Close"
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:32
+#: ../resources\views\messenger\user-conversation.blade.php:128
+msgid "Loading..."
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:60
+msgid "This field is required."
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:61
+msgid "Please fix this field."
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:62
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:63
+msgid "Please enter a valid URL."
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:64
+msgid "Please enter a valid date."
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:65
+msgid "Please enter a valid date (ISO)."
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:66
+msgid "Please enter a valid number."
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:67
+msgid "Please enter only digits."
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:68
+msgid "Please enter the same value again."
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:69
+msgid "Please enter no more than {0} characters."
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:70
+msgid "Please enter at least {0} characters."
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:71
+msgid "Please enter a value between {0} and {1} characters long."
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:72
+msgid "Please enter a value between {0} and {1}."
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:73
+msgid "Please enter a value less than or equal to {0}."
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:74
+msgid "Please enter a value greater than or equal to {0}."
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:75
+msgid "Please enter a multiple of {0}."
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:84
+msgid "processing"
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:85
+msgid "Drag & Drop Files or Browse"
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:86
+msgid "Result Not Found"
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:87
+msgid "Message is required"
+msgstr ""
+
+#: ../resources\views\includes\footer.blade.php:88
+#: ../resources\views\includes\sidebar.blade.php:37
+msgid "Stickers"
+msgstr ""
+
+#: ../resources\views\includes\public-sidebar.blade.php:17
+msgid "Messenger"
+msgstr ""
+
+#: ../resources\views\includes\public-sidebar.blade.php:24
+#: ../resources\views\includes\public-sidebar.blade.php:30
+#: ../resources\views\includes\public-top-bar.blade.php:92
+msgid "Notification"
+msgstr ""
+
+#: ../resources\views\includes\public-sidebar.blade.php:48
+#: ../resources\views\includes\public-top-bar.blade.php:109
+msgid "Show All Notifications."
+msgstr ""
+
+#: ../resources\views\includes\public-sidebar.blade.php:52
+#: ../resources\views\includes\public-top-bar.blade.php:113
+#: ../resources\views\notification\notification-list.blade.php:96
+msgid "There are no notification."
+msgstr ""
+
+#: ../resources\views\includes\public-sidebar.blade.php:64
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:18
+msgid "Credit Wallet"
+msgstr ""
+
+#: ../resources\views\includes\public-sidebar.blade.php:73
+msgid "Profile Booster"
+msgstr ""
+
+#: ../resources\views\includes\public-sidebar.blade.php:87
+msgid "Home"
+msgstr ""
+
+#: ../resources\views\includes\public-sidebar.blade.php:102
+msgid "My Profile"
+msgstr ""
+
+#: ../resources\views\includes\public-sidebar.blade.php:109
+#: ../resources\views\user\settings\photos.blade.php:14
+msgid "My Photos"
+msgstr ""
+
+#: ../resources\views\includes\public-sidebar.blade.php:117
+msgid "Who likes me"
+msgstr ""
+
+#: ../resources\views\includes\public-sidebar.blade.php:130
+#: ../resources\views\user\mutual-like.blade.php:15
+msgid "Mutual Likes"
+msgstr ""
+
+#: ../resources\views\includes\public-sidebar.blade.php:136
+#: ../resources\views\user\my-liked.blade.php:15
+msgid "My Likes"
+msgstr ""
+
+#: ../resources\views\includes\public-sidebar.blade.php:142
+#: ../resources\views\user\my-disliked.blade.php:15
+msgid "My Dislikes"
+msgstr ""
+
+#: ../resources\views\includes\public-sidebar.blade.php:148
+#: ../resources\views\user\profile-visitor.blade.php:14
+msgid "Visitors"
+msgstr ""
+
+#: ../resources\views\includes\public-sidebar.blade.php:154
+#: ../resources\views\notification\notification-list.blade.php:14
+msgid "Notifications"
+msgstr ""
+
+#: ../resources\views\includes\public-sidebar.blade.php:169
+msgid "Featured Users"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:58
+msgid "Distance From My Location (__distanceUnit__)"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:72
+msgid "Be Premium User"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:72
+msgid "Be Premium"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:158
+msgid "Choose your language"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:186
+#: ../resources\views\includes\top-bar.blade.php:77
+#: ../resources\views\outer-home.blade.php:144
+msgid "Profile"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:194
+#: ../resources\views\includes\top-bar.blade.php:81
+#: ../resources\views\user\change-password.blade.php:13
+msgid "Change Password"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:198
+#: ../resources\views\includes\top-bar.blade.php:85
+#: ../resources\views\user\change-email.blade.php:13
+msgid "Change Email"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:203
+#: ../resources\views\includes\public-top-bar.blade.php:288
+msgid "Delete Account"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:210
+msgid "Admin Panel"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:216
+#: ../resources\views\includes\top-bar.blade.php:90
+#: ../resources\views\manage-master.blade.php:63
+#: ../resources\views\public-master.blade.php:81
+#: ../resources\views\user\profile\update-wizard.blade.php:30
+#: ../resources\views\user\profile\update-wizard.blade.php:176
+msgid "Logout"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:228
+msgid "Boost Profile"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:237
+#: ../resources\views\user\profile.blade.php:686
+msgid "Your credit balance is too low, please"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:238
+#: ../resources\views\user\profile.blade.php:687
+msgid "purchase credits"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:244
+msgid "This will costs you"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:252
+msgid "credits for immediate"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:256
+msgid "minutes"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:260
+#: ../resources\views\manage-master.blade.php:62
+#: ../resources\views\translation\languages_list.blade.php:101
+#: ../resources\views\translation\list.blade.php:86
+#: ../resources\views\user\profile\update-wizard.blade.php:175
+#: ../resources\views\user\profile.blade.php:659
+#: ../resources\views\user\profile.blade.php:714
+msgid "Cancel"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:261
+msgid "Boost"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:271
+msgid "Delete account?"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:277
+msgid "Are you sure you want to delete your account? All content including photos and other data will be permanently removed!"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:282
+msgid "Enter your password"
+msgstr ""
+
+#: ../resources\views\includes\public-top-bar.blade.php:283
+#: ../resources\views\user\login.blade.php:53
+#: ../resources\views\user\manage\add.blade.php:54
+#: ../resources\views\user\sign-up.blade.php:93
+msgid "Password"
+msgstr ""
+
+#: ../resources\views\includes\sidebar.blade.php:25
+msgid "Pages"
+msgstr ""
+
+#: ../resources\views\includes\sidebar.blade.php:31
+#: ../resources\views\user\profile.blade.php:267
+msgid "Gifts"
+msgstr ""
+
+#: ../resources\views\includes\sidebar.blade.php:43
+msgid "Credit Packages"
+msgstr ""
+
+#: ../resources\views\includes\sidebar.blade.php:49
+msgid "Abuse Reports"
+msgstr ""
+
+#: ../resources\views\includes\sidebar.blade.php:61
+msgid "User Uploads"
+msgstr ""
+
+#: ../resources\views\includes\sidebar.blade.php:79
+msgid "Languages"
+msgstr ""
+
+#: ../resources\views\includes\sidebar.blade.php:89
+msgid "If you have made changes which doesn't reflecting this link may help to clear all the cache."
+msgstr ""
+
+#: ../resources\views\includes\sidebar.blade.php:91
+msgid "Clear System Cache"
+msgstr ""
+
+#: ../resources\views\includes\top-bar.blade.php:10
+msgid "Admin Section"
+msgstr ""
+
+#: ../resources\views\items\gift\manage\add.blade.php:3
+msgid "Add Gift"
+msgstr ""
+
+#: ../resources\views\items\gift\manage\add.blade.php:6
+#: ../resources\views\items\gift\manage\edit.blade.php:6
+msgid "Back to Gifts"
+msgstr ""
+
+#: ../resources\views\items\gift\manage\add.blade.php:36
+#: ../resources\views\items\gift\manage\edit.blade.php:37
+#: ../resources\views\items\sticker\manage\add.blade.php:39
+#: ../resources\views\items\sticker\manage\edit.blade.php:39
+msgid "Normal Price"
+msgstr ""
+
+#: ../resources\views\items\gift\manage\add.blade.php:47
+#: ../resources\views\items\gift\manage\edit.blade.php:49
+#: ../resources\views\items\sticker\manage\add.blade.php:51
+#: ../resources\views\items\sticker\manage\edit.blade.php:51
+msgid "Premium Price"
+msgstr ""
+
+#: ../resources\views\items\gift\manage\edit.blade.php:3
+msgid "Edit Gift"
+msgstr ""
+
+#: ../resources\views\items\gift\manage\list.blade.php:13
+msgid "Manage Gifts"
+msgstr ""
+
+#: ../resources\views\items\gift\manage\list.blade.php:14
+msgid "Add New Gift"
+msgstr ""
+
+#: ../resources\views\items\gift\manage\list.blade.php:27
+#: ../resources\views\items\sticker\manage\list.blade.php:27
+msgid "Normal Price (In Credits)"
+msgstr ""
+
+#: ../resources\views\items\gift\manage\list.blade.php:28
+#: ../resources\views\items\sticker\manage\list.blade.php:28
+msgid "Premium Price (In Credits)"
+msgstr ""
+
+#: ../resources\views\items\sticker\manage\add.blade.php:3
+msgid "Add Sticker"
+msgstr ""
+
+#: ../resources\views\items\sticker\manage\add.blade.php:6
+#: ../resources\views\items\sticker\manage\edit.blade.php:6
+msgid "Back to Stickers"
+msgstr ""
+
+#: ../resources\views\items\sticker\manage\add.blade.php:65
+#: ../resources\views\items\sticker\manage\edit.blade.php:65
+msgid "Is for premium user only"
+msgstr ""
+
+#: ../resources\views\items\sticker\manage\edit.blade.php:3
+msgid "Edit Sticker"
+msgstr ""
+
+#: ../resources\views\items\sticker\manage\list.blade.php:13
+msgid "Manage Stickers"
+msgstr ""
+
+#: ../resources\views\items\sticker\manage\list.blade.php:14
+msgid "Add New Sticker"
+msgstr ""
+
+#: ../resources\views\items\sticker\manage\list.blade.php:30
+msgid "Is Premium"
+msgstr ""
+
+#: ../resources\views\manage-master.blade.php:52
+#: ../resources\views\public-master.blade.php:71
+#: ../resources\views\user\profile\update-wizard.blade.php:166
+msgid "Ready to Leave?"
+msgstr ""
+
+#: ../resources\views\manage-master.blade.php:58
+#: ../resources\views\public-master.blade.php:77
+#: ../resources\views\user\profile\update-wizard.blade.php:172
+msgid "Select \"Logout\" below if you are ready to end your current session."
+msgstr ""
+
+#: ../resources\views\messenger\audio-video.blade.php:59
+msgid "Reject"
+msgstr ""
+
+#: ../resources\views\messenger\audio-video.blade.php:96
+msgid "Error!"
+msgstr ""
+
+#: ../resources\views\messenger\audio-video.blade.php:97
+msgid "May be your browser not support Audio/Video Calling. We recommend you to use another browser."
+msgstr ""
+
+#: ../resources\views\messenger\audio-video.blade.php:118
+msgid "Ringing..."
+msgstr ""
+
+#: ../resources\views\messenger\audio-video.blade.php:119
+msgid "Calling..."
+msgstr ""
+
+#: ../resources\views\messenger\audio-video.blade.php:120
+msgid "Connecting..."
+msgstr ""
+
+#: ../resources\views\messenger\audio-video.blade.php:121
+msgid "Connected"
+msgstr ""
+
+#: ../resources\views\messenger\audio-video.blade.php:122
+msgid "Call Disconnected..."
+msgstr ""
+
+#: ../resources\views\messenger\audio-video.blade.php:123
+msgid "Some went wrong, please contact to administrator."
+msgstr ""
+
+#: ../resources\views\messenger\audio-video.blade.php:124
+msgid "Busy..."
+msgstr ""
+
+#: ../resources\views\messenger\audio-video.blade.php:269
+#: ../resources\views\messenger\audio-video.blade.php:272
+#: ../resources\views\messenger\user-conversation.blade.php:21
+#: ../resources\views\messenger\user-conversation.blade.php:23
+msgid "Audio Call"
+msgstr ""
+
+#: ../resources\views\messenger\audio-video.blade.php:274
+#: ../resources\views\messenger\user-conversation.blade.php:28
+#: ../resources\views\messenger\user-conversation.blade.php:30
+msgid "Video Call"
+msgstr ""
+
+#: ../resources\views\messenger\audio-video.blade.php:329
+#: ../resources\views\messenger\audio-video.blade.php:331
+msgid "Incoming Audio Call"
+msgstr ""
+
+#: ../resources\views\messenger\audio-video.blade.php:333
+msgid "Incoming Video Call"
+msgstr ""
+
+#: ../resources\views\messenger\manage\log.blade.php:3
+msgid "Messenger Log"
+msgstr ""
+
+#: ../resources\views\messenger\manage\log.blade.php:14
+msgid "Sender"
+msgstr ""
+
+#: ../resources\views\messenger\manage\log.blade.php:15
+msgid "Receiver"
+msgstr ""
+
+#: ../resources\views\messenger\manage\log.blade.php:16
+#: ../resources\views\user\contact.blade.php:50
+#: ../resources\views\user\contact.blade.php:51
+#: ../resources\views\user\profile.blade.php:207
+#: ../resources\views\user\profile.blade.php:785
+msgid "Message"
+msgstr ""
+
+#: ../resources\views\messenger\manage\log.blade.php:17
+msgid "Send On"
+msgstr ""
+
+#: ../resources\views\messenger\user-conversation.blade.php:36
+#: ../resources\views\messenger\user-conversation.blade.php:37
+msgid "Delete All Chat"
+msgstr ""
+
+#: ../resources\views\messenger\user-conversation.blade.php:143
+msgid "Decline"
+msgstr ""
+
+#: ../resources\views\messenger\user-conversation.blade.php:147
+msgid "Message Request Declined"
+msgstr ""
+
+#: ../resources\views\messenger\user-conversation.blade.php:152
+msgid "Are you sure to purchase this sticker"
+msgstr ""
+
+#: ../resources\views\messenger\user-conversation.blade.php:173
+msgid "User needs to accept chat request"
+msgstr ""
+
+#: ../resources\views\notification\notification-list.blade.php:23
+msgid "Notification For"
+msgstr ""
+
+#: ../resources\views\notification\notification-list.blade.php:24
+msgid "Time"
+msgstr ""
+
+#: ../resources\views\outer-home.blade.php:38
+#: ../resources\views\user\premium-plan\premium.blade.php:3
+msgid "Premium"
+msgstr ""
+
+#: ../resources\views\outer-home.blade.php:47
+#: ../resources\views\user\login.blade.php:67
+msgid "Login"
+msgstr ""
+
+#: ../resources\views\outer-home.blade.php:58
+msgid "Find Your Love"
+msgstr ""
+
+#: ../resources\views\outer-home.blade.php:59
+msgid "One stop destination for finding your love"
+msgstr ""
+
+#: ../resources\views\outer-home.blade.php:62
+msgid "Get Started"
+msgstr ""
+
+#: ../resources\views\outer-home.blade.php:76
+msgid "Find perfect match"
+msgstr ""
+
+#: ../resources\views\outer-home.blade.php:81
+msgid "Looking for"
+msgstr ""
+
+#: ../resources\views\outer-home.blade.php:96
+msgid "Age till"
+msgstr ""
+
+#: ../resources\views\outer-home.blade.php:121
+#: ../resources\views\user\premium-plan\premium.blade.php:76
+msgid "Premium Features"
+msgstr ""
+
+#: ../resources\views\outer-home.blade.php:123
+msgid "No Ads, Browse in Incognito mode, See Who Likes you, View likes Notifications, Priority In Search Result, Priority In Random User, Audio Call Via Messenger, Video Call Via Messenger, Unlimited User Encounters, Discounts in Stickers & Gifts and Many more ..."
+msgstr ""
+
+#: ../resources\views\outer-home.blade.php:140
+msgid "Register"
+msgstr ""
+
+#: ../resources\views\outer-home.blade.php:141
+msgid "Registrations are free & quick"
+msgstr ""
+
+#: ../resources\views\outer-home.blade.php:145
+msgid "Complete your profile information"
+msgstr ""
+
+#: ../resources\views\outer-home.blade.php:148
+msgid "Find"
+msgstr ""
+
+#: ../resources\views\outer-home.blade.php:149
+msgid "Search for person you are looking for"
+msgstr ""
+
+#: ../resources\views\outer-home.blade.php:164
+msgid "Get encounter with the person, you may interested in"
+msgstr ""
+
+#: ../resources\views\outer-home.blade.php:181
+msgid "Complete your profile"
+msgstr ""
+
+#: ../resources\views\outer-home.blade.php:182
+msgid "An example of where you can put an image of a features, or anything else, along with a description."
+msgstr ""
+
+#: ../resources\views\outer-home.blade.php:203
+msgid "Address"
+msgstr ""
+
+#: ../resources\views\outer-home.blade.php:227
+msgid "Phone"
+msgstr ""
+
+#: ../resources\views\pages\manage\add.blade.php:13
+msgid "Add Page"
+msgstr ""
+
+#: ../resources\views\pages\manage\add.blade.php:16
+#: ../resources\views\pages\manage\edit.blade.php:16
+msgid "Back to Pages"
+msgstr ""
+
+#: ../resources\views\pages\manage\add.blade.php:36
+#: ../resources\views\pages\manage\edit.blade.php:45
+msgid "Description"
+msgstr ""
+
+#: ../resources\views\pages\manage\edit.blade.php:13
+msgid "Edit Page"
+msgstr ""
+
+#: ../resources\views\pages\manage\edit.blade.php:26
+msgid "Preview URL"
+msgstr ""
+
+#: ../resources\views\pages\manage\list.blade.php:13
+msgid "Manage Pages"
+msgstr ""
+
+#: ../resources\views\pages\manage\list.blade.php:14
+msgid "Add New Page"
+msgstr ""
+
+#: ../resources\views\pages\manage\list.blade.php:25
+msgid "Created"
+msgstr ""
+
+#: ../resources\views\pages\manage\list.blade.php:26
+msgid "Updated"
+msgstr ""
+
+#: ../resources\views\pages\manage\list.blade.php:42
+msgid "You want to delete this page."
+msgstr ""
+
+#: ../resources\views\pages\manage\list.blade.php:58
+msgid "Preview Page"
+msgstr ""
+
+#: ../resources\views\public-master.blade.php:53
+msgid "OK"
+msgstr ""
+
+#: ../resources\views\public-master.blade.php:80
+msgid "Not now"
+msgstr ""
+
+#: ../resources\views\translation\languages_list.blade.php:13
+msgid "Translation Languages"
+msgstr ""
+
+#: ../resources\views\translation\languages_list.blade.php:21
+msgid "Add New Translation Language"
+msgstr ""
+
+#: ../resources\views\translation\languages_list.blade.php:25
+msgid "Language Name"
+msgstr ""
+
+#: ../resources\views\translation\languages_list.blade.php:29
+msgid "Language Code"
+msgstr ""
+
+#: ../resources\views\translation\languages_list.blade.php:38
+#: ../resources\views\translation\languages_list.blade.php:85
+msgid "Is RTL"
+msgstr ""
+
+#: ../resources\views\translation\languages_list.blade.php:48
+msgid "Please Note: Valid language code is required for Auto Translation"
+msgstr ""
+
+#: ../resources\views\translation\languages_list.blade.php:62
+msgid "Name"
+msgstr ""
+
+#: ../resources\views\translation\languages_list.blade.php:123
+msgid "Recollect all the translatable strings from the source & make it ready for translations"
+msgstr ""
+
+#: ../resources\views\translation\languages_list.blade.php:124
+#: ../resources\views\translation\list.blade.php:12
+msgid "Re-Scan"
+msgstr ""
+
+#: ../resources\views\translation\languages_list.blade.php:147
+msgid "you want to delete this translation language?"
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:3
+msgid "__languageName__ Language Translations (__translationsCount__)"
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:9
+msgid "Back to languages"
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:14
+msgid "Auto translations (Google Spreadsheet)"
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:24
+msgid "Auto translations using Google Spreadsheet"
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:32
+msgid "Step 1"
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:34
+msgid "Export"
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:34
+msgid "Export Translation Strings to XLSX file"
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:41
+msgid "Step 2"
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:43
+msgid "Once downloaded file, Go to __googleSpreadSheetAnchorTag__ and Open the exported spreadsheet using upload."
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:45
+msgid "Google Spreadsheets"
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:54
+msgid "Step 3"
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:55
+msgid "Then go to Edit Menu and Select Find and Replace option, now find __doubleQuotes__ and replace with __singleQuote__, Also check the option called \"Also check within formulas\" and click on Replace All button"
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:64
+msgid "Step 4"
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:65
+msgid "Now it translate all your string automatically, Now just export using __downloadFunctionPath__ and Drag & Drop or Browse your excel file to process the translations below."
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:80
+msgid "Import & Process"
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:96
+msgid "Please note"
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:96
+msgid "Google Auto Translate given here is API key less method your IP may get BLOCKED for particular time, if too much requests are done."
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:109
+msgid "Singular"
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:119
+#: ../resources\views\translation\list.blade.php:139
+msgid "Google Auto Translate"
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:119
+#: ../resources\views\translation\list.blade.php:139
+msgid "Auto Translate"
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:129
+msgid "Plural"
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:180
+msgid "Auto Translation fetched Successfully"
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:186
+msgid "Google Auto Translate given here is API key less method your IP may get BLOCKED for particular time, if too much requests are done. Check again after few hours or change your internet connection to change IP address"
+msgstr ""
+
+#: ../resources\views\translation\list.blade.php:188
+msgid "Failed to get auto translation"
+msgstr ""
+
+#: ../resources\views\user\block-user\list.blade.php:27
+msgid "There are no blocked users."
+msgstr ""
+
+#: ../resources\views\user\change-email.blade.php:23
+msgid "Activate your new email address"
+msgstr ""
+
+#: ../resources\views\user\change-email.blade.php:25
+msgid "Almost finished... You need to confirm your email address. To complete the activation process, please click the link in the email we just sent you."
+msgstr ""
+
+#: ../resources\views\user\change-email.blade.php:32
+msgid "Current Email"
+msgstr ""
+
+#: ../resources\views\user\change-email.blade.php:40
+#: ../resources\views\user\change-password.blade.php:35
+msgid "Current Password"
+msgstr ""
+
+#: ../resources\views\user\change-email.blade.php:44
+msgid "New Email"
+msgstr ""
+
+#: ../resources\views\user\change-email.blade.php:51
+msgid "Update Email"
+msgstr ""
+
+#: ../resources\views\user\change-password.blade.php:22
+msgid "As you had registered using social account & didn’t set the password yet, you need to logout and use Forgot Password link to set a password."
+msgstr ""
+
+#: ../resources\views\user\change-password.blade.php:43
+#: ../resources\views\user\reset-password.blade.php:41
+msgid "New Password"
+msgstr ""
+
+#: ../resources\views\user\change-password.blade.php:47
+#: ../resources\views\user\reset-password.blade.php:47
+msgid "New Password Confirmation"
+msgstr ""
+
+#: ../resources\views\user\change-password.blade.php:54
+msgid "Update Password"
+msgstr ""
+
+#: ../resources\views\user\contact.blade.php:29
+#: ../resources\views\user\manage\details.blade.php:11
+#: ../resources\views\user\manage\list.blade.php:66
+#: ../resources\views\user\photos\list.blade.php:29
+msgid "Full Name"
+msgstr ""
+
+#: ../resources\views\user\contact.blade.php:30
+msgid "Enter Full Name"
+msgstr ""
+
+#: ../resources\views\user\contact.blade.php:37
+msgid "Enter Email"
+msgstr ""
+
+#: ../resources\views\user\contact.blade.php:43
+#: ../resources\views\user\contact.blade.php:44
+msgid "Subject"
+msgstr ""
+
+#: ../resources\views\user\contact.blade.php:65
+#: ../resources\views\user\forgot-password.blade.php:56
+#: ../resources\views\user\login.blade.php:92
+#: ../resources\views\user\reset-password.blade.php:61
+#: ../resources\views\user\sign-up.blade.php:36
+msgid "Create an Account!"
+msgstr ""
+
+#: ../resources\views\user\contact.blade.php:68
+#: ../resources\views\user\forgot-password.blade.php:59
+#: ../resources\views\user\reset-password.blade.php:64
+#: ../resources\views\user\sign-up.blade.php:150
+msgid "Already have an account? Login!"
+msgstr ""
+
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:13
+msgid "Selected"
+msgstr ""
+
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:31
+msgid "Your Wallet Balance"
+msgstr ""
+
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:35
+msgid "__creditBalance__ Credit"
+msgid_plural "__creditBalance__ Credits"
+msgstr[0] ""
+
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:41
+msgid "You can use these credits on this website for the various purchases like to buy Premium Membership, Profile Booster, Gift & Sticker purchases etc"
+msgstr ""
+
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:76
+msgid "Buy More Credits"
+msgstr ""
+
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:90
+msgid "__credits__ Credit"
+msgid_plural "__credits__ Credits"
+msgstr[0] ""
+
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:95
+msgid "for __currencyCode__ __price__ only"
+msgstr ""
+
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:106
+msgid "There are no packages"
+msgstr ""
+
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:124
+msgid "Stripe Payment"
+msgstr ""
+
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:128
+msgid "Razorpay Payment"
+msgstr ""
+
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:143
+msgid "Wallet Transactions"
+msgstr ""
+
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:150
+msgid "Transaction On"
+msgstr ""
+
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:151
+msgid "Transaction For"
+msgstr ""
+
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:152
+msgid "Credits (credited/debited)"
+msgstr ""
+
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:174
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:190
+msgid "Financial Transaction"
+msgstr ""
+
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:220
+msgid "Method"
+msgstr ""
+
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:224
+msgid "Mode"
+msgstr ""
+
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:402
+msgid "Payment Canceled by User"
+msgstr ""
+
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:414
+msgid "Something went wrong with paypal checkout, please contact to administrator."
+msgstr ""
+
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:546
+msgid "Payment Successful, Credits has been added successfully to your wallet"
+msgstr ""
+
+#: ../resources\views\user\credit-wallet\credit-wallet.blade.php:548
+msgid "Reload to Update"
+msgstr ""
+
+#: ../resources\views\user\forgot-password-success.blade.php:5
+msgid "Reset your password"
+msgstr ""
+
+#: ../resources\views\user\forgot-password-success.blade.php:6
+msgid "We have sent password reset link to your email address.."
+msgstr ""
+
+#: ../resources\views\user\forgot-password.blade.php:34
+msgid "Forgot Your Password?"
+msgstr ""
+
+#: ../resources\views\user\forgot-password.blade.php:35
+#: ../resources\views\user\reset-password.blade.php:28
+msgid "We get it, stuff happens. Just enter your email address below and we'll send you a link to reset your password!"
+msgstr ""
+
+#: ../resources\views\user\forgot-password.blade.php:42
+#: ../resources\views\user\reset-password.blade.php:35
+msgid "Enter Email Address..."
+msgstr ""
+
+#: ../resources\views\user\forgot-password.blade.php:48
+#: ../resources\views\user\reset-password.blade.php:53
+msgid "Reset Password"
+msgstr ""
+
+#: ../resources\views\user\login.blade.php:33
+msgid "Login to your account"
+msgstr ""
+
+#: ../resources\views\user\login.blade.php:47
+msgid "Enter Email Address or Username ..."
+msgstr ""
+
+#: ../resources\views\user\login.blade.php:61
+msgid "Remember Me"
+msgstr ""
+
+#: ../resources\views\user\login.blade.php:72
+msgid "Login with Google"
+msgstr ""
+
+#: ../resources\views\user\login.blade.php:77
+msgid "Login with Facebook"
+msgstr ""
+
+#: ../resources\views\user\login.blade.php:85
+#: ../resources\views\user\sign-up.blade.php:145
+msgid "Forgot Password?"
+msgstr ""
+
+#: ../resources\views\user\login.blade.php:91
+msgid "Don't have a Account Create New Its Free!!"
+msgstr ""
+
+#: ../resources\views\user\manage\add.blade.php:3
+msgid "Add New User"
+msgstr ""
+
+#: ../resources\views\user\manage\add.blade.php:6
+#: ../resources\views\user\manage\edit.blade.php:6
+msgid "Back to Users"
+msgstr ""
+
+#: ../resources\views\user\manage\add.blade.php:24
+#: ../resources\views\user\manage\edit.blade.php:24
+#: ../resources\views\user\profile.blade.php:326
+#: ../resources\views\user\profile.blade.php:411
+#: ../resources\views\user\profile.blade.php:413
+#: ../resources\views\user\sign-up.blade.php:43
+msgid "First Name"
+msgstr ""
+
+#: ../resources\views\user\manage\add.blade.php:31
+#: ../resources\views\user\manage\edit.blade.php:30
+#: ../resources\views\user\profile.blade.php:332
+#: ../resources\views\user\profile.blade.php:418
+#: ../resources\views\user\profile.blade.php:419
+#: ../resources\views\user\sign-up.blade.php:49
+msgid "Last Name"
+msgstr ""
+
+#: ../resources\views\user\manage\add.blade.php:46
+#: ../resources\views\user\manage\details.blade.php:23
+#: ../resources\views\user\manage\edit.blade.php:44
+#: ../resources\views\user\manage\list.blade.php:67
+#: ../resources\views\user\sign-up.blade.php:56
+msgid "Username"
+msgstr ""
+
+#: ../resources\views\user\manage\add.blade.php:61
+msgid "Confirm Password"
+msgstr ""
+
+#: ../resources\views\user\manage\add.blade.php:69
+#: ../resources\views\user\manage\details.blade.php:29
+msgid "Designation"
+msgstr ""
+
+#: ../resources\views\user\manage\add.blade.php:76
+#: ../resources\views\user\manage\details.blade.php:35
+#: ../resources\views\user\manage\edit.blade.php:52
+#: ../resources\views\user\profile.blade.php:395
+#: ../resources\views\user\profile.blade.php:496
+#: ../resources\views\user\profile.blade.php:497
+msgid "Mobile Number"
+msgstr ""
+
+#: ../resources\views\user\manage\details.blade.php:3
+msgid "User Details"
+msgstr ""
+
+#: ../resources\views\user\manage\edit.blade.php:3
+msgid "Update User"
+msgstr ""
+
+#: ../resources\views\user\manage\list.blade.php:30
+#: ../config\__tech.php:47
+msgid "Inactive"
+msgstr ""
+
+#: ../resources\views\user\manage\list.blade.php:38
+#: ../config\__tech.php:50
+msgid "Deleted"
+msgstr ""
+
+#: ../resources\views\user\manage\list.blade.php:46
+#: ../config\__tech.php:49
+msgid "Never Activated"
+msgstr ""
+
+#: ../resources\views\user\manage\list.blade.php:54
+#: ../config\__tech.php:48
+msgid "Blocked"
+msgstr ""
+
+#: ../resources\views\user\manage\list.blade.php:65
+msgid "Profile Picture"
+msgstr ""
+
+#: ../resources\views\user\manage\list.blade.php:87
+msgid "You want to delete this user, it will be placed in deleted tab."
+msgstr ""
+
+#: ../resources\views\user\manage\list.blade.php:94
+msgid "You want to permanent delete this user."
+msgstr ""
+
+#: ../resources\views\user\manage\list.blade.php:125
+msgid "Transactions"
+msgstr ""
+
+#: ../resources\views\user\manage\list.blade.php:130
+msgid "Verify"
+msgstr ""
+
+#: ../resources\views\user\manage\list.blade.php:140
+msgid "Restore"
+msgstr ""
+
+#: ../resources\views\user\manage\list.blade.php:144
+#: ../resources\views\user\manage\list.blade.php:156
+msgid "Block"
+msgstr ""
+
+#: ../resources\views\user\manage\list.blade.php:152
+msgid "Soft Delete"
+msgstr ""
+
+#: ../resources\views\user\manage\list.blade.php:164
+#: ../resources\views\user\partial-templates\blocked-users.blade.php:18
+msgid "Unblock"
+msgstr ""
+
+#: ../resources\views\user\manage\list.blade.php:183
+msgid "User Transactions"
+msgstr ""
+
+#: ../resources\views\user\mutual-like.blade.php:27
+msgid "There are no mutual likes."
+msgstr ""
+
+#: ../resources\views\user\my-disliked.blade.php:27
+msgid "There are no Disliked users."
+msgstr ""
+
+#: ../resources\views\user\my-liked.blade.php:27
+msgid "There are no any users who likes me."
+msgstr ""
+
+#: ../resources\views\user\partial-templates\blocked-users.blade.php:24
+#: ../resources\views\user\partial-templates\my-liked-users.blade.php:39
+msgid "Load more"
+msgstr ""
+
+#: ../resources\views\user\partial-templates\blocked-users.blade.php:26
+#: ../resources\views\user\partial-templates\my-liked-users.blade.php:42
+msgid "Looks like you reached the end."
+msgstr ""
+
+#: ../resources\views\user\photos\list.blade.php:13
+msgid "Manage User Uploads"
+msgstr ""
+
+#: ../resources\views\user\photos\list.blade.php:30
+msgid "Type"
+msgstr ""
+
+#: ../resources\views\user\photos\list.blade.php:48
+msgid "You want to delete this Photo"
+msgstr ""
+
+#: ../resources\views\user\premium-plan\premium-plan-success.blade.php:3
+#: ../resources\views\user\profile\update-wizard.blade.php:151
+msgid "Congratulations"
+msgstr ""
+
+#: ../resources\views\user\premium-plan\premium-plan-success.blade.php:6
+msgid "You are the Premium User now"
+msgstr ""
+
+#: ../resources\views\user\premium-plan\premium.blade.php:13
+msgid "You have already purchased the premium plan"
+msgstr ""
+
+#: ../resources\views\user\premium-plan\premium.blade.php:17
+msgid "Plan"
+msgstr ""
+
+#: ../resources\views\user\premium-plan\premium.blade.php:25
+msgid "Expiry"
+msgstr ""
+
+#: ../resources\views\user\premium-plan\premium.blade.php:33
+msgid "Debited Credits"
+msgstr ""
+
+#: ../resources\views\user\premium-plan\premium.blade.php:41
+msgid "Choose Duration Plan for Premium"
+msgstr ""
+
+#: ../resources\views\user\premium-plan\premium.blade.php:51
+msgid "__creditPrice__ Credit"
+msgid_plural "__creditPrice__ Credits"
+msgstr[0] ""
+
+#: ../resources\views\user\premium-plan\premium.blade.php:62
+msgid "Be Premium Now"
+msgstr ""
+
+#: ../resources\views\user\premium-plan\premium.blade.php:67
+msgid "There are no premium plans."
+msgstr ""
+
+#: ../resources\views\user\premium-plan\premium.blade.php:85
+msgid "Discounts on Gifts, Stickers & Profile Booster"
+msgstr ""
+
+#: ../resources\views\user\premium-plan\premium.blade.php:93
+msgid "Premium Badge"
+msgstr ""
+
+#: ../resources\views\user\premium-plan\premium.blade.php:100
+msgid "Priority In Search Result & Random Users"
+msgstr ""
+
+#: ../resources\views\user\premium-plan\premium.blade.php:117
+msgid "There are no premium features."
+msgstr ""
+
+#: ../resources\views\user\premium-plan\premium.blade.php:134
+msgid "You want to buy __selectedPlanTitle__ plan."
+msgstr ""
+
+#: ../resources\views\user\premium-plan\premium.blade.php:181
+msgid "Your credit balance is too low, please purchase credits"
+msgstr ""
+
+#: ../resources\views\user\profile\update-wizard.blade.php:34
+msgid "Please complete your profile"
+msgstr ""
+
+#: ../resources\views\user\profile\update-wizard.blade.php:41
+msgid "Profile Pictures"
+msgstr ""
+
+#: ../resources\views\user\profile\update-wizard.blade.php:44
+msgid "Choose Location"
+msgstr ""
+
+#: ../resources\views\user\profile\update-wizard.blade.php:48
+msgid "Finished"
+msgstr ""
+
+#: ../resources\views\user\profile\update-wizard.blade.php:64
+#: ../resources\views\user\profile.blade.php:385
+#: ../resources\views\user\profile.blade.php:486
+msgid "Birthday"
+msgstr ""
+
+#: ../resources\views\user\profile\update-wizard.blade.php:65
+#: ../resources\views\user\profile.blade.php:487
+#: ../resources\views\user\sign-up.blade.php:85
+msgid "YYYY-MM-DD"
+msgstr ""
+
+#: ../resources\views\user\profile\update-wizard.blade.php:70
+#: ../resources\views\user\profile.blade.php:341
+#: ../resources\views\user\profile.blade.php:426
+msgid "Gender"
+msgstr ""
+
+#: ../resources\views\user\profile\update-wizard.blade.php:72
+#: ../resources\views\user\profile.blade.php:428
+#: ../resources\views\user\sign-up.blade.php:75
+msgid "Choose your gender"
+msgstr ""
+
+#: ../resources\views\user\profile\update-wizard.blade.php:126
+#: ../resources\views\user\profile\update-wizard.blade.php:131
+#: ../resources\views\user\profile.blade.php:526
+#: ../resources\views\user\profile.blade.php:540
+msgid "Location"
+msgstr ""
+
+#: ../resources\views\user\profile\update-wizard.blade.php:143
+#: ../resources\views\user\profile.blade.php:552
+msgid "Something went wrong with Google Api Key, please contact to system administrator."
+msgstr ""
+
+#: ../resources\views\user\profile\update-wizard.blade.php:154
+msgid "Finish"
+msgstr ""
+
+#: ../resources\views\user\profile-visitor.blade.php:27
+msgid "There are no visitors."
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:23
+msgid "This user is unavailable."
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:29
+msgid "You have blocked this user."
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:39
+#: ../resources\views\user\profile.blade.php:660
+msgid "Report"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:43
+msgid "Block User"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:53
+#: ../config\__tech.php:60
+msgid "Online"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:55
+#: ../config\__tech.php:61
+msgid "Idle"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:57
+#: ../config\__tech.php:62
+msgid "Offline"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:83
+msgid "__totalUserLike__ like"
+msgid_plural "__totalUserLike__ likes"
+msgstr[0] ""
+
+#: ../resources\views\user\profile.blade.php:89
+msgid "__totalVisitors__ view"
+msgid_plural "__totalVisitors__ views"
+msgstr[0] ""
+
+#: ../resources\views\user\profile.blade.php:128
+#: ../resources\views\user\profile.blade.php:147
+msgid "Drag & Drop your picture or"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:128
+#: ../resources\views\user\profile.blade.php:147
+msgid "Browse"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:173
+msgid "Like Dislike"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:183
+#: ../resources\views\user\profile.blade.php:761
+#: ../resources\views\user\profile.blade.php:835
+msgid "Liked"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:183
+#: ../resources\views\user\profile.blade.php:761
+#: ../resources\views\user\profile.blade.php:848
+#: ../resources\views\user\profile.blade.php:861
+msgid "Like"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:192
+#: ../resources\views\user\profile.blade.php:771
+#: ../resources\views\user\profile.blade.php:849
+msgid "Disliked"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:192
+#: ../resources\views\user\profile.blade.php:771
+#: ../resources\views\user\profile.blade.php:836
+#: ../resources\views\user\profile.blade.php:868
+msgid "Dislike"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:202
+#: ../resources\views\user\profile.blade.php:780
+msgid "Send Message or Gift"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:210
+#: ../resources\views\user\profile.blade.php:675
+#: ../resources\views\user\profile.blade.php:788
+msgid "Send Gift"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:211
+#: ../resources\views\user\profile.blade.php:789
+#: ../config\__tech.php:69
+msgid "Gift"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:222
+#: ../resources\views\user\profile.blade.php:503
+msgid "About Me"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:245
+msgid "Photos"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:255
+msgid "Ooops... No images found..."
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:278
+msgid "sent by"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:281
+msgid "This is a private gift you and only sender can see this."
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:289
+msgid "There are no gifts."
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:315
+msgid "Basic Information"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:349
+#: ../resources\views\user\profile.blade.php:438
+msgid "Preferred Language"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:440
+msgid "Choose your Preferred Language"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:453
+msgid "Choose your Relationship Status"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:464
+msgid "Choose your work status"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:477
+msgid "Choose your education"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:504
+msgid "Say something about yourself."
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:607
+msgid "Choose __label__"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:641
+msgid "Abuse Report to __username__"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:675
+msgid "(Credits Available:  __availableCredits__)"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:708
+msgid "Private"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:715
+msgid "Send"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:722
+msgid "There are no gifts"
+msgstr ""
+
+#: ../resources\views\user\profile.blade.php:736
+msgid "You want to block this user."
+msgstr ""
+
+#: ../resources\views\user\reset-password.blade.php:27
+msgid "Reset Your Password?"
+msgstr ""
+
+#: ../resources\views\user\settings\notification.blade.php:13
+msgid "Notification Settings"
+msgstr ""
+
+#: ../resources\views\user\settings\notification.blade.php:24
+msgid "Show Visitors Notification"
+msgstr ""
+
+#: ../resources\views\user\settings\notification.blade.php:34
+msgid "Show Likes Notification"
+msgstr ""
+
+#: ../resources\views\user\settings\notification.blade.php:47
+msgid "Show Gifts Notification"
+msgstr ""
+
+#: ../resources\views\user\settings\notification.blade.php:56
+msgid "Show Messages Notification"
+msgstr ""
+
+#: ../resources\views\user\settings\notification.blade.php:65
+msgid "Show Login Notification For Your Liked Users"
+msgstr ""
+
+#: ../resources\views\user\settings\photos.blade.php:35
+msgid "There are no photos found."
+msgstr ""
+
+#: ../resources\views\user\sign-up.blade.php:62
+msgid "Mobile No"
+msgstr ""
+
+#: ../resources\views\user\sign-up.blade.php:68
+msgid "Email Address"
+msgstr ""
+
+#: ../resources\views\user\sign-up.blade.php:99
+msgid "Repeat Password"
+msgstr ""
+
+#: ../resources\views\user\sign-up.blade.php:109
+msgid "I accept all "
+msgstr ""
+
+#: ../resources\views\user\sign-up.blade.php:111
+msgid "terms and conditions"
+msgstr ""
+
+#: ../resources\views\user\sign-up.blade.php:119
+msgid "Register Account"
+msgstr ""
+
+#: ../resources\views\user\sign-up.blade.php:127
+msgid "Register with Google"
+msgstr ""
+
+#: ../resources\views\user\sign-up.blade.php:135
+msgid "Register with Facebook"
+msgstr ""
+
+#: ../resources\views\user\who-liked-me.blade.php:15
+msgid "Who Likes Me"
+msgstr ""
+
+#: ../resources\views\user\who-liked-me.blade.php:28
+msgid "There are no people liked me."
+msgstr ""
+
+#: ../resources\views\user\who-liked-me.blade.php:35
+msgid "This is a premium feature, to view who likes me you need to buy premium plan first."
+msgstr ""
+
+#: ../config\__settings.php:359
+msgid "1 Day"
+msgstr ""
+
+#: ../config\__settings.php:364
+msgid "1 Week"
+msgstr ""
+
+#: ../config\__settings.php:369
+msgid "1 Month"
+msgstr ""
+
+#: ../config\__settings.php:374
+msgid "Half Year"
+msgstr ""
+
+#: ../config\__settings.php:379
+msgid "Year"
+msgstr ""
+
+#: ../config\__settings.php:384
+msgid "Life Time"
+msgstr ""
+
+#: ../config\__settings.php:397
+msgid "No Adds"
+msgstr ""
+
+#: ../config\__settings.php:403
+#: ../config\__settings.php:419
+#: ../config\__settings.php:435
+#: ../config\__settings.php:451
+#: ../config\__settings.php:467
+#: ../config\__settings.php:484
+msgid "All Users"
+msgstr ""
+
+#: ../config\__settings.php:407
+#: ../config\__settings.php:423
+#: ../config\__settings.php:439
+#: ../config\__settings.php:455
+#: ../config\__settings.php:471
+#: ../config\__settings.php:488
+msgid "Premium Users"
+msgstr ""
+
+#: ../config\__settings.php:413
+msgid "Browse in Incognito mode"
+msgstr ""
+
+#: ../config\__settings.php:429
+msgid "Show Who Likes Me"
+msgstr ""
+
+#: ../config\__settings.php:445
+msgid "Audio Call Via Messenger"
+msgstr ""
+
+#: ../config\__settings.php:461
+msgid "Video Call Via Messenger"
+msgstr ""
+
+#: ../config\__settings.php:477
+msgid "User Encounter"
+msgstr ""
+
+#: ../config\__settings.php:502
+msgid "728 X 90 (Appear in Header)"
+msgstr ""
+
+#: ../config\__settings.php:514
+msgid "728 X 90 (Appear in Footer)"
+msgstr ""
+
+#: ../config\__settings.php:526
+msgid "200 X 200 (Appear in User Sidebar)"
+msgstr ""
+
+#: ../config\__tech.php:51
+msgid "Suspended"
+msgstr ""
+
+#: ../config\__tech.php:52
+msgid "On Hold"
+msgstr ""
+
+#: ../config\__tech.php:53
+#: ../config\__tech.php:102
+msgid "Completed"
+msgstr ""
+
+#: ../config\__tech.php:54
+msgid "Invite"
+msgstr ""
+
+#: ../config\__tech.php:68
+msgid "Buying Package"
+msgstr ""
+
+#: ../config\__tech.php:70
+msgid "Sticker"
+msgstr ""
+
+#: ../config\__tech.php:71
+msgid "Profile Boost"
+msgstr ""
+
+#: ../config\__tech.php:72
+msgid "Premium Plan"
+msgstr ""
+
+#: ../config\__tech.php:73
+msgid "Bonus Credits"
+msgstr ""
+
+#: ../config\__tech.php:101
+msgid "Awaiting Payment"
+msgstr ""
+
+#: ../config\__tech.php:104
+msgid "Pending"
+msgstr ""
+
+#: ../config\__tech.php:105
+msgid "Refunded"
+msgstr ""
+
+#: ../config\__tech.php:108
+msgid "Test"
+msgstr ""
+
+#: ../config\__tech.php:109
+msgid "Live"
+msgstr ""
+
+#: ../config\__tech.php:112
+msgid "Bonuses"
+msgstr ""
+
+#: ../config\__tech.php:113
+msgid "Purchased"
+msgstr ""
+
+#: ../config\__tech.php:228
+msgid "Male"
+msgstr ""
+
+#: ../config\__tech.php:229
+msgid "Female"
+msgstr ""
+
+#: ../config\__tech.php:230
+msgid "Secret"
+msgstr ""
+
+#: ../config\__tech.php:233
+msgid "English"
+msgstr ""
+
+#: ../config\__tech.php:234
+msgid "Arabic"
+msgstr ""
+
+#: ../config\__tech.php:235
+msgid "Dutch"
+msgstr ""
+
+#: ../config\__tech.php:236
+msgid "French"
+msgstr ""
+
+#: ../config\__tech.php:237
+msgid "German"
+msgstr ""
+
+#: ../config\__tech.php:238
+msgid "Italian"
+msgstr ""
+
+#: ../config\__tech.php:239
+msgid "Portuguese"
+msgstr ""
+
+#: ../config\__tech.php:240
+msgid "Russian"
+msgstr ""
+
+#: ../config\__tech.php:241
+msgid "Spanish"
+msgstr ""
+
+#: ../config\__tech.php:242
+msgid "Turkish"
+msgstr ""
+
+#: ../config\__tech.php:243
+msgid "Urdu"
+msgstr ""
+
+#: ../config\__tech.php:244
+msgid "Hindi"
+msgstr ""
+
+#: ../config\__tech.php:245
+msgid "Marathi"
+msgstr ""
+
+#: ../config\__tech.php:246
+msgid "Chinese"
+msgstr ""
+
+#: ../config\__tech.php:247
+msgid "Japanese"
+msgstr ""
+
+#: ../config\__tech.php:248
+msgid "Bengali"
+msgstr ""
+
+#: ../config\__tech.php:249
+msgid "Persian"
+msgstr ""
+
+#: ../config\__tech.php:250
+msgid "Korean"
+msgstr ""
+
+#: ../config\__tech.php:251
+msgid "Tamil"
+msgstr ""
+
+#: ../config\__tech.php:252
+msgid "Hausa"
+msgstr ""
+
+#: ../config\__tech.php:253
+msgid "Indonesian"
+msgstr ""
+
+#: ../config\__tech.php:254
+msgid "Panjabi"
+msgstr ""
+
+#: ../config\__tech.php:257
+msgid "Single"
+msgstr ""
+
+#: ../config\__tech.php:258
+msgid "Married"
+msgstr ""
+
+#: ../config\__tech.php:259
+msgid "Divorced"
+msgstr ""
+
+#: ../config\__tech.php:260
+msgid "Widow"
+msgstr ""
+
+#: ../config\__tech.php:263
+msgid "Studying"
+msgstr ""
+
+#: ../config\__tech.php:264
+msgid "Working"
+msgstr ""
+
+#: ../config\__tech.php:265
+msgid "Looking for work"
+msgstr ""
+
+#: ../config\__tech.php:266
+msgid "Retired"
+msgstr ""
+
+#: ../config\__tech.php:267
+msgid "Self-Employed"
+msgstr ""
+
+#: ../config\__tech.php:271
+msgid "Secondary school"
+msgstr ""
+
+#: ../config\__tech.php:272
+msgid "ITI"
+msgstr ""
+
+#: ../config\__tech.php:273
+msgid "College"
+msgstr ""
+
+#: ../config\__tech.php:274
+msgid "University"
+msgstr ""
+
+#: ../config\__tech.php:275
+msgid "Advanced degree"
+msgstr ""
