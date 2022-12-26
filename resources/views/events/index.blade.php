@@ -152,6 +152,18 @@
             width: 100%;
             height: 200px;
         }
+        .card .card-header > .d-flex {
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: flex-end;
+            row-gap: 10px;
+        }
+        .card .card-header .d-flex a.web-button {
+            margin-right: 0;
+        }
+        .card .card-header {
+            align-items: center;
+        }
     }
 </style>
 
@@ -974,50 +986,49 @@
                             @endif
                             <div class="vister d-flex justify-content-between pb-3  align-items-center">
                             <p class="event-title">{{ isset($filter['title']) ? $filter['title'] : '' }}</p>
-                                <div class="img-about d-flex align-items-flex-start" style="width: 100%;">                                    
-                                    <div class="vister-image-icon">
-                                        <div class="slick-carousel mob-vw">
-                                            <?php foreach ($filter['user_photos']['photos'] as $photos) {
-                                                if ($photos['extantion_type'] == 'jpeg' || $photos['extantion_type'] == 'jpg') {
-                                                    $imgURLpop = url('/') . '/media-storage/users/' . $filter['UID'] . '/' . $photos['file']; ?>
-                                                    <div class="">
-                                                        <div class=" vister-profile-image user-img">
-                                                            <img width="300px" class="vister-profile-image" src="{{ $imgURLpop }}">
+                                <a href="<?= route('user.view.events') ?>/?id={{ $filter['_id'] }}">
+                                    <div class="img-about d-flex align-items-flex-start" style="width: 100%;">                                    
+                                        <div class="vister-image-icon">
+                                            <div class="slick-carousel mob-vw">
+                                                <?php foreach ($filter['user_photos']['photos'] as $photos) {
+                                                    if ($photos['extantion_type'] == 'jpeg' || $photos['extantion_type'] == 'jpg') {
+                                                        $imgURLpop = url('/') . '/media-storage/users/' . $filter['UID'] . '/' . $photos['file']; ?>
+                                                        <div class="">
+                                                            <div class=" vister-profile-image user-img">
+                                                                <img width="300px" class="vister-profile-image" src="{{ $imgURLpop }}">
+                                                            </div>
                                                         </div>
-                                                    </div>
 
-                                            <?php  }
-                                            } ?>
+                                                <?php  }
+                                                } ?>
+                                            </div>
+                                            <div class="vister-profile-image desk-vw">
+                                                <img width="300px" src="{{ $imgURL }}">
+                                            </div>
+
+
+                                            <i class="fa-solid fa-camera"></i>
+
                                         </div>
-                                        <div class="vister-profile-image desk-vw">
-                                            <img width="300px" src="{{ $imgURL }}">
+                                        <div style="width:100%;">
+
+                                                <p class="user-name">{{$filter['meet_type'] }}</p>
+
+
+                                            <?php $description = substr($filter['description'], 0, 150) . '...'; ?>
+
+                                                <p>{{$description }} </p>
+
+                                            <?php $event_date = date('D, M d', strtotime($filter['event_date'])); ?>
+                                            <p class=" adress text-gray-600">Event On: {{ $event_date }}</p>
+
+                                            <p class=" adress text-gray-600">{{ isset($filter['location']) ? $filter['location'] : '' }}</p>
+
+
+                                            <p class="text-right"><span class="send">View More</span></p>
                                         </div>
-
-
-                                        <i class="fa-solid fa-camera"></i>
-
                                     </div>
-                                    <div style="width:100%;">
-
-                                        <a href="<?= route('user.view.events') ?>/?id={{ $filter['_id'] }}">
-                                            <p class="user-name">{{$filter['meet_type'] }}</p>
-                                        </a>
-
-                                        <?php $description = substr($filter['description'], 0, 150) . '...'; ?>
-
-                                        <a href="<?= route('user.view.events') ?>/?id={{ $filter['_id'] }}">
-                                            <p>{{$description }} </p>
-                                        </a>
-
-                                        <?php $event_date = date('D, M d', strtotime($filter['event_date'])); ?>
-                                        <p class=" adress text-gray-600">Event On: {{ $event_date }}</p>
-
-                                        <p class=" adress text-gray-600">{{ isset($filter['location']) ? $filter['location'] : '' }}</p>
-
-
-                                        <p class="text-right"><a href="<?= route('user.view.events') ?>/?id={{ $filter['_id'] }}" class="send">View More</a></p>
-                                    </div>
-                                </div>
+                                </a>
                                 <div class="about-vistor">
                                     <p class="ethnicty"><b> </b></p>
                                 </div>

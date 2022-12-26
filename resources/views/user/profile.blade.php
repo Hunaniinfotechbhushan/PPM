@@ -46,18 +46,18 @@
         z-index: 9999;
         background: rgba(255,255,255,0.8) url("loading.gif") center no-repeat;
     }
-/* Turn off scrollbar when body element has the loading class */
-body.loading{
-    overflow: hidden;   
-}
-/* Make spinner image visible when body element has the loading class */
-body.loading .overlay{
-    display: block;
-}
-.my-profile-verification-area li {
-    border-bottom: 1px solid #ece6e6;
-    padding-bottom: 5px;
-}
+    /* Turn off scrollbar when body element has the loading class */
+    body.loading{
+        overflow: hidden;   
+    }
+    /* Make spinner image visible when body element has the loading class */
+    body.loading .overlay{
+        display: block;
+    }
+    .my-profile-verification-area li {
+        border-bottom: 1px solid #ece6e6;
+        padding-bottom: 5px;
+    }
 </style>
 
 <!-- if user block then don't show profile page content -->
@@ -79,26 +79,15 @@ body.loading .overlay{
 <!-- Begin Page Content -->
 
 <div class="lw-page-content">
-
     <div class="overlay"></div>
-
     <!-- header advertisement -->
-
     <div class="lw-ad-block-h90">
-
     </div>
-
     <div class="card mobile-view-none ">
-
      <div class="card-header ">
-
       <!-- <h4><i class="fa-solid fa-user" style="color:#F51B1C; border:none !important;"></i>My Profile</h4> -->
-
-
       <div class="row">
-
           <div class="col-sm-12">
-
             <div class="ProfileInfoCard">
                 <div class="ProfileInfoCard-content" style="width: 100%;">
                     <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
@@ -106,7 +95,6 @@ body.loading .overlay{
                         <a class="lw-icon-btn" href role="button" id=""  data-toggle="modal" data-target="#userSmallProfileEditPopup">
                             <i class="fa fa-pencil-alt"></i>
                         </a>
-
                     </div><div>
                       <!-- <p data-cy="heading-txt" class="ProfileInfoCard-bio">{{ $userData['userName'] }}</p> -->
                       <p class="ProfileInfoCard-heading" style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><span>{{ $userData['userAge'] }} • </span><span>
@@ -123,33 +111,22 @@ body.loading .overlay{
        </div>
    </div>     
 </div>
-
 </div>
-
 </div>
 
 <div class="card mb-3 bg-white p-3">
-
     <div class="upload-img">
-
       <div class="row">
-
           <div class="col-sm-12">
-
-
            <div class="profile d-md-none">
              <?php $userProfileGet = \App\Exp\Components\User\Models\UserProfile::where('users__id',Auth::user()->_id)->first();?>
              <div class="user-profile" style="background-image: url('{{ asset('media-storage/users/') }}/{{ Auth::user()->_uid }}/{{ $userProfileGet->profile_picture }}');">
-
                 <div class="user-about-short">
-
                   <a class="lw-icon-btn" href role="button" id=""  data-toggle="modal" data-target="#userSmallProfileEditPopup">
                     <i class="fa fa-pencil-alt"></i>
                 </a>
-
                 <div class="mobile-short-details">
                     <h4>{{ Auth::user()->username }}</h4>
-
                     <p class="ProfileInfoCard-heading" style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><span>{{ $userData['userAge'] }} • </span><span>
                        @if($userData['gender_selection'] == 1)
                        Male
@@ -158,143 +135,108 @@ body.loading .overlay{
                        Female
                        @endif
                    </span><span>@if(isset($userData['UserProfile']->city)){{ $userData['UserProfile']->city }} @endif</span></p>
-
                    <p data-cy="heading-txt" class="ProfileInfoCard-bio">@if(isset($userData['UserProfile']->heading)) {{ $userData['UserProfile']->heading }} @endif</p>
                </div>
            </div>
-
        </div>
-
    </div>
-
 </div>
-
 </div>
 
 <div class="row loaded_images">
-
     @forelse ($userData['userPhotoCollection'] as $key => $collections)
-    @if($collections->type == 1)
-
-    <?php  $imageType = 'public'; ?>
-    @else
-    <?php $imageType = 'private';  ?>
-    @endif
-    <?php  $imgURL = url('/').'/media-storage/users/'.getUserUID().'/'.$collections->file;
-    $videourl = url('/').'/media-storage/users/'.getUserUID().'/'.$collections->video_thumbnail;
-    ?>
-
-    <div class="col-4 col-sm-4 col-lg-3 col-md-3 p-1 {{$collections->_id}}">
-     <div class="image-box">         
-         @if($collections->extantion_type == 'mp4' || $collections->extantion_type == 'MOV' || $collections->extantion_type == 'wmv' || $collections->extantion_type == 'WMV' || $collections->extantion_type == '3gp' || $collections->extantion_type == '3GP' || $collections->extantion_type == 'avi' || $collections->extantion_type == 'AVI' || $collections->extantion_type == 'f4v' || $collections->extantion_type == 'f4v' || $collections->extantion_type == 'MP4' || $collections->extantion_type == 'mov' || $collections->extantion_type == 'webm' || $collections->extantion_type == 'mkv' || $collections->extantion_type == 'flv' || $collections->extantion_type == 'svi' || $collections->extantion_type == 'mpg'|| $collections->extantion_type == 'mpeg'|| $collections->extantion_type == 'amv')
-         <div class="outer-settint show_hide"><i class='fa fa-gear photto-setting-icon' id="show_hide" data-photto-id="{{$collections->_id}}"></i></div>
-         <div id="trigger_vdo" class="span4 proj-div videoplay trigger_vdo" dataivideo="{{ $imgURL }}">
-             @if($collections->type == 2)
-             <i class="fa-solid fa-lock lock"></i>
-             @endif
-             <a href="{{ $imgURL }}" class="glightbox4">
-                 <img class="upload-images" src="{{ $videourl }}">
-                @if($collections->is_verified == 2)
-                 <div class="text-block-on-image">
-                    <h5>Pending approval</h5>
-                    <p>(doesn't take long)</p>
-                </div>
-            @endif
-                <i class="fa fa-play" aria-hidden="true"></i>
-            </a>
-            <input type="hidden" id="video_type" dataivideo_type="{{ $collections->extantion_type }}" value="{{$collections->extantion_type}}"> 
-        </div>
-        <div id="toggle_tst" class="toggle_tst" style="display:none;">
-          @if($collections->type == 1)
-          <a class="move_photo" data-photto-id="{{$collections->_id}}"  href="#">Move to Private</a>
-          @else
-          <a class="move_photo_public" data-photto-id="{{$collections->_id}}"  href="#">Move to Public</a>
-          @endif
-          <a class="delete_photo" data-photto-id="{{$collections->_id}}" href="#">Delete Video</a>
-      </div>
-      @else
-      <div class="outer-settint show_hide"><i class='fa fa-gear photto-setting-icon' id="show_hide" data-photto-id="{{$collections->_id}}"></i>
-      </div>
-      <div id="trigger_img" class="trigger_img" dataimg="{{ $imgURL }}">
-
-
-        @if($collections->type == 2)
-        <i class="fa-solid fa-lock lock"></i>
-        @endif
-        <a href="{{ $imgURL }}" class="glightbox4">
-            <img class="upload-images image_url_" id="image_url_" src="{{ $imgURL }}">
-            @if($collections->is_verified == 2)
-                 <div class="text-block-on-image">
-                    <h5>Pending approval</h5>
-                    <p>(doesn't take long)</p>
-                </div>
-            @endif
-
-            @if($collections->is_verified == 0)
-            <div class="text-block-on-image">
-                <h5>Rejected By Admin</h5>
-            </div>
-            @endif
-        </a>
-        @if($collections->primary == 1)
-        <div class="primay_image"><span>Primary</span></div>
-        @endif
-    </div>
-    <div id="toggle_tst" class="toggle_tst" style="display:none;">
-
-        <?php //echo "<pre>"; print_r($collections); die();?>
-
         @if($collections->type == 1)
-        @if($collections->primary == 0)
-        @if($collections->is_verified == 1)
-        <a class="set_profile_pic" data-photto-uid="{{$collections->_uid}}" data-photto-id="{{$collections->_id}}" data-photto-name="{{$collections->file}}"  href="#" >Set as Primary</a>
-        @endif
-        @endif
-           @if($collections->is_verified == 1)
-        <a class="move_photo" data-photto-id="{{$collections->_id}}"  href="#" >Move to Private</a>
-           @endif
-        <a class="delete_photo" data-photto-id="{{$collections->_id}}" href="#" >Delete Photo</a>
-        
+            <?php  $imageType = 'public'; ?>
         @else
-           @if($collections->is_verified == 1)
-        <a class="move_photo_public" data-photto-id="{{$collections->_id}}"  href="#" >Move to Public</a>
-           @endif
-        <a class="delete_photo" data-photto-id="{{$collections->_id}}" href="#" >Delete Photo</a>
+            <?php $imageType = 'private';  ?>
         @endif
-        
-    </div>
+        <?php  
+               $imgURL = url('/').'/media-storage/users/'.getUserUID().'/'.$collections->file;
+               $videourl = url('/').'/media-storage/users/'.getUserUID().'/'.$collections->video_thumbnail;
+        ?>
+
+    @if($collections->is_verified == 1)
+        <div class="col-4 col-sm-4 col-lg-3 col-md-3 p-1 {{$collections->_id}}">
+            <div class="image-box">         
+                @if($collections->extantion_type == 'mp4' || $collections->extantion_type == 'MOV' || $collections->extantion_type == 'wmv' || $collections->extantion_type == 'WMV' || $collections->extantion_type == '3gp' || $collections->extantion_type == '3GP' || $collections->extantion_type == 'avi' || $collections->extantion_type == 'AVI' || $collections->extantion_type == 'f4v' || $collections->extantion_type == 'f4v' || $collections->extantion_type == 'MP4' || $collections->extantion_type == 'mov' || $collections->extantion_type == 'webm' || $collections->extantion_type == 'mkv' || $collections->extantion_type == 'flv' || $collections->extantion_type == 'svi' || $collections->extantion_type == 'mpg'|| $collections->extantion_type == 'mpeg'|| $collections->extantion_type == 'amv')
+                    <div class="outer-settint show_hide"><i class='fa fa-gear photto-setting-icon' id="show_hide" data-photto-id="{{$collections->_id}}"></i></div>
+                    
+                        <div id="trigger_vdo" class="span4 proj-div videoplay trigger_vdo" dataivideo="{{ $imgURL }}">
+                            @if($collections->type == 2)
+                            <i class="fa-solid fa-lock lock"></i>
+                            @endif
+                            <a href="{{ $imgURL }}" class="glightbox4">
+                                <img class="upload-images" src="{{ $videourl }}">
+                                @if($collections->is_verified == 2)
+                                <div class="text-block-on-image">
+                                    <h5>Pending approval</h5>
+                                    <p>(doesn't take long)</p>
+                                </div>
+                                @endif
+                                <i class="fa fa-play" aria-hidden="true"></i>
+                            </a>
+                            <input type="hidden" id="video_type" dataivideo_type="{{ $collections->extantion_type }}" value="{{$collections->extantion_type}}"> 
+                        </div>
+
+                        <div id="toggle_tst" class="toggle_tst" style="display:none;">
+                        @if($collections->type == 1)
+                        <a class="move_photo" data-photto-id="{{$collections->_id}}"  href="#">Move to Private</a>
+                        @else
+                        <a class="move_photo_public" data-photto-id="{{$collections->_id}}"  href="#">Move to Public</a>
+                        @endif
+                        <a class="delete_photo" data-photto-id="{{$collections->_id}}" href="#">Delete Video</a>
+                    </div>
+                @else
+                    <div class="outer-settint show_hide"><i class='fa fa-gear photto-setting-icon' id="show_hide" data-photto-id="{{$collections->_id}}"></i></div>
+                    <div id="trigger_img" class="trigger_img" dataimg="{{ $imgURL }}">
+                        @if($collections->type == 2)
+                        <i class="fa-solid fa-lock lock"></i>
+                        @endif
+                        @if($collections->is_verified == 1)
+                        <a href="{{ $imgURL }}" class="glightbox4">
+                            <img class="upload-images image_url_" id="image_url_" src="{{ $imgURL }}">
+                        </a>
+                        @endif
+                        @if($collections->primary == 1)
+                        <div class="primay_image"><span>Primary</span></div>
+                        @endif
+                    </div>
+                @endif
+
+                <div id="toggle_tst" class="toggle_tst" style="display:none;">
+                    @if($collections->type == 1)
+                    @if($collections->primary == 0)
+                    @if($collections->is_verified == 1)
+                    <a class="set_profile_pic" data-photto-uid="{{$collections->_uid}}" data-photto-id="{{$collections->_id}}" data-photto-name="{{$collections->file}}"  href="#" >Set as Primary</a>
+                    @endif
+                    @endif
+                    @if($collections->is_verified == 1)
+                    <a class="move_photo" data-photto-id="{{$collections->_id}}"  href="#" >Move to Private</a>
+                    @endif
+                    <a class="delete_photo" data-photto-id="{{$collections->_id}}" href="#" >Delete Photo</a>
+                    
+                    @else
+                    @if($collections->is_verified == 1)
+                    <a class="move_photo_public" data-photto-id="{{$collections->_id}}"  href="#" >Move to Public</a>
+                    @endif
+                    <a class="delete_photo" data-photto-id="{{$collections->_id}}" href="#" >Delete Photo</a>
+                    @endif
+                </div>
+            </div>
+        </div>
     @endif
-
-</div>
-
-</div>
-
 @empty
 @endforelse 
-
-
-
 <div class="col-4 col-sm-4 col-lg-3 col-md-3 p-1 ">
-
    <div class="image-box add-new-image">
-
        <a data-toggle="modal" data-target="#userPhottoPopup">
-
           <i class="fa-solid fa-upload"></i>
-
           <p>Add Image/Video</p>
-
       </a>
-
   </div>
-
 </div>
-
-
 </div>
-
 </div>
-
 </div>
 
 

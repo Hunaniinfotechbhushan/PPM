@@ -91,8 +91,8 @@
                                                     <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                                                     <div class="dropdown-menu dropdown-menu-end">
                                                        <ul class="link-list-opt no-bdr">
-                                                                   <li><a href="{{action('backend\NewSignUpController@show', $value->users__id)}}"><!-- <em class="icon ni ni-eye"> --></em><span>View/Edit Profile</span></a></li>
-                                                            <!--     <li><a href="{{action('backend\NewSignUpController@edit', $value->users__id)}}"><em class="icon ni ni-edit"></em><span>Edit</span></a></li> -->
+                                                                   <!-- <li><a href="{{action('backend\NewSignUpController@show', $value->users__id)}}"><em class="icon ni ni-eye"></em><span>View/Edit Profile</span></a></li> -->
+                                                            <li><a href="{{action('backend\NewSignUpController@edit', $value->users__id)}}"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
                                                            
                                                             </ul>
                                                         </div>

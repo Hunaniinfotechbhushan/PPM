@@ -206,7 +206,7 @@
     </div>
     <div class="card mb-3 ">
         <div class="card-header d-flex justify-content-between align-items-center filter filter-page-search-area">
-            <h3 class="mb-0"><div class="css-r0xk3p" style="font-size: 0.875rem; color: rgb(126, 126, 126);">About <?= $totalCount ?> Results...</div></h3>
+            <!-- <h3 class="mb-0"><div class="css-r0xk3p" style="font-size: 0.875rem; color: rgb(126, 126, 126);">About <?= $totalCount ?> Results...</div></h3> -->
             <div class="filter-middle-search-area d-flex">
                 <span class="list-item text-right" id="trigger_search">
                     <button type="submit" class="btn btn--action searchResultsSaveBtn">Save this search</button>

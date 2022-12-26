@@ -61,11 +61,11 @@ class EventController extends BaseController
 
     public function index(CommonUnsecuredPostRequest $request)
     {
-        // return  $request->all();
-        $id = Auth::user()->_id;
+        
+        $id = Auth::user()->_id; 
         $user = UserProfile::where('users__id', $id)->get()->first();
         // $events = Event::where('status','1')->get();
-        $events = Event::select('users.username','users._uid as UID', 'user_profiles.dob', 'user_profiles.profile_picture', 'user_profiles.city', 'events.*', 'event_like_dislikes.event_id')
+        $events = Event::select('users.username','users._uid as UID', 'users.gender_selection', 'user_profiles.dob', 'user_profiles.profile_picture', 'user_profiles.city', 'events.*', 'event_like_dislikes.event_id')
             ->leftJoin('users', 'users._id', '=', 'events.user_id')
             ->leftJoin('user_profiles', 'user_profiles.users__id', '=', 'users._id')
             ->leftJoin('event_like_dislikes', 'event_like_dislikes.event_id', '=', 'events._id');
@@ -100,9 +100,8 @@ class EventController extends BaseController
             $events->orderBy('events.created_at', 'desc');
         }
         
-        // $eventsData = $events->where('status', 1);
         $eventsData = $events->orderBy('events.created_at', 'desc')->paginate(50);
-        // return $eventsData;
+
         if ($request->distance) {
             $distance = $request->distance;
         } else {
@@ -114,74 +113,79 @@ class EventController extends BaseController
             $distance = '1';
         }
 
-        if ($distance) {
-            $res = array();
-            $dataEvents = array();
-            foreach ($eventsData as  $value) {
-                // return $value;
-                $UserPhotosModel = UserPhotosModel::where('users__id', $value['user_id'])->get();
-                // return $UserPhotosModel;
-                $userProfileImagesData = array();
-                if ($UserPhotosModel) {
-                    
-                    foreach ($UserPhotosModel as $key => $images) {
-                        $userProfileImages['file'] = $images->file;
-                        $userProfileImages['users__id'] = $images->users__id;
-
-                        $userProfileImages['extantion_type'] = $images->extantion_type;
-                        $userProfileImages['type'] = $images->type;
-                        $userProfileImages['_uid'] = $images->_uid;
-                        $userProfileImages['video_thumbnail'] = $images->video_thumbnail;
-                        $userProfileImagesData[] = $userProfileImages;
-                    }
-                }
-                $userProfileGet = UserProfile::where('users__id', $value['user_id'])->get()->first();
-
-                if (!empty($userProfileImagesData)) {
-
-                    $userProfileImagesData = array(0 => array('file' => $userProfileGet['profile_picture'], 'extantion_type' => 'jpg', 'type' => '1', '_uid' => $value['UID'])) + $userProfileImagesData;
-                }
-
-
+        $username = User::where('_id',$id)->first();
+        // return $username->gender_selection;
+            if ($distance) {
                 $res = array();
-                $getDistanceKM =  $this->distance($user->location_latitude, $user->location_longitude, $value['location_latitude'], $value['location_longitude'], 'K');
-                // return $getDistanceKM;
-                if ($value) {
-                    $active_status_time = $this->getUserOnlineStatusAgo($value['created_at']);
-                } else {
-                    $active_status_time = '';
-                }
+                $dataEvents = array();
+                foreach ($eventsData as  $value) {
+                    // return $value->gender_selection;
+                    if($username->gender_selection!=$value->gender_selection){
 
-
-                if ($getDistanceKM >= $distance) {
-                    // return $value;
-                    $user_block_users = DB::table('user_block_users')->where('to_users__id', $value['user_id'])->where('by_users__id', Auth::user()->_id)->first();
-                    if (empty($user_block_users)) {
-                        $dataArray['event_id']  = $value['event_id'];
-                        $dataArray['auth_id']  = $id;
-
-                        $dataArray['user_photos']['photos']  = $userProfileImagesData;
-                        $dataArray['_uid'] = $value['_uid'];
-                        $dataArray['_id'] = $value['_id'];
-                        $dataArray['UID'] = $value['UID'];
-                        $dataArray['profile_picture'] = $value['profile_picture'];
-                        $dataArray['title']  = $value['title'];
-                        $dataArray['meet_type']  = $value['meet_type'];
-
-                        $dataArray['event_date']  = $value['event_date'];
-
-                        $dataArray['created_at']  = $value['created_at'];
-                        $dataArray['location']  = $value['location'];
-                        $dataArray['image']  = $value['image'];
-                        $dataArray['description']  = $value['description'];
-                        $dataArray['block_user']  = $value['block_user'];
-                        $dataEvents[] = $dataArray;
+                    $UserPhotosModel = UserPhotosModel::where('users__id', $value['user_id'])->get();
+                    $userProfileImagesData = array();
+                    if ($UserPhotosModel) {
+                        
+                        foreach ($UserPhotosModel as $key => $images) {
+                            $userProfileImages['file'] = $images->file;
+                            $userProfileImages['users__id'] = $images->users__id;
+    
+                            $userProfileImages['extantion_type'] = $images->extantion_type;
+                            $userProfileImages['type'] = $images->type;
+                            $userProfileImages['_uid'] = $images->_uid;
+                            $userProfileImages['video_thumbnail'] = $images->video_thumbnail;
+                            $userProfileImagesData[] = $userProfileImages;
+                        }
+                    }
+                    $userProfileGet = UserProfile::where('users__id', $value['user_id'])->get()->first();
+    
+                    if (!empty($userProfileImagesData)) {
+    
+                        $userProfileImagesData = array(0 => array('file' => $userProfileGet['profile_picture'], 'extantion_type' => 'jpg', 'type' => '1', '_uid' => $value['UID'])) + $userProfileImagesData;
+                    }
+    
+    
+                    $res = array();
+                    $getDistanceKM =  $this->distance($user->location_latitude, $user->location_longitude, $value['location_latitude'], $value['location_longitude'], 'K');
+                    if ($value) {
+                        $active_status_time = $this->getUserOnlineStatusAgo($value['created_at']);
+                    } else {
+                        $active_status_time = '';
+                    }
+    
+    
+                    if ($getDistanceKM >= $distance) {
+    
+                        $user_block_users = DB::table('user_block_users')->where('to_users__id', $value['user_id'])->where('by_users__id', Auth::user()->_id)->first();
+                        if (empty($user_block_users)) {
+                            $dataArray['event_id']  = $value['event_id'];
+                            $dataArray['auth_id']  = $id;
+    
+                            $dataArray['user_photos']['photos']  = $userProfileImagesData;
+                            $dataArray['_uid'] = $value['_uid'];
+                            $dataArray['_id'] = $value['_id'];
+                            $dataArray['UID'] = $value['UID'];
+                            $dataArray['profile_picture'] = $value['profile_picture'];
+                            $dataArray['title']  = $value['title'];
+                            $dataArray['meet_type']  = $value['meet_type'];
+    
+                            $dataArray['event_date']  = $value['event_date'];
+    
+                            $dataArray['created_at']  = $value['created_at'];
+                            $dataArray['location']  = $value['location'];
+                            $dataArray['image']  = $value['image'];
+                            $dataArray['description']  = $value['description'];
+                            $dataArray['block_user']  = $value['block_user'];
+                            $dataEvents[] = $dataArray;
+                        }
                     }
                 }
             }
-        } else {
-            $dataEvents = array();
-        }
+            } else {
+                $dataEvents = array();
+            }
+        
+
         $citydata = $user->city;
         $selectedFilter = [];
         $selectedFilter['meet_type'] = $request->meet_type;
@@ -198,7 +202,7 @@ class EventController extends BaseController
     {
         if (isset($_GET['id'])) {
 
-            $event = Event::select('users.username', 'users._id as UserID', 'users._uid as UID', 'user_profiles.dob', 'user_profiles.profile_picture', 'user_profiles.city', 'events.*')
+            $event = Event::select('users.username', 'users._id as UserID','users._uid as UID', 'user_profiles.dob', 'user_profiles.profile_picture', 'user_profiles.city', 'events.*')
                 ->leftJoin('users', 'users._id', '=', 'events.user_id')
                 ->leftJoin('user_profiles', 'user_profiles.users__id', '=', 'users._id')
                 ->where('events._id', $_GET['id'])
@@ -241,15 +245,70 @@ class EventController extends BaseController
 
                 $citydata =  $citydata;
                 $UserBock = User::all();
+                // return $userProfileImagesData;
                 return view('events.viewevent', compact('event', 'citydata', 'user', 'userProfileImagesData', 'UserBock'));
             }
         }
     }
 
     public function viewEvents(Request $request){
-        $id = Auth::user()->_id;
-        $event = Event::where('user_id',$id)->get();
-        return view('events.eventviews');
+        // $id = Auth::user()->_id;
+        // $event = Event::where('user_id',$id)->get();
+        // return view('events.eventviews');
+
+        // if (isset($_GET['id'])) {
+            $get = Event::get();
+            // return $get;
+            $id = Auth::user()->_id;
+            $event = Event::select('users.username', 'users._id as UserID','users._uid as UID', 'user_profiles.dob', 'user_profiles.profile_picture', 'user_profiles.city', 'events.*')
+                ->leftJoin('users', 'users._id', '=', 'events.user_id')
+                ->leftJoin('user_profiles', 'user_profiles.users__id', '=', 'users._id')
+                ->where('user_id',$id)
+                ->get();
+        
+            // return $id; 
+            if (isset($event)) {
+                // return $event;
+                $UserPhotosModel = UserPhotosModel::where('users__id', $id)->get();
+                if ($UserPhotosModel) {
+                    $userProfileImagesData = array();
+                    foreach ($UserPhotosModel as $key => $images) {
+                        $userProfileImages['file'] = $images->file;
+                        $userProfileImages['users__id'] = $images->users__id;
+
+                        $userProfileImages['extantion_type'] = $images->extantion_type;
+                        $userProfileImages['type'] = $images->type;
+                        $userProfileImages['_uid'] = $images->_uid;
+                        $userProfileImages['video_thumbnail'] = $images->video_thumbnail;
+                        $userProfileImagesData[] = $userProfileImages;
+                    }
+                }
+
+
+                $userProfileGet = UserProfile::where('users__id', $id)->get()->first();
+                $user = UserProfile::where('users__id', $id)->get()->first();
+
+
+                if (isset($userProfileGet['profile_picture'])) {
+                    $files =  $userProfileGet['profile_picture'];
+                } else {
+                    $files =  '';
+                }
+                foreach($event as $events){
+                    // return $events->UID;
+                    $userProfileImagesData = array(0 => array('file' => $files, 'extantion_type' => 'jpg', 'type' => '1', '_uid' => $events->UID)) + $userProfileImagesData;
+                    if (isset($userProfileGet->city)) {
+                        $citydata =  $userProfileGet->city;
+                    } else {
+                        $citydata =  '';
+                    }
+                }
+                $citydata =  $citydata;
+                $UserBock = User::all();
+                // return $userProfileImagesData;
+                return view('events.eventviews', compact('event', 'citydata', 'user', 'userProfileImagesData', 'UserBock'));
+            }
+        // }
     }
 
     public function addEvent(CommonUnsecuredPostRequest $request)

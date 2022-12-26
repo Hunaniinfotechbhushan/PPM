@@ -250,37 +250,21 @@
 </style>
 
 <div id="wrapper" class="container-fluid px-0">
-
     <!-- include sidebar -->
-
     <!-- Sidebar -->
-
     <ul class="navbar-nav sidebar  accordion" id="accordionSidebar" style="display: none;">
-
         <li class="nav-item mt-2 d-sm-block d-md-none">
-
             <a href class="nav-link" onclick="getChatMessenger('user/messenger/all-conversation', true)" id="lwAllMessageChatButton" data-chat-loaded="false" data-toggle="modal" data-target="#messengerDialog">
-
                 <i class="far fa-comments"></i>
-
                 <span>Messenger</span>
-
             </a>
-
         </li>
-
         <!-- Notification Link -->
-
         <li class="nav-item dropdown no-arrow mx-1 d-sm-block d-md-none">
-
             <a class="nav-link dropdown-toggle lw-ajax-link-action" href="user/notifications/read-all-notification" data-callback="onReadAllNotificationCallback" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-method="post">
-
                 <i class="fas fa-bell fa-fw"></i>
-
                 <span>Notification</span>
-
                 <span class="badge badge-danger badge-counter" id="lwNotificationCount">0</span>
-
             </a>
 
             <!-- Dropdown - Alerts -->
@@ -519,12 +503,13 @@
                 </div>
                 <div class="card mb-3 ">
                     <div class="card-header d-flex justify-content-between">
-                        <h3><i class="fa-solid fa-photo-film"></i>Event</h3>
+                        <h3><i class="fa-solid fa-photo-film"></i>My Event</h3>
                         <div class="d-flex">
                             <button data-toggle="modal" data-target="#addEventPopup" class="web-button">Add Event</button>
                         </div>
                     </div>
                 </div>
+
                 <div class="mb-3 d-md-none">
                     <div class="card-header d-flex justify-content-between mob-resp">
                         <h3><i class="fa-solid fa-filter"></i></h3>
@@ -576,19 +561,78 @@
                 }
             }
             ?>
-            <!-- <div class="event d-flex justify-content-between pb-3 py-2 p-main">
+
+            <div class="event d-flex justify-content-between pb-3 py-2 p-main">
                 <div class="w-100 img-about d-flex align-items-flex-start">
-                    
-                </div>
-                <div class="time text-right" style="width:20%;">
-                    <p>10 mint Ago</p>
-                </div>
+                    <div class="w-100">
+                    @foreach($event as $events)
+                        <div class="slick-carousel mob-vw">
+                            <?php 
+                            foreach ($userProfileImagesData as $photos) {
+                                if($photos['extantion_type'] == 'jpeg' || $photos['extantion_type'] == 'jpg' ){
+                                $imgURLpop = url('/').'/media-storage/users/'.$events->UID.'/'.$photos['file']; ?>
+                            <div class="">
+                                <div class=" vister-profile-image user-img">
+                                    <img width="300px" class="" src="{{ $imgURLpop }}">
+                                </div>
+                            </div>
 
-            </div> -->
-            <!-- /User Specifications -->
+                            <?php  }
+                            }
+                            ?>
+                        </div>
+                        <?php
+if($events->profile_picture){
+    $imgURL = url('/').'/media-storage/users/'.$events->UID.'/'.$events->profile_picture;
+    }else{
+    $imgURL = url('/').'/imgs/default-image.png';
+ } 
+       ?> 
 
+       
+      <div class="image_box_event desk-vw">  
+             <a href="{{ $imgURL }}" class="glightbox4">
+             <img class="vister-profile-image1" src="{{$imgURL }}" class="lw-user-thumbnail lw-lazy-img">
+           <!-- <i class="fa-solid fa-magnifying-glass-plus event_icon"></i> -->
+       </div>
+            </a>
+      <a href="{{ url('/member')}}/{{ $events->UID }}"> <p class="adress text-dark user-age bg-light"><b>{{$events->title}}</b><a> - <b class="border rounded user-age"></b></p>
+     <?php $date = date( 'D, M d', strtotime( $events->created_at) );
 
+     $event_date = date( 'D, M d', strtotime( $events->event_date) );
 
+     ?>
+    <p class="text-dark d-flex justify-content-end visitor-post-low"><b>Event On</b>:&nbsp;&nbsp;<span class="text-gray-500">{{$event_date}}</span></p>
+     <p class="pt-3 pb-3">{{ $events->description }}</p>
+     <div class="year_age d-flex">
+        <p class="text_num">
+            <span class="text-pop position-relative">{{ $events->city }}</span>
+            <!-- <span class="text_age me-auto">Age {{ $userAge }} Years</span></p> -->
+
+         
+     </div>
+    
+  <!--    <div class="age-para">
+         <num class="ppm-new-numm mt-5"></num> 
+        <p class="numm">024358299190 <span class="d-flex justify-content-end pb-5">Age 27 years</span></p>
+     </div> -->
+       <div class="visitor-box-blue d-flex bg-white px-3">
+        <!-- <button type="button" class="btn btn-lg-box1">Contact</button> -->
+       <!-- <strong class="ml-2">{{ $events->username }}</strong> -->
+    </div>
+    @endforeach
+    </div>
+    <div>
+ </div>
+</div>
+<div class="time text-right" style="width:20%;">
+ <!-- <p>10 mint Ago</p> -->
+</div>
+
+</div>
+
+            
+          
         </div>
 
     </div>

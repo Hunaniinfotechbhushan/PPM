@@ -183,10 +183,18 @@ button.btn.btn-lg-box2:hover {
     text-decoration: none;
 }
 .mob-vw{
-    display: none;
+    display: block;
 }
 .visitor-box-blue .intersted_user:focus, .visitor-box-blue .intersted_user:active  {
     background: #000 !important;
+}
+
+.image_box_event.desk-vw {
+        display: none;
+}
+.event .vister-profile-image {
+    margin: auto;
+    height: 400px;
 }
 
 @media (max-width: 768px)
@@ -220,7 +228,6 @@ img.vister-profile-image1 {
         margin-top: 0;
         height: 400px;
     }
-
  }
 </style>
 
@@ -795,9 +802,9 @@ if($event->profile_picture){
       <div class="visitor-box-blue d-flex justify-content-center mt-3">
         <!-- <button type="button" class="btn btn-lg-box1">Contact</button> -->
         <?php if($event->InterestedUser == 1){
-            $ms =' Already  interested';
+            $ms ='I’m interested';
         }else{
-              $ms=' I’m interested';
+              $ms='Already interested';
 
         } ?>
 

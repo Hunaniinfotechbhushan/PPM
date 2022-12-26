@@ -622,12 +622,13 @@ return $this->loadPublicView('user.change-password', $data);
  public function getUserProfile($userName)
  {
     $processReaction = $this->userEngine->prepareUserProfile($userName);
-
+    // return $processReaction;
         // check if record does not exists
     if ($processReaction['reaction_code'] == 18) {
         return redirect()->route('user.profile_view', ['username' => getUserAuthInfo('profile.username')]);
     }
     $processReaction['data']['is_profile_page'] = true;
+
     return $this->loadPublicView('user.profile', $processReaction['data']);
 }
 
@@ -701,7 +702,7 @@ return $this->loadPublicView('user.change-password', $data);
     {
 		//get page requested
     	$page = request()->input('page');
-		//get liked people data by parameter like '1'
+		//get liked people data by parameter like '1'   
         $processReaction = $this->userEngine->prepareUserLikeDislikedData(0);
 
         //check if page is not null and not equal to first page

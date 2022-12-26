@@ -172,31 +172,7 @@ input::-moz-focus-outer {
     </li>
 
 <li class="nav-item justify-content-between text-left select-drop-down">
-      <p>OPTIONS</p>
-        <ul class="filter-ul">
-          <?php 
-          $option = array("Verified users only");
-          $length = count($option);
-          for ($i = 0; $i < $length; $i++) {
-            $lowerName = strtolower($option[$i]);
-            $nameVal = str_replace(" ","_",$lowerName);
-
-            if(isset($_GET[$nameVal])){
-              $checkedBox = "checked";
-            }else{
-               $checkedBox = "";
-            }
-            ?>
-            <li> 
-              <input type="checkbox" name="<?= $nameVal; ?>" {{ $checkedBox }}><span class="css-3rrmd2"><?= $option[$i]; ?></span>
-            </li>
-              
-            <?php 
-          }
-          ?> 
-        </ul>
-
-      
+      <p>Verified users only</p>
     </li>
 
  
