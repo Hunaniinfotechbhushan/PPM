@@ -21,6 +21,7 @@
         text-decoration: none;
         color: #4e4e4e;
     }
+
     .mr-15 {
         margin-right: 15px;
     }
@@ -147,20 +148,28 @@
         padding-top: 20px;
     }
 
+    #grid_block .vister.align-items-center-1 {
+        background-color: #fff9ea;
+        border-color: #f6c23e;
+    }
+
     @media screen and (max-width: 576px) {
         .vister .vister-image-icon .vister-profile-image {
             width: 100%;
             height: 200px;
         }
-        .card .card-header > .d-flex {
+
+        .card .card-header>.d-flex {
             flex-wrap: wrap;
             flex-direction: column;
             justify-content: flex-end;
             row-gap: 10px;
         }
+
         .card .card-header .d-flex a.web-button {
             margin-right: 0;
         }
+
         .card .card-header {
             align-items: center;
         }
@@ -192,27 +201,30 @@
     }
 
     p.event-title {
-    width: 100%;
-    font-size: 22px;
-    font-weight: 500;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 6px;
+        width: 100%;
+        font-size: 22px;
+        font-weight: 500;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 6px;
     }
+
     .vister .user-name {
-    font-size: 18px;
-    font-weight: 500;
-}
-#grid_block .vister {
-    border: 1px solid #e9e9e9;
-    position: relative;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    padding: 15px;
-    flex-wrap: wrap;
-}
-#grid_block .vister > a {
-    width: 100%;
-}
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    #grid_block .vister {
+        border: 1px solid #e9e9e9;
+        position: relative;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        padding: 15px;
+        flex-wrap: wrap;
+    }
+
+    #grid_block .vister>a {
+        width: 100%;
+    }
 
 
     p.user-name {
@@ -263,11 +275,12 @@
         height: 100%;
         object-fit: cover;
     }
+
     .web-button {
-    align-items: center;
-    display: flex;
-    color: #fff !important;
-}
+        align-items: center;
+        display: flex;
+        color: #fff !important;
+    }
 
     @media (max-width: 767px) {
         .time text-right {
@@ -368,6 +381,33 @@
         padding-left: 20px !important;
         border: 1px solid #ccc !important;
         margin-top: 15px !important;
+    }
+
+    #grid_block .vister.align-items-center-1:before {
+        content: 'featured';
+        position: absolute;
+        top: -18px;
+        right: 0;
+        text-transform: uppercase;
+        width: auto;
+        background-color: #fff9ea;
+        border: 1px solid #f6c23e;
+        padding: 5px 20px;
+        border-radius: 5px;
+        font-weight: 700;
+        color: #f51b1c !important;
+    }
+
+    #grid_block .vister.align-items-center-1 {
+        margin-top: 30px;
+    }
+
+    #grid_block .vister.align-items-center-1 .like {
+        top: 25px;
+    }
+    .select-drop-down p {
+        font-weight: 700;
+        text-transform: capitalize;
     }
 </style>
 
@@ -841,7 +881,7 @@
                         @if(Auth::user()->is_verified == 1)
                         <div class="d-flex">
                             <!-- <button class="web-button mr-15">My Events</button> -->
-                            <a href="{{url('events-views')}}" class="web-button mr-15">My Meet</a>
+                            <a href="{{url('events-views')}}" class="web-button mr-15">My Meets</a>
                             <button data-toggle="modal" data-target="#addEventPopup" class="web-button">Add Meet</button>
                         </div>
                         @endif
@@ -856,7 +896,7 @@
                         <!--    <h3 class="mb-0"><div class="css-r0xk3p" style="font-size: 0.875rem; color: rgb(126, 126, 126);">About <?= $totalCount ?> Results...</div></h3> -->
 
                         <div class="d-flex">
-                            <button id="show_filtermobile" class="web-button event-filter-button">Filters</button>
+                            <button id="show_filtermobile" class="web-button event-filter-button">Filters demo</button>
 
                         </div>
                         <div class="col-md-3 col-sm-12 text-right intrest-input pr-0">
@@ -876,13 +916,8 @@
                                     }
 
                                     ?>
-
-
                                     <select name="short_by" id="selected-short-mob" class="selected-by-short">
-
                                         <option class="shot_opt <?php echo $AddClass1; ?>" value="newest" @if(Request::get('short_by')) @if(Request::get('short_by')=='newest' ) selected @endif @endif>Sort By: Newest</option>
-
-
                                         <option class="shot_opt <?php echo $AddClass3; ?>" value="nearest" @if(Request::get('short_by')) @if(Request::get('short_by')=='nearest' ) selected @endif @endif>Sort By: Nearest</option>
                                     </select>
                                 </div>
@@ -936,18 +971,9 @@
                                         <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
                                     </g>
                                 </svg></a></li>
-
-
-
-                        @include('events.event-sidebar-mobile')
-
-
-
-
+                         @include('events.event-sidebar-mobile')
                     </ul>
-
                 </div>
-
             </div>
 
 
@@ -981,96 +1007,96 @@
 
                     ?>
 
-                        @if(Auth::user()->is_verified == 1)
-                        <a href="<?= route('user.view.events') ?>/?id={{ $filter['_id'] }}">
-                            @endif
-                            <div class="vister d-flex justify-content-between pb-3  align-items-center">
-                            <p class="event-title">{{ isset($filter['title']) ? $filter['title'] : '' }}</p>
-                                <a href="<?= route('user.view.events') ?>/?id={{ $filter['_id'] }}">
-                                    <div class="img-about d-flex align-items-flex-start" style="width: 100%;">                                    
-                                        <div class="vister-image-icon">
-                                            <div class="slick-carousel mob-vw">
-                                                <?php foreach ($filter['user_photos']['photos'] as $photos) {
-                                                    if ($photos['extantion_type'] == 'jpeg' || $photos['extantion_type'] == 'jpg') {
-                                                        $imgURLpop = url('/') . '/media-storage/users/' . $filter['UID'] . '/' . $photos['file']; ?>
-                                                        <div class="">
-                                                            <div class=" vister-profile-image user-img">
-                                                                <img width="300px" class="vister-profile-image" src="{{ $imgURLpop }}">
-                                                            </div>
-                                                        </div>
-
-                                                <?php  }
-                                                } ?>
-                                            </div>
-                                            <div class="vister-profile-image desk-vw">
-                                                <img width="300px" src="{{ $imgURL }}">
-                                            </div>
-
-
-                                            <i class="fa-solid fa-camera"></i>
-
-                                        </div>
-                                        <div style="width:100%;">
-
-                                                <p class="user-name">{{$filter['meet_type'] }}</p>
-
-
-                                            <?php $description = substr($filter['description'], 0, 150) . '...'; ?>
-
-                                                <p>{{$description }} </p>
-
-                                            <?php $event_date = date('D, M d', strtotime($filter['event_date'])); ?>
-                                            <p class=" adress text-gray-600">Event On: {{ $event_date }}</p>
-
-                                            <p class=" adress text-gray-600">{{ isset($filter['location']) ? $filter['location'] : '' }}</p>
-
-
-                                            <p class="text-right"><span class="send">View More</span></p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="about-vistor">
-                                    <p class="ethnicty"><b> </b></p>
-                                </div>
-                                <div>
-
-
-
-                                    <p class="timing">{{ isset($active_status_time) ? $active_status_time : '' }}</p>
-
-                                    <p class="timing"></p>
-
-                                    <?php if ($filter['_id'] == $filter['event_id']) {
-                                        $hasLike = "like_true";
-                                    } else {
-                                        $hasLike = "";
-                                    }
-                                    ?>
-
-                                    <div class="like">
-                                        <a href data-action="<?= route('event.write.like_dislike', ['toUserUid' => $filter['_id'], 'like' => 1]) ?>" data-method="post" data-callback="onLikeCallback" title="Like" class="lw-ajax-link-action lw-like-action-btn" id="lwLikeBtn">
-                                            <i class="fa-solid fa-heart {{ $hasLike }} "></i>
-                                        </a>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                            @if(Auth::user()->is_verified == 1)
-                        </a>
+                    @if(Auth::user()->is_verified == 1)
+                    <a href="<?= route('user.view.events') ?>/?id={{ $filter['_id'] }}">
                         @endif
+                        <div class="vister d-flex justify-content-between pb-3  align-items-center-{{$filter['featured']}}">
+                            <p class="event-title">{{ isset($filter['title']) ? $filter['title'] : '' }}</p>
+                            <a href="<?= route('user.view.events') ?>/?id={{ $filter['_id'] }}">
+                                <div class="img-about d-flex align-items-flex-start" style="width: 100%;">
+                                    <div class="vister-image-icon">
+                                        <div class="slick-carousel mob-vw">
+                                            <?php foreach ($filter['user_photos']['photos'] as $photos) {
+                                                if ($photos['extantion_type'] == 'jpeg' || $photos['extantion_type'] == 'jpg') {
+                                                    $imgURLpop = url('/') . '/media-storage/users/' . $filter['UID'] . '/' . $photos['file']; ?>
+                                                    <div class="">
+                                                        <div class=" vister-profile-image user-img">
+                                                            <img width="300px" class="vister-profile-image" src="{{ $imgURLpop }}">
+                                                        </div>
+                                                    </div>
+
+                                            <?php  }
+                                            } ?>
+                                        </div>
+                                        <div class="vister-profile-image desk-vw">
+                                            <img width="300px" src="{{ $imgURL }}">
+                                        </div>
+
+
+                                        <i class="fa-solid fa-camera"></i>
+
+                                    </div>
+                                    <div style="width:100%;">
+
+                                        <p class="user-name">{{$filter['meet_type'] }}</p>
+
+
+                                        <?php $description = substr($filter['description'], 0, 150) . '...'; ?>
+
+                                        <p>{{$description }} </p>
+
+                                        <?php $event_date = date('D, M d', strtotime($filter['event_date'])); ?>
+                                        <p class=" adress text-gray-600">Event On: {{ $event_date }}</p>
+
+                                        <p class=" adress text-gray-600">{{ isset($filter['location']) ? $filter['location'] : '' }}</p>
+
+
+                                        <p class="text-right"><span class="send">View More</span></p>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="about-vistor">
+                                <p class="ethnicty"><b> </b></p>
+                            </div>
+                            <div>
+
+
+
+                                <p class="timing">{{ isset($active_status_time) ? $active_status_time : '' }}</p>
+
+                                <p class="timing"></p>
+
+                                <?php if ($filter['_id'] == $filter['event_id']) {
+                                    $hasLike = "like_true";
+                                } else {
+                                    $hasLike = "";
+                                }
+                                ?>
+
+                                <div class="like">
+                                    <a href data-action="<?= route('event.write.like_dislike', ['toUserUid' => $filter['_id'], 'like' => 1]) ?>" data-method="post" data-callback="onLikeCallback" title="Like" class="lw-ajax-link-action lw-like-action-btn" id="lwLikeBtn">
+                                        <i class="fa-solid fa-heart {{ $hasLike }} "></i>
+                                    </a>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        @if(Auth::user()->is_verified == 1)
+                    </a>
+                    @endif
                     @endif
 
-                        @endforeach
-                        <div class="activity-pagination text-right">
-                            {!! $eventsData->links() !!}
-                        </div>
+                    @endforeach
+                    <div class="activity-pagination text-right">
+                        {!! $eventsData->links() !!}
+                    </div>
                     @else
-                        <!-- info message -->
-                        <div class="col-sm-12 alert alert-info">
-                            <?= __tr('There are no matches found.') ?>
-                        </div>
-                        <!-- / info message -->
+                    <!-- info message -->
+                    <div class="col-sm-12 alert alert-info">
+                        <?= __tr('There are no matches found.') ?>
+                    </div>
+                    <!-- / info message -->
                     @endif
 
 
@@ -1233,7 +1259,7 @@
             success: function(response) {
                 //showSuccessMessage("Updated Successfully");
                 if (response.status == 'success') {
-                    showSuccessMessage("Updated Successfully");
+                    showSuccessMessage("Event Add Successfully");
 
                     setInterval(function() {
                         window.location.href = "{{ url('events') }}";

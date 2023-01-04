@@ -8,15 +8,13 @@
                     <div class="nk-block-between">
                         <div class="nk-block-head-content">
                             <h3 class="nk-block-title page-title">
-                                Events
+                                Update Events
                             </h3>
                         </div><!-- .nk-block-head-content -->
 
                     </div><!-- .nk-block-between -->
                 </div><!-- .nk-block-head -->
                 <div class="nk-block">
-
-
                     <div class="card">
                      @include('backend.flash-message')
                      <div class="card-inner">
@@ -28,7 +26,6 @@
                                 <th class="nk-tb-col"><span>Username</span></th>
                                 <th class="nk-tb-col"><span>Event Date</span></th>
                                 <th class="nk-tb-col"><span>Date Even </br> was Created</span></th>
-                                <th class="nk-tb-col"><span>Featured</span></th>
                                 <th class="nk-tb-col"><span>Gender</span></th>
                                 <th class="nk-tb-col"><span>Event Status</span></th>
                                 <th class="nk-tb-col"><span>Event Type</span></th>
@@ -58,19 +55,12 @@
                                  <td class="nk-tb-col">
                                     <span class="tb-sub">{{ date('d M Y', strtotime($value->created_at)) }}</span>
                                 </td> 
-                                <td class="nk-tb-col">
-                                    <span class="tb-sub">   
-                                        @if($value->featured  == 1)
-                                            <span class="tb-status text-success">Premium</span>     
-                                        @else
-                                            <span class="tb-status text-danger">Standard</span>                                              
-                                        @endif
-                                    </span>
-                                </td>  
+                            
                                 <td class="nk-tb-col">
                                     <span class="tb-sub">@if($value->gender_selection == 1) Man @else Woman @endif</span>
                                 </td>
-                                  <td class="nk-tb-col">
+                                
+                                <td class="nk-tb-col">
                                     <span class="tb-sub">@if($value->user_account == 1) Premium @else Standard @endif</span>
                                 </td>   
                                 <td class="nk-tb-col">
@@ -103,7 +93,7 @@
                                                 <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                                                 <div class="dropdown-menu dropdown-menu-end">
                                                  <ul class="link-list-opt no-bdr">
-                                                     <li><a href="{{url('admin/events', $value->_id)}}"><em class="icon ni ni-speed"></em><span>View/Edit Event</span></a></li>
+                                                     <li><a href="{{url('admin/update-events-edit', $value->_id)}}"><em class="icon ni ni-speed"></em><span>View/Edit Event</span></a></li>
                                                  </ul>
                                              </div>
                                          </div>

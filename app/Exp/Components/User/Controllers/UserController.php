@@ -621,9 +621,10 @@ return $this->loadPublicView('user.change-password', $data);
 
  public function getUserProfile($userName)
  {
+
     $processReaction = $this->userEngine->prepareUserProfile($userName);
     // return $processReaction;
-        // check if record does not exists
+    // foreach()
     if ($processReaction['reaction_code'] == 18) {
         return redirect()->route('user.profile_view', ['username' => getUserAuthInfo('profile.username')]);
     }

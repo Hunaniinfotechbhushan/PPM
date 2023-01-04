@@ -91,13 +91,48 @@
     max-height: auto;
     min-height: 45px;
   }
-  @media screen and (max-width: 576px){
-        .vister .vister-image-icon .vister-profile-image{
+  .slick-next::before, .slick-prev::before {
+    color: #e74a3b;
+    font-size: 30px;
+    opacity: 0.8;
+}
+.slick-next {
+    right: 23%;
+}
+.slick-prev {
+    left: 22%;
+    z-index: 9;
+}
+button.btn.btn-lg-box2-box {
+    background: #ffff;
+    padding: 10px 65px 10px 65px;
+    font-size: 18px;
+    border-radius: 0;
+    font-weight: 500;
+    color: #858796;
+    box-shadow: none;
+}
+
+
+ @media screen and (max-width: 991px){
+.slick-next {
+    right: 21%;
+}
+.slick-prev {
+    left: 20%;
+}
+  }
+
+ @media screen and (max-width: 767px){
+    .slick-next, .slick-prev {
+    display: none !important;
+}  
+.vister .vister-image-icon .vister-profile-image{
             width: 100%;
             height: 200px;
         }
   }
-  </style>
+</style>
 <style type="text/css">
     .event .vister-profile-image {
     height: 200px;
@@ -548,23 +583,14 @@ if(empty($UserBlock)){
         <div class="modal fade" id="lwDeleteAccountModel" tabindex="-1" role="dialog" aria-labelledby="messengerModalLabel" aria-hidden="true" style="display: none;">
 
             <div class="modal-dialog modal-lg" role="document">
-
                 <div class="modal-content">
-
                     <div class="modal-header">
-
                         <h5 class="modal-title">Delete account?</h5>        
-
                     </div>
-
                     <div class="modal-body">
-
                         <!-- Delete Account Form -->
-
                         <form class="user lw-ajax-form lw-form" method="post" action="user/delete-account">
-
                             <!-- Delete Message -->
-
                             Are you sure you want to delete your account? All content including photos and other data will be permanently removed!                    <!-- /Delete Message -->
 
                             <hr/>
@@ -748,7 +774,7 @@ if(isset($event->dob)){
 
           <div class="slick-carousel mob-vw">
                 <?php foreach ($userProfileImagesData as $photos) {
-            if($photos['extantion_type'] == 'jpeg' || $photos['extantion_type'] == 'jpg' ){
+            if($photos['extantion_type'] == 'jpeg' || $photos['extantion_type'] == 'jpg' || $photos['extantion_type'] == 'png' ){
      $imgURLpop = url('/').'/media-storage/users/'.$event->UID.'/'.$photos['file']; ?>
        <div class="">
             <div class=" vister-profile-image user-img">
@@ -801,16 +827,15 @@ if($event->profile_picture){
     
       <div class="visitor-box-blue d-flex justify-content-center mt-3">
         <!-- <button type="button" class="btn btn-lg-box1">Contact</button> -->
-        <?php if($event->InterestedUser == 1){
-            $ms ='I’m interested';
-        }else{
-              $ms='Already interested';
-
-        } ?>
-
+        
+        @if(count($Interested) == 0)
+            <button type="button" data-id-ins="{{ $event->_id }}" class="btn btn-lg-box2 intersted_user"> I’m interested </button>
+        @else
+            <button type="button" data-id-ins="{{ $event->_id }}"  class="btn btn-lg-box2-box"> Sent </button>
+        @endif
+        
+        <!--<button type="button" data-id-ins="{{ $event->_id }}" class="btn btn-lg-box2 intersted_user"> </button>-->
        
-
-        <button type="button" data-id-ins="{{ $event->_id }}" class="btn btn-lg-box2 intersted_user"> {{ $ms }}</button>
     </div>
 
        <div class="visitor-box-blue d-flex bg-white px-3">
@@ -854,8 +879,9 @@ if($event->profile_picture){
 <script type="text/javascript">
     
     $('.intersted_user').click(function(){
-       $(".intersted_user").text('Sent');
-});
+      $(".intersted_user").text('Sent');
+    //   $('.btn-lg-box2').removeClass('intersted_user');
+    });
 
 
      $(document).ready(function() {
@@ -899,8 +925,6 @@ if($event->profile_picture){
 
 
 $("body").on("submit", ".userPhottoFormEvent", function(e) {
-   
-
     e.preventDefault();
     $.ajaxSetup({
       headers: {
@@ -915,13 +939,12 @@ $("body").on("submit", ".userPhottoFormEvent", function(e) {
       processData: false,
       contentType: false,
       success:function(response){
-    //showSuccessMessage("Updated Successfully");
         if(response.status== 'success'){
              showSuccessMessage("Updated Successfully");
 
              setInterval(function () {
        window.location.href = "{{ url('events') }}";
-    },1000);
+        },1000);
             
         }
          //
@@ -954,38 +977,31 @@ $("body").on("submit", ".userPhottoFormEvent", function(e) {
 // $("body").on("submit", ".userPhottoFormEvent", function(e) {
 
     $( ".intersted_user" ).click(function(e) {
-        
-
            var event_id =  $(this).attr('data-id-ins');
-   
-
-    e.preventDefault();
-    $.ajaxSetup({
-      headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      }
-  });
-    $.ajax({
-      type:'POST',
-      url:"{{ url('interested-user') }}",
-      dataType : 'json',
-      data: {event_id:event_id},
-     
-      success:function(response){
-    //showSuccessMessage("Updated Successfully");
-        if(response.status== 'success'){
-             showSuccessMessage("Thanks for interested.");
-
-    //          setInterval(function () {
-    //    window.location.href = "{{ url('events') }}";
-    // },1000);
-            
-        }
-         //
-    // console.log(response.data.stored_photo.image_url);
-   
-
-}
+           let counter = 0;
+            e.preventDefault();
+            $.ajaxSetup({
+              headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              }
+          });
+            $.ajax({
+              type:'POST',
+              url:"{{ url('interested-user') }}",
+              dataType : 'json',
+              data: {event_id:event_id},
+             
+              success:function(data){
+                  console.log(data);
+                if(data.status== 'success'){
+                     showSuccessMessage("Your interest has been sent to the" + data.username);
+                    setInterval(function () {
+                        window.location.reload();
+                    },1000);
+                }
+                 //
+            // console.log(response.data.stored_photo.image_url);
+    }
 
 });
 
@@ -1007,7 +1023,7 @@ $('.slick-carousel').slick({
   infinite: true,
   slidesToShow: 1, // Shows a three slides at a time
   slidesToScroll: 1, // When you click an arrow, it scrolls 1 slide at a time
-  arrows: false, // Adds arrows to sides of slider
+  arrows: true, // Adds arrows to sides of slider
   dots: true // Adds the dots on the bottom
 });
 </script>

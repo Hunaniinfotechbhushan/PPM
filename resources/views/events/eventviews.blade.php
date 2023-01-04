@@ -99,6 +99,9 @@
         max-height: auto;
         min-height: 45px;
     }
+    span.text-pop::after {
+    display: none;
+}
 
     @media screen and (max-width: 576px) {
         .vister .vister-image-icon .vister-profile-image {
@@ -205,7 +208,19 @@
     .mob-vw {
         display: none;
     }
-
+    .event p {
+    padding: 10px 20px;
+}
+.events-views-sec {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.web-button:hover {
+    color: #fff;
+    background-color: #000 !important;
+}
     @media (max-width: 768px) {
 
         .fa-magnifying-glass-plus:before,
@@ -327,8 +342,6 @@
 
         </li>
 
-
-
         <hr class="sidebar-divider mt-2 mb-2 d-sm-block d-md-none">
 
         @include('events.event-sidebar')
@@ -386,6 +399,7 @@
                             </button>
                         </div>
                         <hr />
+
                         <form class="userPhottoFormEvent" id="userPhottoFormEvent" method="post" enctype="multipart/form-data">
                             <input type="hidden" id="phottoFromInput" name="phottoFrom">
                             <div class="modal-body">
@@ -442,9 +456,84 @@
                                 <button type="submit" class="btn btn-success s-btn">Submit</button>
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>
+
+            <!--- Edit event modal -->
+            <div class="modal fade add-evnt-modal" id="editEventPopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header border-bottom-0  text-center">
+                            <h5 class="modal-title text-center" id="exampleModalLabel">Edit Event</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <hr />
+
+                        <form class="userEventUpdate" id="userEventUpdate" method="post" enctype="multipart/form-data">
+                            <input type="hidden" id="event_id" value="" name="eventID">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label class="event-label" for="display-name">Title</label>
+                                    <input type="text" name="title" id="title" value="" / required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="event-label" for="display-name">Description </label>
+                                    <textarea id="description" id="description" name="description" value="" rows="4" cols="59"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="event-label" for="display-name">Event Date</label>
+                                    <select class="select-sidebar drop" value="" name="event_date" id="event_date">
+                                        <option>Any</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="event-label" for="display-name">Location</label>
+                                    <input type="text" name="location"  id="address" value="" / required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="event-label" for="display-name">Meet Type</label>
+                                    <select class="select-sidebar" value="" id="meet_type" name="meet_type">
+                                        <option value="Dinner/Lunch date">Dinner/Lunch date</option>
+                                        <option value="Meet at your place">Meet at your place</option>
+                                        <option value="Social meetup">Social meetup</option>
+                                        <option value="Meet at my place">Meet at my place</option>
+                                        <option value="Night out">Night out</option>
+                                        <option value="Anything, anywhere">Anything, anywhere</option>
+                                        <option value="Hotel meet">Hotel meet</option>
+                                        <option value="Club meet">Club meet</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <!-- <label class="event-label" for="display-name"><a href="#" onclick="togglePopup()"> Privacy (stop these users from seeing your event)</a></label> -->
+                                    <select class="select2 select2-hidden-accessible" name="block_user[]" multiple="" style="width: 100%;" data-select2-id="7" tabindex="-1" aria-hidden="true">
+                                    </select>
+                                </div>
+                                <!-- <div class="form-group mt-3 file-uploader-main p-0">
+                                <input id='userUploadPublicPhottoButton' name="image" type='file' hidden/>
+                                <input type='file' id='userPublicUploadFileButtons' name="image" class="action-button w-100 " type='button' value='Add a public photo' />
+                                <p class="uploader-txt mb-0 d-flex align-items-center justify-content-center h-100">upload <i class="fas fa-upload ml-3"></i></p>
+                                <div class="uploaded-img">
+                                    <img id="blah" src="" >
+                                </div>
+                                </div> -->
+                            </div>
+                            <hr />
+                            <div class="modal-footer border-top-0 d-flex justify-content-center">
+                                <button type="button" class="btn btn-danger userPhottoCancelBtn c-btn" data-dismiss="modal" aria-label="Close">
+                                    Cancel
+                                </button>
+                                <button type="submit" class="btn btn-success s-btn">Update</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
             <div class="content-messages">
                 <div onclick="togglePopup()" class="close-btn">
                     ×
@@ -503,7 +592,7 @@
                 </div>
                 <div class="card mb-3 ">
                     <div class="card-header d-flex justify-content-between">
-                        <h3><i class="fa-solid fa-photo-film"></i>My Event</h3>
+                        <h3><i class="fa-solid fa-photo-film"></i>My Meets</h3> 
                         <div class="d-flex">
                             <button data-toggle="modal" data-target="#addEventPopup" class="web-button">Add Event</button>
                         </div>
@@ -596,22 +685,30 @@ if($events->profile_picture){
            <!-- <i class="fa-solid fa-magnifying-glass-plus event_icon"></i> -->
        </div>
             </a>
-      <a href="{{ url('/member')}}/{{ $events->UID }}"> <p class="adress text-dark user-age bg-light"><b>{{$events->title}}</b><a> - <b class="border rounded user-age"></b></p>
+      <a href="{{ url('/member')}}/{{ $events->UID }}"> 
+        <p class="adress text-dark user-age bg-light"><b>{{$events->title}}</b> - <b class="rounded user-age"></b></p>
+      </a>
      <?php $date = date( 'D, M d', strtotime( $events->created_at) );
 
      $event_date = date( 'D, M d', strtotime( $events->event_date) );
 
-     ?>
-    <p class="text-dark d-flex justify-content-end visitor-post-low"><b>Event On</b>:&nbsp;&nbsp;<span class="text-gray-500">{{$event_date}}</span></p>
-     <p class="pt-3 pb-3">{{ $events->description }}</p>
-     <div class="year_age d-flex">
-        <p class="text_num">
+     ?>        <p class="text-dark d-flex justify-content-end visitor-post-low"><b>Event On</b>:&nbsp;&nbsp;<span class="text-gray-500">{{$event_date}}</span></p>
+
+     <div class="events-views-sec">
+    <div class="content_sec_left">
+     <h3 class="pt-3 pb-0">{{ $events->description }}</h3>
+     <div class="year_age">
+        <p class="text_num p-0">
             <span class="text-pop position-relative">{{ $events->city }}</span>
             <!-- <span class="text_age me-auto">Age {{ $userAge }} Years</span></p> -->
-
-         
      </div>
-    
+    </div>
+    <div class="button_sec_right">
+        <!-- <a href="#" class="web-button">Edit</a> -->
+        <button data-toggle="modal" data-target="#editEventPopup" value="{{ $events->_id }}" class="web-button editbtn">Edit</button>
+        <button class="web-button deleteRecord" data-id="{{ $events->_id }}" >Delete</button>
+    </div>
+</div>
   <!--    <div class="age-para">
          <num class="ppm-new-numm mt-5"></num> 
         <p class="numm">024358299190 <span class="d-flex justify-content-end pb-5">Age 27 years</span></p>
@@ -642,25 +739,16 @@ if($events->profile_picture){
 <script type="text/javascript">
     $(document).ready(function() {
 
-
         $("#filterSidebarClose").click(function() {
-
             $('.event-filter').hide();
-
-
         });
 
         $("#show_filtermobile").click(function() {
-
             $('.event-filter').show();
-
-
         });
 
 
         $('.search-event-submit-btn').click(function() {
-
-
             $('#event-serach-form').submit()
         });
 
@@ -676,11 +764,57 @@ if($events->profile_picture){
         var autocomplete = new google.maps.places.Autocomplete(input);
     }
     google.maps.event.addDomListener(window, 'load', initialize);
+
 </script>
 <script type="text/javascript">
+
+    $(".deleteRecord").click(function(){
+        var id = $(this).data("id");
+        var token = $("meta[name='csrf-token']").attr("content");
+    
+        $.ajax(
+        {
+            url: "events-delete/"+id,
+            type: 'DELETE',
+            data: {
+                "id": id,
+                "_token": token,
+            },
+            success: function(response){
+                console.log('asdsadsadsd');
+                if (response.status == 'success') {
+                    console.log('fdsvvdsfdsf');
+                    showSuccessMessage("Event Delete Successfully");
+                    setInterval(function() {
+                        window.location.reload();
+                    }, 1000);
+                }
+            }
+        });
+    });
+
+
+
+     $(document).ready(function(){
+         $(document).on('click','.editbtn',function(){
+            var book_id = $(this).val();
+            $.ajax({
+               type:"GET",
+               url:"/events-edit/"+book_id,
+               success:function(response){   
+                console.log(response);
+                  $('input#event_id').val(response.editEvent._id);
+                  $('#title').val(response.editEvent.title);
+                  $('textarea#description').val(response.editEvent.description);
+                  $('#event_date').val(response.editEvent.event_date);
+                  $('#address').val(response.editEvent.location);
+                  $('#meet_type').val(response.editEvent.meet_type);
+               }
+            });
+         });
+      });
+
     $("body").on("submit", ".userPhottoFormEvent", function(e) {
-
-
         e.preventDefault();
         $.ajaxSetup({
             headers: {
@@ -697,29 +831,54 @@ if($events->profile_picture){
             success: function(response) {
                 //showSuccessMessage("Updated Successfully");
                 if (response.status == 'success') {
-                    showSuccessMessage("Updated Successfully");
-
+                    showSuccessMessage("Event Add Successfully");
                     setInterval(function() {
-                        window.location.href = "{{ url('events') }}";
+                            window.location.reload();
                     }, 1000);
-
                 }
                 //
                 // console.log(response.data.stored_photo.image_url);
-
-
             }
 
         });
-
         return false;
     });
+
+    $("body").on("submit", ".userEventUpdate", function(e) {
+            e.preventDefault();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                type: 'POST',
+                url: "{{ url('events-update') }}",
+                dataType: 'json',
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    // console.log(response);
+                    //showSuccessMessage("Updated Successfully");
+                    if (response.status == 'success') {
+                        showSuccessMessage("Event Updated Successfully");
+
+                        setInterval(function() {
+                            window.location.reload();
+                        }, 1000);
+                    }
+                }
+
+            });
+            return false;
+            });
+
+
     $('#blah').hide();
     userPublicUploadFileButtons.onchange = evt => {
         const [file] = userPublicUploadFileButtons.files
         if (file) {
-
-
             $('#blah').show();
             blah.src = URL.createObjectURL(file)
         }
@@ -731,12 +890,8 @@ if($events->profile_picture){
     // $("body").on("submit", ".userPhottoFormEvent", function(e) {
 
     $(".intersted_user").click(function(e) {
-
-
         var event_id = $(this).attr('data-id-ins');
-
-
-        e.preventDefault();
+        e.preventDefault(); 
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -749,27 +904,17 @@ if($events->profile_picture){
             data: {
                 event_id: event_id
             },
-
             success: function(response) {
                 //showSuccessMessage("Updated Successfully");
                 if (response.status == 'success') {
                     showSuccessMessage("Thanks for interested.");
-
-                    //          setInterval(function () {
-                    //    window.location.href = "{{ url('events') }}";
-                    // },1000);
-
                 }
-                //
-                // console.log(response.data.stored_photo.image_url);
-
-
             }
 
         });
-
         return false;
     });
+
 </script>
 <!-- jQuery CDN -->
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -785,7 +930,7 @@ if($events->profile_picture){
         infinite: true,
         slidesToShow: 1, // Shows a three slides at a time
         slidesToScroll: 1, // When you click an arrow, it scrolls 1 slide at a time
-        arrows: false, // Adds arrows to sides of slider
+        arrows:true, // Adds arrows to sides of slider
         dots: true // Adds the dots on the bottom
     });
 </script>

@@ -10,6 +10,7 @@ namespace App\Exp\Components\Event\Controllers;
 use App\Exp\Base\BaseController;
 use App\Exp\Support\CommonUnsecuredPostRequest;
 use App\Exp\Components\Event\UserEncounterEngine;
+use App\Exp\Components\Event\Models\UpdateEvent;
 use Request;
 use Auth;
 use DB;
@@ -58,14 +59,13 @@ class EventController extends BaseController
         }
     }
 
-
     public function index(CommonUnsecuredPostRequest $request)
     {
         
         $id = Auth::user()->_id; 
         $user = UserProfile::where('users__id', $id)->get()->first();
         // $events = Event::where('status','1')->get();
-        $events = Event::select('users.username','users._uid as UID', 'users.gender_selection', 'user_profiles.dob', 'user_profiles.profile_picture', 'user_profiles.city', 'events.*', 'event_like_dislikes.event_id')
+        $events = Event::select('users.username','users._uid as UID', 'users.gender_selection','users.user_account', 'user_profiles.dob', 'user_profiles.profile_picture', 'user_profiles.city', 'events.*', 'event_like_dislikes.event_id')
             ->leftJoin('users', 'users._id', '=', 'events.user_id')
             ->leftJoin('user_profiles', 'user_profiles.users__id', '=', 'users._id')
             ->leftJoin('event_like_dislikes', 'event_like_dislikes.event_id', '=', 'events._id');
@@ -100,8 +100,8 @@ class EventController extends BaseController
             $events->orderBy('events.created_at', 'desc');
         }
         
-        $eventsData = $events->orderBy('events.created_at', 'desc')->paginate(50);
-
+        $eventsData = $events->orderBy('events.featured', 'desc')->paginate(50);
+        // return 
         if ($request->distance) {
             $distance = $request->distance;
         } else {
@@ -119,7 +119,7 @@ class EventController extends BaseController
                 $res = array();
                 $dataEvents = array();
                 foreach ($eventsData as  $value) {
-                    // return $value->gender_selection;
+                    // return $value->featured;
                     if($username->gender_selection!=$value->gender_selection){
 
                     $UserPhotosModel = UserPhotosModel::where('users__id', $value['user_id'])->get();
@@ -176,6 +176,8 @@ class EventController extends BaseController
                             $dataArray['image']  = $value['image'];
                             $dataArray['description']  = $value['description'];
                             $dataArray['block_user']  = $value['block_user'];
+                            $dataArray['user_account']  = $value->user_account;
+                            $dataArray['featured']  = $value->featured;
                             $dataEvents[] = $dataArray;
                         }
                     }
@@ -193,7 +195,7 @@ class EventController extends BaseController
         $selectedFilter['created_at'] = $request->created_at;
         $totalCount = count($dataEvents);
         // $userProfileGet = UserProfile::where('users__id',$user['_id'])->get();
-
+        // return $dataEvents;
         $UserBock = User::all();
         return view('events.index', compact('eventsData', 'dataEvents', 'selectedFilter', 'totalCount', 'citydata', 'UserBock'));
     }
@@ -207,11 +209,15 @@ class EventController extends BaseController
                 ->leftJoin('user_profiles', 'user_profiles.users__id', '=', 'users._id')
                 ->where('events._id', $_GET['id'])
                 ->first();
-
+            
+            // return ;
             $id = Auth::user()->_id;
+            // return $id; 
+            $Interested = InterestedUser::where('user_id',$id)->where('event_id',$event->_id)->get();
+            // return $Interested;
             if (isset($event)) {
-
-                $UserPhotosModel = UserPhotosModel::where('users__id', $event->UserID)->get();
+                $UserPhotosModel = UserPhotosModel::where('users__id', $event->UserID)->where('is_verified','1')->where('type','1')->get();
+                // return $UserPhotosModel;
                 if ($UserPhotosModel) {
                     $userProfileImagesData = array();
                     foreach ($UserPhotosModel as $key => $images) {
@@ -222,10 +228,11 @@ class EventController extends BaseController
                         $userProfileImages['type'] = $images->type;
                         $userProfileImages['_uid'] = $images->_uid;
                         $userProfileImages['video_thumbnail'] = $images->video_thumbnail;
+                        $userProfileImages['is_verified'] = $images->is_verified;
                         $userProfileImagesData[] = $userProfileImages;
                     }
                 }
-
+                // return  $userProfileImagesData;
 
                 $userProfileGet = UserProfile::where('users__id', $event->UserID)->get()->first();
                 $user = UserProfile::where('users__id', $id)->get()->first();
@@ -236,7 +243,7 @@ class EventController extends BaseController
                 } else {
                     $files =  '';
                 }
-                $userProfileImagesData = array(0 => array('file' => $files, 'extantion_type' => 'jpg', 'type' => '1', '_uid' => $event->UID)) + $userProfileImagesData;
+                $userProfileImagesData = array(0 => array('file' => $files, 'extantion_type' => 'jpg', 'type' => '1', '_uid' => $event->UID )) + $userProfileImagesData;
                 if (isset($userProfileGet->city)) {
                     $citydata =  $userProfileGet->city;
                 } else {
@@ -245,17 +252,13 @@ class EventController extends BaseController
 
                 $citydata =  $citydata;
                 $UserBock = User::all();
-                // return $userProfileImagesData;
-                return view('events.viewevent', compact('event', 'citydata', 'user', 'userProfileImagesData', 'UserBock'));
+                return view('events.viewevent', compact('event', 'citydata', 'user', 'userProfileImagesData', 'UserBock','Interested'));
             }
         }
     }
 
     public function viewEvents(Request $request){
-        // $id = Auth::user()->_id;
-        // $event = Event::where('user_id',$id)->get();
-        // return view('events.eventviews');
-
+     
         // if (isset($_GET['id'])) {
             $get = Event::get();
             // return $get;
@@ -266,10 +269,12 @@ class EventController extends BaseController
                 ->where('user_id',$id)
                 ->get();
         
-            // return $id; 
-            if (isset($event)) {
-                // return $event;
+            // return $event; 
+            // foreach($event as $events){
+            if ($event) {
+                // return '12345';
                 $UserPhotosModel = UserPhotosModel::where('users__id', $id)->get();
+                // return $UserPhotosModel;
                 if ($UserPhotosModel) {
                     $userProfileImagesData = array();
                     foreach ($UserPhotosModel as $key => $images) {
@@ -294,21 +299,60 @@ class EventController extends BaseController
                 } else {
                     $files =  '';
                 }
-                foreach($event as $events){
-                    // return $events->UID;
-                    $userProfileImagesData = array(0 => array('file' => $files, 'extantion_type' => 'jpg', 'type' => '1', '_uid' => $events->UID)) + $userProfileImagesData;
+                // return  $userProfileGet->city;
+               
+                    // return '12345';
+                    foreach($event as $events){
+                        $userProfileImagesData = array(0 => array('file' => $files, 'extantion_type' => 'jpg', 'type' => '1', '_uid' => $events->UID)) + $userProfileImagesData;
+                    }
                     if (isset($userProfileGet->city)) {
                         $citydata =  $userProfileGet->city;
                     } else {
+                        //  return '12345';
                         $citydata =  '';
                     }
-                }
-                $citydata =  $citydata;
+                    // return $userProfileImagesData;
+                
+                // return $citydata;
+                // $citydata =  $citydata;
                 $UserBock = User::all();
                 // return $userProfileImagesData;
-                return view('events.eventviews', compact('event', 'citydata', 'user', 'userProfileImagesData', 'UserBock'));
+                return view('events.eventviews', compact('event', 'user', 'userProfileImagesData', 'UserBock'));
             }
         // }
+    }
+
+    public function viewsEventsedit(Request $request, $id)
+    {
+        $editEvent = Event::find($id);
+        return response()->json([
+            'status' =>200,
+            'editEvent' =>$editEvent,
+        ]);
+    }
+
+    public function viewsEventsupdate(CommonUnsecuredPostRequest $request)
+    {
+        $id = Auth::user()->_id;
+        $editEvent = New UpdateEvent();
+        $editEvent->title = $request->title;
+        $editEvent->event_id = $request->eventID;
+        $editEvent->user_id	 = Auth::user()->_id;
+        $editEvent->location = $request->location;
+        $editEvent->meet_type = $request->meet_type;
+        $editEvent->description = $request->description;
+        $editEvent->event_date = date('Y-m-d', strtotime($request->event_date));
+        $editEvent->save();
+        return json_encode(array('status' => 'success'));
+    }
+
+    public function viewsEventsdelete($id)
+    {
+        Event::find($id)->delete($id);
+        return response()->json([
+            'status' =>'success',
+        ]);
+        // return json_encode(array('status' => 'success'));
     }
 
     public function addEvent(CommonUnsecuredPostRequest $request)
@@ -357,16 +401,24 @@ class EventController extends BaseController
 
     public function interestedUser(CommonUnsecuredPostRequest $request)
     {
-
         $id = Auth::user()->_id;
-        $InterestedUser = new InterestedUser;
-        $InterestedUser->user_id = $id;
-        $InterestedUser->event_id = $request->event_id;
-        $InterestedUser->save();
-
+ 
+        $Interested = InterestedUser::where('user_id',$id)->where('event_id',$request->event_id)->get();
+        if(count($Interested) == 0){
+            $InterestedUser = new InterestedUser;
+            $InterestedUser->user_id = $id;
+            $InterestedUser->event_id = $request->event_id;
+            $InterestedUser->save();
+        }else{
+            $error =  'error';
+        }
+      
         $UpdateDetails = Event::where('_id', '=',  $request->event_id)->first();
         $UpdateDetails->InterestedUser = 1;
         $UpdateDetails->save();
+
+        $getusername = Event::where('_id', '=',  $request->event_id)->first();
+        $getusernames = User::where('_id',$getusername->user_id)->first();
 
         // add notify 
         $event_iddata = Event::where('_id', $request->event_id)->get()->first();
@@ -377,10 +429,10 @@ class EventController extends BaseController
         $status = 1;
         $action = url('/') . '/@' . $getUserDetails->username;
         $is_read = 0;
-        $users__id = $event_iddata['user_id'];
-        notificationUserLog($uid, $slug, $status, $message, $action, $is_read, $users__id, "");
+        $users__id = $event_iddata['user_id'];  
 
-        return json_encode(array('status' => 'success'));
+        notificationUserLog($uid, $slug, $status, $message, $action, $is_read, $users__id, "");
+        return json_encode(array('status' => 'success','username' => $getusernames->username,'error' => $error));
     }
 
 

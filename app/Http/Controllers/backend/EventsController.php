@@ -1,11 +1,12 @@
 <?php
 namespace App\Http\Controllers\backend;
-use Request;
+use Illuminate\Http\Request; 
 use App\Exp\Components\User\Models\{
   User, UserAuthorityModel, UserProfile, CreditWalletTransaction
 };
 use Auth;
 use App\Exp\Components\Event\Models\Event;
+use App\Exp\Components\Event\Models\UpdateEvent;
 use Carbon\Carbon;
 use Session;
 use Mail;
@@ -29,6 +30,7 @@ class EventsController extends Controller
 
      $events = Event::select('users._id as user_id',
       'users.username',
+      'users.user_account',
       'users._uid as UID',
       'user_profiles.dob',
       'user_profiles.profile_picture',
@@ -40,7 +42,6 @@ class EventsController extends Controller
      ->where('events.status','!=',2)
      ->orderBy('events.created_at','DESC')
      ->get();
-
      return view('backend.events.index',compact('events'));
    }
 
@@ -203,8 +204,8 @@ class EventsController extends Controller
 
     {
      $user = Event::findOrFail($id);
-     $input = Request::all();
-
+     
+     $input = $request->all();
 
      $validation = Validator::make($input,
        [
@@ -221,6 +222,7 @@ class EventsController extends Controller
 
       $user->title =$input['title'];
       $user->event_date = $input['event_date'];
+      $user->featured = $input['featured'];
       $user->meet_type = $input['meet_type'];
       $user->description = $input['description'];
       // $user->location=$input['location'];
@@ -338,17 +340,58 @@ if($input['status'] == 1 || $input['status'] == 2){
      */
 
     public function destroy($id)
-
     {
 
       $user = User::findOrFail($id);
-
       $user->delete();
-
       Session::flash('success','Successfully deleted.');
-
       return redirect('admin/users');
 
+    }
+
+
+    public function updateEvent()
+    {
+      $events = UpdateEvent::select('users._id as user_id',
+      'users.username',
+      'users.user_account',
+      'users._uid as UID',
+      'user_profiles.dob',
+      'user_profiles.profile_picture',
+      'event_update.*',
+      'event_like_dislikes.event_id')
+     ->leftJoin('users', 'users._id', '=', 'event_update.user_id')       
+     ->leftJoin('user_profiles', 'user_profiles.users__id', '=', 'users._id')
+     ->leftJoin('event_like_dislikes', 'event_like_dislikes.event_id', '=', 'event_update._id')
+     ->where('event_update.status','!=',2)
+     ->orderBy('event_update.created_at','DESC')
+     ->get();
+      return view('backend.events.eventupdate',compact('events'));
+
+    }
+
+    public function editUpdateEvent($id)
+    {
+      $events = UpdateEvent::find($id);
+      return view('backend.events.eventUpdateEdit',compact('events'));
+    }
+
+    public function updateEventEditUpdate(Request $request, $id)
+    {
+
+        $event = Event::where('_id',$request->event_id)->first();
+        $event->event_date = $request->event_date;
+        $event->title = $request->title;
+        $event->meet_type = $request->meet_type;
+        $event->description = $request->description;
+        $event->status = $request->status;
+        $event->update();
+
+        $eventDelete = UpdateEvent::where('_id',$request->_id)->first();
+        $eventDelete->delete();
+        
+        Session::flash('success','Event Update Successfully.');
+        return redirect('admin/events');
     }
 
 

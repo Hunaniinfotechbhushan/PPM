@@ -11,6 +11,7 @@
     <!-- Fav Icon  -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <link rel="shortcut icon" href="{{ asset('/backend/mages/favicon.png') }}') }}">
+    <script rel="shortcut icon" src="{{ asset('/dist/js/common-app.min.js') }}') }}"></script>
     <!-- Page Title  -->
     <title>PPM</title>
     <!-- StyleSheets  -->
@@ -139,6 +140,10 @@
   @media screen and (max-width:799px){
       .custom-model-inner{margin-top: 45px;}
   }
+
+  .nk-sidebar-content {
+    overflow-y: scroll;
+}
 
 </style>
 </head>

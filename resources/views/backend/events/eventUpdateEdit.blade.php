@@ -7,10 +7,10 @@
                 <div class="nk-block-head nk-block-head-sm">
                     <div class="nk-block-between g-3">
                         <div class="nk-block-head-content">
-                            <h3 class="nk-block-title page-title">Event / <strong class="text-primary small">{{ $events->title }}</strong></h3>
+                            <h3 class="nk-block-title page-title">Edit Update Event / <strong class="text-primary small">{{ $events->title }}</strong></h3>
                             <div class="nk-block-des text-soft">
                                 <ul class="list-inline">
-                                    <li>Event ID: <span class="text-base">UD - {{ $events->_id }}</span></li>
+                                    <li>Edit Update Event ID: <span class="text-base">UD - {{ $events->_id }}</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -20,7 +20,7 @@
                         </div>
                     </div>
                 </div><!-- .nk-block-head -->
-                {!! Form::model($events, ['method' => 'PATCH', 'action' => ['backend\EventsController@update',$events->_id],'files'=>true]) !!}
+                {!! Form::model($events, ['method' => 'POST', 'url' => ['admin/events/updates',$events->_id],'files'=>true]) !!}
 
                 <div class="nk-block">
                     <div class="card">
@@ -45,6 +45,8 @@
                                                                     <span class="profile-ud-value"> {!! Form::text('username', null, ['class' => 'form-control', 'id' => 'username', 'readonly' => 'true']) !!}</span>
                                                                 </div>
                                                             </div> -->
+                                                            <input type="hidden" name="_id" value="{{$events->_id}}">
+                                                            <input type="hidden" name="event_id" value="{{$events->event_id}}">
                                                             <div class="profile-ud-item">
                                                                 <div class="profile-ud wider">
                                                                     <span class="profile-ud-label">Event Title</span>
@@ -103,18 +105,9 @@
 
                                                                             <div class="profile-ud-item">
                                                                                 <div class="profile-ud wider">
-                                                                                    <span class="profile-ud-label">Featured</span>
-                                                                                    <span class="profile-ud-value">
-                                                                                        {!! Form::select('featured',['Standard','Premium'], null,  ['class' => 'form-control']) !!}
-                                                                                    </span>
-                                                                                </div>
-                                                                            </div>
-
-                                                                            <div class="profile-ud-item">
-                                                                                <div class="profile-ud wider">
                                                                                     <span class="profile-ud-label">Approval</span>
                                                                                     <span class="profile-ud-value">
-                                                                                        {!! Form::select('status',['Awaiting Approval','Approved','Rejected'], null,  ['class' => 'form-control']) !!}
+                                                                                        {!! Form::select('status',['Awaiting Approval','Approved'], null,  ['class' => 'form-control']) !!}
                                                                                     </span>
                                                                                 </div>
                                                                             </div>

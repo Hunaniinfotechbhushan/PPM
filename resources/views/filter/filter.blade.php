@@ -35,7 +35,7 @@
 }
 .active-short {
   display: block !important;
-  background: red !magentant;
+  background: red !important;
   color: #fff!important;
   font-weight: 600!important;
 }
@@ -85,6 +85,18 @@
     width: 0 !important;
     height: 0 !important;
 }
+
+#grid_block,
+#list_view{
+    display: none;
+}
+
+.grid_active{
+    display:flex !important;
+}
+.list_active{
+    display: block !important;
+}
 </style>
 <style type="text/css">
     .filter i {
@@ -130,6 +142,24 @@
 .fa-solid.fa-table-cells.grid_block.red_box.active_block {
     color: #000;
 }
+#list_view .vister > a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+#list_view .like {
+    position: relative;
+    z-index: 1 !important;
+}
+
+
+
+
+
+
 @media screen and (min-width:577px ){
     .mob-vw,.slick-dots{
         display: none !important;
@@ -206,7 +236,7 @@
     </div>
     <div class="card mb-3 ">
         <div class="card-header d-flex justify-content-between align-items-center filter filter-page-search-area">
-            <!-- <h3 class="mb-0"><div class="css-r0xk3p" style="font-size: 0.875rem; color: rgb(126, 126, 126);">About <?= $totalCount ?> Results...</div></h3> -->
+            <!--<h3 class="mb-0"><div class="css-r0xk3p" style="font-size: 0.875rem; color: rgb(126, 126, 126);">About <?= $totalCount ?> Results...</div></h3>-->
             <div class="filter-middle-search-area d-flex">
                 <span class="list-item text-right" id="trigger_search">
                     <button type="submit" class="btn btn--action searchResultsSaveBtn">Save this search</button>
@@ -379,7 +409,7 @@
 
 </div>
 
-<div class="row" id="grid_block">
+<div class="row grid_active" id="grid_block">
 
     @if(!__isEmpty($filterData))
 
@@ -391,14 +421,9 @@
     <div class="col-6 col-sm-6 col-md-4">
         <div class="serch-result-box">
             <div class="result-box-img">
-
-
                 <div class="slick-carousel">
                  @foreach($filter['userPhottoLists'] as $imagesList)
-                 
                  <?php $userProfileLink = url('/member').'/'.$filter['user_uid']; ?>
-                 
-
                  @if($imagesList['type'] == 1)
 
                  <?php  $imageType = 'public';?>
@@ -538,110 +563,98 @@
 
 
 <div class="row" id="list_view">
-
    @if(!__isEmpty($filterData))
    @foreach($filterData as $filter)
-
-
-
    <div class="col-md-12">
+        <a href="{{ url('/member')}}/{{ $filter['user_uid'] }}">
        <div class="vister d-flex justify-content-between pb-3  align-items-center">
            <div class="img-about d-flex align-items-flex-start">
-            <div class="slick-left-img"> 
-                <div class="slick-carousel"> 
-                 @foreach($filter['userPhottoLists'] as $imagesList)
-                 @if($imagesList['type'] == 1)
-                 <?php  $imageType = 'public';?>
-                 @else
-                 <?php $imageType = 'private';?>
-                 @endif
-                 <?php  
-                 if(isset($imagesList['file'])){
-                     if($imagesList['extantion_type'] == 'jpeg' || $imagesList['extantion_type'] == 'jpg' ){
-                        $imgURL = url('/').'/media-storage/users/'.$filter['user_uid'].'/'.$imagesList['file'];
-
-                    }else{
-                     $imgURL = url('/').'/imgs/default-image.png';
-                 }
-             }else{
-                 $imgURL = url('/').'/imgs/default-image.png';
-             } ?>     
-
-             <div class="vister-image-icon mob-vw">
-                 <div class="user-img ">
-                    <a href="{{ url('/member')}}/{{ $filter['user_uid'] }}"> 
-                        <img width="300px" class="vister-profile-image" src="{{ $imgURL }}"></a>
-                        
-                        <i class="fa-solid fa-camera"></i>
-                    </div>
-                </div> 
-
-                @endforeach
-            </div> 
-        </div>
-
-
-        <div class="vister-image-icon desk-vw">
-          <a href="{{ url('/member')}}/{{ $filter['user_uid'] }}">
-            <img width="300px" class="vister-profile-image" src="<?= imageOrNoImageAvailable($filter['profileImage']) ?>">
-        </a>
+                <div class="slick-left-img"> 
+                    <div class="slick-carousel"> 
+                         @foreach($filter['userPhottoLists'] as $imagesList)
+                             @if($imagesList['type'] == 1)
+                                <?php  $imageType = 'public';?>
+                             @else
+                                <?php $imageType = 'private';?>
+                             @endif
+                             <?php  
+                             
+                                if(isset($imagesList['file'])){
+                                     if($imagesList['extantion_type'] == 'jpeg' || $imagesList['extantion_type'] == 'jpg' ){
+                                        $imgURL = url('/').'/media-storage/users/'.$filter['user_uid'].'/'.$imagesList['file'];
+                
+                                    }else{
+                                         $imgURL = url('/').'/imgs/default-image.png';
+                                     }
+                                }else{
+                                     $imgURL = url('/').'/imgs/default-image.png';
+                                } ?>     
         
-        <i class="fa-solid fa-camera"></i>
-    </div>
+                            <div class="vister-image-icon mob-vw">
+                                <div class="user-img ">
+                                    <!--<a href="{{ url('/member')}}/{{ $filter['user_uid'] }}"> -->
+                                        <img width="300px" class="vister-profile-image" src="{{ $imgURL }}">
+                                        <!--</a>-->
+                                    <i class="fa-solid fa-camera"></i>
+                                </div>
+                            </div> 
+                        @endforeach
+                    </div> 
+                </div>
 
-    <div>
-        <a href="{{ url('/member')}}/{{ $filter['user_uid'] }}"><p class="font-bold live-status">  
+                <div class="vister-image-icon desk-vw">
+                    <!--<a href="{{ url('/member')}}/{{ $filter['user_uid'] }}">-->
+                        <img width="300px" class="vister-profile-image" src="<?= imageOrNoImageAvailable($filter['profileImage']) ?>">
+                    <!--</a>-->
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+    
+                <div>            
+                    @if($filter['userOnlineStatus'])
 
-         @if($filter['userOnlineStatus'])
+                    @if($filter['userOnlineStatus'] == 1)
+                    <span class="lw-dot lw-dot-success" title="Online"></span>
+                    @elseif($filter['userOnlineStatus'] == 2)
+                    <span class="lw-dot lw-dot-warning" title="Idle"></span>
+                    @elseif($filter['userOnlineStatus'] == 3)
+                    <span class="lw-dot lw-dot-danger" title="Offline"></span>
+                    @endif
 
-         @if($filter['userOnlineStatus'] == 1)
-         <span class="lw-dot lw-dot-success" title="Online"></span>
-         @elseif($filter['userOnlineStatus'] == 2)
-         <span class="lw-dot lw-dot-warning" title="Idle"></span>
-         @elseif($filter['userOnlineStatus'] == 3)
-         <span class="lw-dot lw-dot-danger" title="Offline"></span>
-         @endif
+                    @endif
+                    <?= $filter['username'] ?>
+                    <p class="location"><?= substr_replace($filter['heading'], "...", 50) ?></p>
+                    <p class="adress"> <?= $filter['userAge'] ?> <?= $filter['city'] ?></p>
+                    <p class="height"><b>Height : </b><?= $filter['height'] ?>cm</p>
+                    <p class="body"><b>Body : </b><?= $filter['body_type_name'] ?></p>
+                    <p class="photos"><?= $filter['totalPhotto'] ?> photos</p></a>
+                </div>
+            </div>
+            <div class="about-vistor"> 
+                <p class="ethnicty"><b>Ethncity : </b><?= $filter['ethnicity_name'] ?></p>
+            </div>
 
-         @endif
-         <!--  -->
-         <?= $filter['username'] ?>
-     </p></a>
-     <a href="{{ url('/member')}}/{{ $filter['user_uid'] }}"><p class="location"><?= substr_replace($filter['heading'], "...", 50) ?></p>
-         <p class="adress"> <?= $filter['userAge'] ?> <?= $filter['city'] ?></p>
-         <p class="height"><b>Height : </b><?= $filter['height'] ?>cm</p>
-         <p class="body"><b>Body : </b><?= $filter['body_type_name'] ?></p>
-         <p class="photos"><?= $filter['totalPhotto'] ?> photos</p></a>
-     </div>
- </div>
- <a href="{{ url('/member')}}/{{ $filter['user_uid'] }}"><div class="about-vistor">   
-   <p class="ethnicty"><b>Ethncity : </b><?= $filter['ethnicity_name'] ?></p>
-</div></a>
-<div>
-
-    <?php if( in_array( $filter['user_id'] ,$LikeUserId ) )
-    {
-       $hasLike = "like_true";
-   }else{
-    $hasLike = "";
-} 
-?>
-<?php if($filter['userOnlineStatus'] == 1) {?>
-    <a href="{{ url('/member')}}/{{ $filter['user_uid'] }}"><p class="timing">Online</p></a>
-<?php }else{ ?>
-    <a href="{{ url('/member')}}/{{ $filter['user_uid'] }}"><p class="timing"><?= $filter['userOnlineStatusAgo'] ?></p></a>
-<?php  } ?>
-<div class="like"> 
-   
- <a href data-action="<?= route('user.write.like_dislike', ['toUserUid' => $filter['user_uid'],'like' => 1]) ?>" data-method="post" data-callback="onLikeCallback" title="Like" class="lw-ajax-link-action lw-like-action-btn" id="lwLikeBtn"> 
-    <i class="fa-solid fa-heart {{ $hasLike }}"></i>
-</a>
-
+            <div>
+                <?php if( in_array( $filter['user_id'] ,$LikeUserId ) )
+                {
+                    $hasLike = "like_true";
+                }else{
+                $hasLike = "";
+                } 
+                ?>
+                <?php if($filter['userOnlineStatus'] == 1) {?>
+                    <p class="timing">Online</p>
+                <?php }else{ ?>
+                    <p class="timing"><?= $filter['userOnlineStatusAgo'] ?></p>
+                <?php  } ?>
+                <div class="like"> 
+                     <a href data-action="<?= route('user.write.like_dislike', ['toUserUid' => $filter['user_uid'],'like' => 1]) ?>" data-method="post" data-callback="onLikeCallback" title="Like" class="lw-ajax-link-action lw-like-action-btn" id="lwLikeBtn"> 
+                        <i class="fa-solid fa-heart {{ $hasLike }}"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </a>
 </div>
-</div>
-
-</div>
-</div>
-
 @endforeach
 @else
 <!-- info message -->
@@ -650,9 +663,6 @@
 </div>
 <!-- / info message -->
 @endif
-
-
-
 </div>
 
 
@@ -698,6 +708,17 @@ $('#lwHideAdvanceFilterLink').on('click', function(e) {
 <!-- /Logout Modal-->
 
 <script type="text/javascript">
+
+$(".grid_block").click(function(){
+  $("#grid_block").addClass("grid_active");
+  $("#list_view").removeClass("list_active");
+});
+$(".listing").click(function(){
+     $("#list_view").addClass("list_active");
+  $("#grid_block").removeClass("grid_active");
+ 
+});
+
     $(document).ready(
         function(){
             $(".event-filter").hide();

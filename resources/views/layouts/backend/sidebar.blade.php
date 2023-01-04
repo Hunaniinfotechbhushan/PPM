@@ -58,9 +58,8 @@
                                         <li class="nk-menu-item">
                                             <a href="{{ url('admin/team') }}" class="nk-menu-link"><span class="nk-menu-text">Team Listing</span></a>
                                         </li>
-
-                                    </ul><!-- .nk-menu-sub -->
-                                </li><!-- .nk-menu-item -->
+                                    </ul>
+                                </li>
 
                                 @endif
 
@@ -85,7 +84,7 @@
                                     </a>
                                 </li>
 
-       <li class="nk-menu-item">
+                                <li class="nk-menu-item">
                                     <a href="{{ url('admin/reports') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-view-row-wd"></em></span>
                                         <span class="nk-menu-text"><?= __tr('Reports') ?></span>
@@ -120,24 +119,28 @@
                                     </a>
                                 </li>
 
-                                          <li class="nk-menu-item">
+                                <li class="nk-menu-item">
                                     <a href="{{ url('admin/events') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-send"></em></span>
                                         <span class="nk-menu-text"><?= __tr('Events') ?></span>
                                     </a>
                                 </li>
+
+                                <li class="nk-menu-item">
+                                    <a href="{{ url('admin/update-events') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-send"></em></span>
+                                        <span class="nk-menu-text"><?= __tr('Update Events') ?></span>
+                                    </a>
+                                </li>
                                 
-                     <li class="nk-menu-item">
+                                <li class="nk-menu-item">
                                     <a href="{{ url('admin/rejected-events') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-send"></em></span>
                                         <span class="nk-menu-text"><?= __tr('Rejected Events') ?></span>
                                     </a>
                                 </li>
 
-                           
-
-
-                                             <li class="nk-menu-item">
+                                <li class="nk-menu-item">
                                     <a href="{{ url('admin/verifications-video') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-video-fill"></em></span>
                                         <span class="nk-menu-text"><?= __tr('Verifications Video') ?></span>

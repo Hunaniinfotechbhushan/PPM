@@ -700,7 +700,8 @@ class UserEngine extends BaseEngine
 
 
         // Set cover and profile picture url
-    	$userData['userPhotoCollection'] = $userPhotoCollection;
+    	// $userData['userPhotoCollection'] = $userPhotoCollection;
+		// return $userData['userPhotoCollection'];
     	$userData['UserProfile'] = $UserProfile;
     	$userData['userTag'] = $userTag;
     	$userData['netWorth'] = $netWorth;

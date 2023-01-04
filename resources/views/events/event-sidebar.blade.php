@@ -139,15 +139,12 @@ input::-moz-focus-outer {
     <p>Location</p>
     <div>
       <ul class="filter-ul" id="locationRd">
-
-
         <li class="locationFilterCity"> 
           <input type = "radio" name = "location" id = "locationfirst">
           <label for="city"> {{ (isset($citydata)) ? $citydata : '' }}</label>
         </li>
         <li class="locationFilterMap">
         <input type = "radio" name = "location" id = "locationsec">
-        
           <label for="city"> Other Locations</label><br> </li>        
         </ul>
         <input id="searchTextField" type="text"   name="location" class="map-input" value="{{ (isset($selectedFilter['location'])) ? $selectedFilter['location'] : '' }}" placeholder="Enter a location" autocomplete="on">
@@ -164,15 +161,35 @@ input::-moz-focus-outer {
           <span class="range-slider__value">0 - {{ $distanceRange }} Miles</span>
           </div>
         </div>
-       
-
-      </div>
-
-      
+      </div>      
     </li>
 
-<li class="nav-item justify-content-between text-left select-drop-down">
-      <p>Verified users only</p>
+    <li class="nav-item justify-content-between text-left select-drop-down">
+      <p>Options</p>
+        <ul class="filter-ul">
+          <?php 
+          $option = array("Verified users only");
+          $length = count($option);
+          for ($i = 0; $i < $length; $i++) {
+            $lowerName = strtolower($option[$i]);
+            $nameVal = str_replace(" ","_",$lowerName);
+
+            if(isset($_GET[$nameVal])){
+              $checkedBox = "checked";
+            }else{
+               $checkedBox = "";
+            }
+            ?>
+            <li> 
+              <input type="checkbox" name="<?= $nameVal; ?>" {{ $checkedBox }}><span class="css-3rrmd2"><?= $option[$i]; ?></span>
+            </li>
+              
+            <?php 
+          }
+          ?> 
+        </ul>
+
+      
     </li>
 
  
@@ -200,15 +217,9 @@ input::-moz-focus-outer {
  <li class="nav-item justify-content-between text-left select-drop-down">
 
      <p>When</p>
-
       <select class="select-sidebar drop" name="created_at">
-
          <option value="">Any</option>
-
-         
-
      </select>
-
  </li>
 
  <li class="nav-item justify-content-between text-left select-drop-down">
@@ -247,10 +258,7 @@ input::-moz-focus-outer {
 
 
     $('#searchTextField-popup').on('click', function(e) {
-       
-
        const locationInputsAddress = document.getElementById("searchTextField-popup").value;
-
        geocoder.geocode({'address': locationInputsAddress}, function (results, status) {
         if (status === google.maps.GeocoderStatus.OK) {
             const lat = results[0].geometry.location.lat();
@@ -278,12 +286,12 @@ console.log(newVal);
 <script type="text/javascript">
 
      $(document).ready(function(){
-$('.locationFilterCity input').attr('checked', true);
-         $("#locationfirst").click(function(){
-         $('.locationFilterMap input').attr('checked', false);
-         $('.pac-target-input').hide();
-     // $(this).find('input').attr('checked', false);
-});
+      $('.locationFilterCity input').attr('checked', true);
+              $("#locationfirst").click(function(){
+              $('.locationFilterMap input').attr('checked', false);
+              $('.pac-target-input').hide();
+          // $(this).find('input').attr('checked', false);
+      });
 
    // $('.locationFilterCity input').attr('checked', true);
     // $("#locationRd li").click(function(){

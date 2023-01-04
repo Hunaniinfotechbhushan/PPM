@@ -4,7 +4,7 @@
 @section('keyword', strip_tags(__tr("Manage Abuse Reports")))
 @section('description', strip_tags(__tr("Manage Abuse Reports")))
 @section('keywordDescription', strip_tags(__tr("Manage Abuse Reports")))
-@section('page-image', getStoreSettings('logo_image_url'))
+@section('page-image', ('logo_image_url'))
 @section('twitter-card-image', getStoreSettings('logo_image_url'))
 @section('page-url', url()->current())
 

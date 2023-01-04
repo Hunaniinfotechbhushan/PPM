@@ -81,6 +81,10 @@ Route::group(['middleware' => 'admin','middleware' => 'auth','prefix' => 'admin'
     // Event Verification
     Route::resource('events', backend\EventsController::class);
 
+    Route::get('update-events', [App\Http\Controllers\backend\EventsController::class, 'updateEvent']);
+    Route::get('update-events-edit/{id}', [App\Http\Controllers\backend\EventsController::class, 'editUpdateEvent']);
+    Route::post('events/updates/{id}', [App\Http\Controllers\backend\EventsController::class, 'updateEventEditUpdate']);
+
     Route::resource('rejected-events', backend\RejectedEventsController::class);
     Route::get('event/reinstate/{id}', [App\Http\Controllers\backend\RejectedEventsController::class, 'reinstate']);
     Route::get('event/remove-from-system/{id}', [App\Http\Controllers\backend\RejectedEventsController::class, 'remove_from_system']);
@@ -154,6 +158,18 @@ Route::group([
 
     Route::get('/events-views', [
         'uses' => 'Event\Controllers\EventController@viewEvents'
+    ]);
+
+    Route::get('/events-edit/{id}', [
+        'uses' => 'Event\Controllers\EventController@viewsEventsedit'
+    ]);
+
+    Route::any('/events-update', [
+        'uses' => 'Event\Controllers\EventController@viewsEventsupdate'
+    ]);
+
+    Route::any('/events-delete/{id}', [
+        'uses' => 'Event\Controllers\EventController@viewsEventsdelete'
     ]);
 
     Route::any('/event-view', [
