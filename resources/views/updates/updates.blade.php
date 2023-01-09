@@ -1,9 +1,30 @@
 @extends('public-master')
 @section('content')
+<style>
+	@media screen and (max-width: 425px){
+		.interest-tab li>a>h3 {
+			font-size: 11px !important;
+		}
+	}
+	@media screen and (max-width: 380px){
+		#lwUserFilterContainer .col-md-9.col-sm-12 {
+			padding: 0;
+		}
+		#lwUserFilterContainer ul.interest-tab li {
+			margin: 0px 9px 10px;
+		}
+	}
+	@media screen and (max-width: 340px){
+		#lwUserFilterContainer ul.interest-tab li {
+			margin: 0px 5px 10px;
+		}
+		.interest-tab li>a>h3 {
+			font-size: 11px !important;
+		}
+	}
+</style>
 <section class="pb-5">
-
 	<div class="container-fluid px-0">
-
 		<div class="row interest-tab-bar px-3 py-3 bg-gray my-3 align-items-center" id="lwUserFilterContainer">
 
 			<div class="col-md-9 col-sm-12">

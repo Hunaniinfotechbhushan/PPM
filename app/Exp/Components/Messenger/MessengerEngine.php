@@ -103,9 +103,6 @@ class MessengerEngine extends BaseEngine implements MessengerEngineInterface
       *-----------------------------------------------------------------------*/
     public function prepareConversationList($type,$specificUserId = null)
     {
-
-     
-
         $userDetails = getUserAuthInfo();
         if(isset($_GET['uid'])){
             $userId = array_get($userDetails, 'profile._id');
@@ -130,9 +127,7 @@ class MessengerEngine extends BaseEngine implements MessengerEngineInterface
               if($type=='unreadMessage'){
               $messengerUserCollection = $this->messengerRepository->unreadMessengerUsers($userId);  
           }
-
-
-                 if($type=='filtered'){
+            if($type=='filtered'){
               $messengerUserCollection = $this->messengerRepository->fetchFilteredOutMessengerUsers($userId);  
           }
                    if($type=='archive'){
@@ -152,14 +147,15 @@ class MessengerEngine extends BaseEngine implements MessengerEngineInterface
     $messengerUsers = array();
         // check if messenger users exists
 
-//     echo "<pre>";
-// print_r($messengerUserCollection);
-// die;
+    // echo "<pre>";
+    // print_r($messengerUserCollection);
+    // die;
 
     if (!empty($messengerUserCollection)) {
         foreach($messengerUserCollection as $user) {
-
+            // dd($user);
             $filter = $this->getFullUserDetails($user->user_id);
+            
             if(isset($filter->users__id)){
                 $fetchAllUserLikeDislike = DB::table('like_dislikes')->where('to_users__id',$filter->users__id)->where('by_users__id',Auth::user()->_id)->first();
                 if (!__isEmpty($fetchAllUserLikeDislike)) {
@@ -184,7 +180,7 @@ class MessengerEngine extends BaseEngine implements MessengerEngineInterface
             $gender = isset($filter->gender) ? configItem('user_settings.gender', $filter->gender) : null;
 
             $user_block_users = DB::table('user_block_users')->where('to_users__id', $filter->users__id)->where('by_users__id', Auth::user()->_id)->first();
-if(empty($user_block_users)){
+    if(empty($user_block_users)){
             $messengerUsers[] = [
                 'id'            => $filter->users__id,
                 'user_uid'            => $filter->_uid,

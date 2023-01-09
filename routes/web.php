@@ -460,6 +460,14 @@ Route::group([
         'uses' => 'Member\Controllers\MemberController@reportUser'
     ]);
 
+    Route::any('/image-approver', [
+        'uses' => 'Member\Controllers\MemberController@imageApprover'
+    ]);
+
+    Route::any('/image-approver-update', [
+        'uses' => 'Member\Controllers\MemberController@updateImageApprover'
+    ]);
+
     Route::group(['middleware' => 'auth'], function () {
 
 

@@ -151,9 +151,9 @@ button.apto-trigger-dropdown:focus-visible, button.apto-trigger-dropdown:focus {
     margin-right: -2rem;
 }
 </style>
-<img src="<?= asset('public/imgs/ajax-loader.gif') ?>" style="height:1px;width:1px;">
+<img src="<?= asset('/imgs/ajax-loader.gif') ?>" style="height:1px;width:1px;">
 
-<script src="{{ asset('public/frontend/glightbox/js/glightbox.js') }}"></script>
+<script src="{{ asset('/frontend/glightbox/js/glightbox.js') }}"></script>
 
  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css" rel="stylesheet"/> 
 
@@ -254,7 +254,7 @@ button.apto-trigger-dropdown:focus-visible, button.apto-trigger-dropdown:focus {
                 });
             })();
         </script>
-         <script src="{{ asset('dist/js/common-app.*.js') }}"></script>
+         <script src="{{ asset('/dist/js/common-app.min.js') }}"></script>
         <script>
             __Utils.setTranslation({
                 'processing': "<?= __tr('processing') ?>",
@@ -454,10 +454,10 @@ button.apto-trigger-dropdown:focus-visible, button.apto-trigger-dropdown:focus {
 <script type="text/javascript">
     const progress = document.querySelector('.progresss');
 
-    progress.addEventListener('input', function() {
-      const value = this.value;
-      this.style.background = `linear-gradient(to right, #f51b1c 0%, #f51b1c ${value}%, #fff ${value}%, white 100%)`
-  })
+//     progress.addEventListener('input', function() {
+//       const value = this.value;
+//       this.style.background = `linear-gradient(to right, #f51b1c 0%, #f51b1c ${value}%, #fff ${value}%, white 100%)`
+//   })
 </script>
 @stack('appScripts')
 <script type="text/javascript">

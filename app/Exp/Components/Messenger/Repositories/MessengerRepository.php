@@ -26,8 +26,7 @@ implements MessengerRepositoryInterface
     public function fetchInboxMessengerUsers($userId)
     {
         if(isset($_GET['uid'])){
-
-                 
+      
     return ChatModel::/* where('chats.users__id', $userId)
     -> */join('users', function ($join) use($userId) {
         $join->on('chats.from_users__id', '=', 'users._id')

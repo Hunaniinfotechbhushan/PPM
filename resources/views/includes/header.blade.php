@@ -46,16 +46,17 @@
 	 <link href="{{ asset('/dist/css/custom.min.css') }}" rel="stylesheet">
 	 <link href="{{ asset('/dist/css/messenger.min.css') }}" rel="stylesheet">
 	 <link href="{{ asset('/dist/css/login-register.min.css') }}" rel="stylesheet">
-	 <link href="{{ asset('/dist/css/custom.css') }}" rel="stylesheet">
-	 <link href="{{ asset('/dist/css/messenger.css') }}" rel="stylesheet">
+	 <!-- <link href="{{ asset('/dist/css/custom.src.css') }}" rel="stylesheet"> -->
+	 <link href="{{ asset('/dist/css/messenger.src.css') }}" rel="stylesheet">
 	 <link href="{{ asset('/frontend/css/ppm-custom.css') }}" rel="stylesheet">
-	 <link href="{{ asset('/dist/css/login-register.css') }}" rel="stylesheet">
+	 <link href="{{ asset('/dist/css/login-register.src.css') }}" rel="stylesheet">
 	@stack('header')
 	<link href="{{ asset('/dist/css/style.css') }}" rel="stylesheet" type="text/css">
 	<link href="{{ asset('/backend/style.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script src="{{ asset('/dist/js/common-app.min.js') }}"></script>
 	<link rel="stylesheet" href="{{ asset('/frontend/glightbox/css/glightbox.css') }}" />
 </head>

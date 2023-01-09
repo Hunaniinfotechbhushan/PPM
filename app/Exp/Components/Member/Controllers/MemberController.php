@@ -35,6 +35,7 @@ use App\Exp\Components\UserSetting\Models\UserSettingModel;
 use App\Exp\Components\UserSetting\Models\UserPhotosModel;
 use App\Exp\Components\Bookmarks\Models\BookMarks;
 use App\Exp\Components\Member\Models\ReportUser;
+use App\Exp\Components\Member\Models\ImageShowRequest;
 
 class MemberController extends BaseController
 {
@@ -51,7 +52,7 @@ class MemberController extends BaseController
 
 public function getUserProfile($userName)
 {
-$uriSegments = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+    $uriSegments = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
     $User = User::where('_uid',end($uriSegments))->first();
     $id = Auth::user()->_id;
@@ -78,17 +79,19 @@ $uriSegments = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
      // Check chat is avaliable
 
-           $checkChat = ChatModel::where('from_users__id',Auth::id())->where('to_users__id',$User['_id'])->first();
+    $checkChat = ChatModel::where('from_users__id',Auth::id())->where('to_users__id',$User['_id'])->first();
     if (empty($checkChat)) {
-   $conversation = 0;
- }else{
- $conversation = 1;
- }
-    $UserProfile = UserProfile::where('users__id',$User['_id'])->first();
-    $UserImage = UserPhotosModel::select("*")
+            $conversation = 0;
+    }else{
+        $conversation = 1;
+    }
+
+        $UserProfile = UserProfile::where('users__id',$User['_id'])->first();
+        $UserImage = UserPhotosModel::select("*")
          ->where("users__id", "=", $User['_id'])
          ->get();
-
+         $ImageShowRequest = ImageShowRequest::where('request_status','2')->where('sender_id',$id)->with('userPhotos')->first();
+    // return $ImageShowRequest['userPhotos'];
             $BookMarks = BookMarks::where('user_id',$User['_id'])->first();
             $LikeDislike = LikeDislikeModal::where('to_users__id',$User['_id'])->first();
 
@@ -145,14 +148,7 @@ $uriSegments = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
                     ->join('eye_color', 'eye_color._id', '=', 'user_profiles.eye_color')
                     ->where('user_profiles.users__id', '=', $User['_id'])
                     ->first();
-
-
-
           }
-
-
-         
-
 
                     $userViewedYou = MemberView::where('by_view_id',$User['_id'])->first();
                     
@@ -175,26 +171,75 @@ $uriSegments = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
          // die;
         $user___id=$User['_id'];
         $userAge = isset($UserProfile_details->dob) ? Carbon::parse($UserProfile_details->dob)->age : null;
-
-   
+        // return $id;
+        // return ;
           
-    return view('member/profile-visitor',compact('User','UserImage','UserProfile','BookMarks','LikeDislike','UserProfile_details','user___id','userAge','user_activity','conversation'));
+    return view('member/profile-visitor',compact('ImageShowRequest','User','UserImage','UserProfile','BookMarks','LikeDislike','UserProfile_details','user___id','userAge','user_activity','conversation'));
 }
 
-public function reportUser(request  $request){
+    public function reportUser(request  $request){
 
+        $id = Auth::user()->_id;
 
-    $id = Auth::user()->_id;
-  
-    $ReportUser = new ReportUser;
-    $ReportUser->reason  = $request->report_reason;
-    $ReportUser->for_users__id  = $request->user_id;
-    $ReportUser->by_users__id  = $id;
-    $ReportUser->moderated_by_users__id  = $id;
+        $ReportUser = new ReportUser;
+        $ReportUser->reason  = $request->report_reason;
+        $ReportUser->for_users__id  = $request->user_id;
+        $ReportUser->by_users__id  = $id;
+        $ReportUser->moderated_by_users__id  = $id;
+        
+        $ReportUser->save();
+
+        return json_encode(array('status'=> 'success'));
+
+    }
+
+    public function imageApprover(Request $request)
+    {
+        
+        $ImageShowRequest = New ImageShowRequest;
+        $ImageShowRequest->reciver_id = $request->reciver_id;
+        $ImageShowRequest->sender_id = $request->sender_id;
+        $ImageShowRequest->request_status = $request->request_status;
+        $ImageShowRequest->save();
+
+        $getUserDetails = getUserDetails($request->sender_id);
+        $slug = 'image_show/approve';
+        $message = $getUserDetails->username.' have Sent You Request for show your Private Images.';   
+        $uid = $getUserDetails->_uid;   
+        $status = 1; 
+        $action = url('/').'/@'.$getUserDetails->username;
+        $is_read = 0;
+        $users__id = $request->reciver_id;
+
+        notificationUserLog($uid,$slug,$status,$message,$action,$is_read,$users__id,"");
+
+        return json_encode(array('status'=> 'success'));
+    }
+
+    public function updateImageApprover(Request $request)
+    {
+        $imageApprover = ImageShowRequest::where('_id',$request->image_id)->first();
+        // return $imageApprover;
+        if($request->status == 'Active'){
+            $status = '2';
+        }else{
+            $status = '1';  
+        }
+        $imageApprover->request_status = $status;
+        $imageApprover->update();
     
-    $ReportUser->save();
+        // return $imageApprover->reciver_id;
+        $getUserDetails = getUserDetails($imageApprover->reciver_id);
+        $slug = 'image_show/approve/user';   
+        $message = 'Your Request Approver by'.$getUserDetails->username. 'To Show There Private Images';   
+        $uid = $getUserDetails->_uid;   
+        $status = 1; 
+        $action = url('/').'/@'.$getUserDetails->username;
+        $is_read = 0;
+        $users__id = $imageApprover->sender_id;
+        notificationUserLog($uid,$slug,$status,$message,$action,$is_read,$users__id,"");
 
-      return json_encode(array('status'=> 'success'));
+        return json_encode(array('status'=> 'success'));
+    }
 
-}
 }

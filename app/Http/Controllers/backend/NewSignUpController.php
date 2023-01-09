@@ -216,6 +216,7 @@ class NewSignUpController extends Controller
     {
      $user = User::findOrFail($id);
      $input = Request::all();
+    //  return $input; 
      $validation = Validator::make($input,
        [
          'username' => 'required',
@@ -248,10 +249,10 @@ class NewSignUpController extends Controller
        $user->save();
 
        UserProfile::where('users__id',$id)->update(array('city'=>$input['city'],
-        'heading'=>$input['heading'],
-        'about_me'=>$input['about_me'],
-        'what_are_you_seeking'=>$input['what_are_you_seeking'],
-        'dob'=>$input['dob']
+        // 'heading'=> $input['heading'],
+        // 'about_me'=> $input['about_me'],
+        // 'what_are_you_seeking'=>$input['what_are_you_seeking'],
+        // 'dob'=>$input['dob']
       ));
 
        $getUserDetails = getUserDetails($id);
@@ -265,6 +266,7 @@ class NewSignUpController extends Controller
         $message = 'Your Profile has been approved!';
         $is_read = 0;
         $action = url('/').'/@'.$getUserDetails->username;
+        return $action;
         $users__id = $getUserDetails->_id;
         notificationUserLog($uid,$slug,$status,$message,$action,$is_read,$users__id,"");
 

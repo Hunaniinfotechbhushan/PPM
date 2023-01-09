@@ -213,7 +213,7 @@ body.loading .overlay{
           <a class="delete_photo" data-photto-id="{{$collections->_id}}" href="#">Delete Video</a>
       </div>
       @else
-      <div class="outer-settint show_hide"><i class='fa fa-gear photto-setting-icon' id="show_hide" data-photto-id="{{$collections->_id}}"></i>
+      <div class="outer-settint show_hide sadsadsad"><i class='fa fa-gear photto-setting-icon' id="show_hide" data-photto-id="{{$collections->_id}}"></i>
       </div>
       <div id="trigger_img" class="trigger_img" dataimg="{{ $imgURL }}">
 
@@ -2276,8 +2276,6 @@ $("body").on("submit", ".userPhottoForm", function(e) {
   processData: false,
   contentType: false,
   success:function(response){
-
-
     showSuccessMessage("Updated Successfully");
 // if(response.data.message){
 
@@ -2285,6 +2283,7 @@ $("body").on("submit", ".userPhottoForm", function(e) {
     // console.log(response.data.stored_photo.image_url);
     $('.loaded_images').html(response.data.stored_photo.image_url);
     $('.userPhottoCancelBtn').click();
+    location.reload();
 
 // }
 }

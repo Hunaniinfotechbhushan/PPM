@@ -28,14 +28,19 @@
     <div class="msgpag {{ $sideBarMessage }}">
         <ul class="nav navbar-nav sidebar sidebar_customheight accordion" id="accordionSidebar" role="tablist">
             <hr class="sidebar-divider mt-2 mb-2 d-sm-block d-md-none">
-            <li role="inboxTab" data-toggle="tab" class="active nav-item justify-content-between text-left select-drop-down">
-                <a class="msg_inbox"href=".inboxTab" aria-controls="profile" role="tab" data-toggle="tab">
+            <li role="inboxTab" data-toggle="tab" class="active nav-item justify-content-between text-left select-drop-down" id="inbox-message">
+                <a class="msg_inbox"href="{{url('messenger')}}" aria-controls="profile" role="tab" data-toggle="tab">
                    <p>Inbox</p>
                </a>
            </li>
            <li role="unreadMessageTab" data-toggle="tab" class="active nav-item justify-content-between text-left select-drop-down">
             <a class="msg_inbox"href=".unreadMessageTab" aria-controls="profile" role="tab" data-toggle="tab">
                <p>Unread Messages</p>
+           </a>
+       </li>
+       <li role="listprivateimages" data-toggle="tab" class="nav-item justify-content-between text-left select-drop-down">
+            <a class="msg_inbox"href=".listprivateimages" aria-controls="profile" role="tab" data-toggle="tab">
+               <p>List Private Images</p>
            </a>
        </li>
        <li role="filterTab" data-toggle="tab" class="nav-item justify-content-between text-left select-drop-down">
@@ -59,28 +64,17 @@
 <!-- Content Wrapper -->
 
 <div id="content-wrapper" class="d-flex flex-column lw-page-bg">
-
     <div id="content">
-
-
         <div class="lw-page-content px-2">
-
             <div class="lw-ad-block-h90">
-
             </div>
 
             <div class="card mb-3 mobile-view-none">
-
                 <div class="card-header d-flex justify-content-between">
-
                    <h3><i class="fa-solid fa-comment-dots"></i>Inbox</h3>
-
                    <div class="d-flex"> 
-
                    </div>
-
                </div>
-
            </div>
            <div class="card p-2 d-md-none chat-box-head">
                <!--       <div class="d-flex justify-content-between">
@@ -100,9 +94,7 @@
 
 
                     <ul class="nav navbar-nav sidebar sidebar_height accordion" id="accordionSidebar" role="tablist">
-
                         <hr class="sidebar-divider mt-2 mb-2 d-sm-block d-md-none">
-
                         <li role="inboxTab" data-toggle="tab" class="active nav-item justify-content-between text-left select-drop-down">
                             <a href=".inboxTab" aria-controls="profile" role="tab" data-toggle="tab">
                                 <p>Inbox</p>
@@ -130,13 +122,10 @@
                         </li>
 
                         <li class="nav-item justify-content-between text-left select-drop-down">
-
                           <p>Filtered Out</p>
-
                       </li>
 
                       <li class="nav-item justify-content-between text-left select-drop-down">
-
                          <p>Archive</p>
 
                      </li>
@@ -160,72 +149,100 @@
  </div>
 </div>
 
-<div class="tab-content" id="message_inbox_chat">
-    <div role="tabpanel" class="tab-pane {{ isset($_GET['uid']) ? '' : 'active' }} inboxTab">
-     @if(!empty($inboxMessageResponse['data']['messengerUsers']))
-     @foreach($inboxMessageResponse['data']['messengerUsers'] as $key=>$filter)
-     <div class="event d-flex justify-content-between pb-3 py-2 message_event_chat">
-        <a class="event_chat_link" href="{{ url('messenger') }}?uid={{ $filter['user_id'] }}">
-         <div class="img-about d-flex align-items-flex-start">
+    <div class="tab-content" id="message_inbox_chat">
+        <div role="tabpanel" class="tab-pane {{ isset($_GET['uid']) ? '' : 'active' }} inboxTab">
+            @if(!empty($inboxMessageResponse['data']['messengerUsers']))
+                @foreach($inboxMessageResponse['data']['messengerUsers'] as $key=>$filter)
+                    <div class="event d-flex justify-content-between pb-3 py-2 message_event_chat">
+                        <a class="event_chat_link" href="{{ url('messenger') }}?uid={{ $filter['user_id'] }}">
+                            <div class="img-about d-flex align-items-flex-start">
+                                <div class="vister-image-icon">
+                                    <img class="vister-profile-image" src="{{ $filter['profileImage'] }}" class="lw-user-thumbnail lw-lazy-img">
+                                </div>
+                                <div>
+                                    <div class="css-ugj49">
+                                        <div class="css-1pk73qe">
+                                            <div data-cy-user-info="username" class="css-1nyvsm4">
+                                                <div class="css-1eve09z">
+                                                    <span class="css-1ld10yt">  
+                                                        @if($filter['userOnlineStatus'])
+                                                            @if($filter['userOnlineStatus'] == 1)
+                                                                <span class="lw-dot lw-dot-success" title="Online"></span>
+                                                            @elseif($filter['userOnlineStatus'] == 2)
+                                                                <span class="lw-dot lw-dot-warning" title="Idle"></span>
+                                                            @elseif($filter['userOnlineStatus'] == 3)
+                                                                <span class="lw-dot lw-dot-danger" title="Offline"></span>
+                                                            @endif
+                                                        @endif
+                                                        <?= $filter['username'] ?>
+                                                    </span>
 
-            <div class="vister-image-icon">
-                <img class="vister-profile-image" src="{{ $filter['profileImage'] }}" class="lw-user-thumbnail lw-lazy-img">
+                                                    <?php $chatMessages = \App\Exp\Components\Messenger\Models\ChatModel::where('to_users__id',Auth::user()->_id)
+                                                    ->where('from_users__id',$filter['user_id'])
+                                                    ->where('msg_status',0)->count();?>
+                                                    ({{ isset($chatMessages) ? $chatMessages : '' }})
+                                                    <span class="timestamp user-time-out" style="color: #808080a1;">
+                                                        <abbr class="timeago"><time datetime="2022-02-25T15:35:45.000Z" title="2022-02-25T15:35:45+00:00"><?= $filter['userOnlineStatusAgo'] ?></time>
+                                                        </abbr>
+                                                    </span>                                     
+                                                </div>
+                                            </div>
+                                            <div data-cy-user-info="time-stamp">
+                                            </div>
+                                        </div>
+                                        <div class="css-13pazyb">
+                                            <div class="css-ls6xl3"><p data-cy-user-info="heading" class="css-rb1opn"><?= substr_replace($filter['heading'], "...", 50) ?></p><p data-cy-user-info="age-location-container" class="css-6tpspj"><span data-cy-user-info="age"><?= $filter['userAge'] ?></span>, <span data-cy-user-info="location"><?= $filter['city'] ?></span></p></div>
+                                        </div>
+                                        <p class="ConvoRow-body" style="font-weight: normal; margin-top: 0px;"><span>Upgrade to read</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            @else
+            <div class="event d-flex justify-content-between pb-3 py-2">
+                <div class="col-sm-12 alert alert-info">
+                <span>No inbox messages.</span>  
             </div>
-            
-            <div>
-                <div class="css-ugj49">
-                    <div class="css-1pk73qe">
-                        <div data-cy-user-info="username" class="css-1nyvsm4">
-                            <div class="css-1eve09z">
-                                <span class="css-1ld10yt">  @if($filter['userOnlineStatus'])
+            </div>
+            @endif
+        </div>
 
-                                    @if($filter['userOnlineStatus'] == 1)
-                                    <span class="lw-dot lw-dot-success" title="Online"></span>
-                                    @elseif($filter['userOnlineStatus'] == 2)
-                                    <span class="lw-dot lw-dot-warning" title="Idle"></span>
-                                    @elseif($filter['userOnlineStatus'] == 3)
-                                    <span class="lw-dot lw-dot-danger" title="Offline"></span>
-                                    @endif
 
-                                    @endif
-                                    
-                                    <?= $filter['username'] ?>
-                                    
-                                </span>
-
-                                <?php $chatMessages = \App\Exp\Components\Messenger\Models\ChatModel::where('to_users__id',Auth::user()->_id)
-                                ->where('from_users__id',$filter['user_id'])
-                                ->where('msg_status',0)->count();?>
-                                ({{ isset($chatMessages) ? $chatMessages : '' }})
-                                <span class="timestamp user-time-out" style="color: #808080a1;">
-                                    <abbr class="timeago"><time datetime="2022-02-25T15:35:45.000Z" title="2022-02-25T15:35:45+00:00"><?= $filter['userOnlineStatusAgo'] ?></time>
-                                    </abbr>
-                                </span>                                     
+    <!-- <div class="tab-content" id="message_inbox_chat_image"> -->
+        <div role="tabpanel" class="tab-pane {{ isset($_GET['uid']) ? '' : 'active' }} listprivateimages">
+            @if(isset($listprivateimages))
+                @foreach($listprivateimages as $listprivateimage)
+                    <div class="event d-flex justify-content-between pb-3 py-2 message_event_chat">
+                        <div class="img-about d-flex justify-content-between w-100 align-items-center">
+                            @foreach($listprivateimage->users as $user)
+                                    <p> This User {{$user->username}} View Your Private Photo</p>
+                            @endforeach
+                            <div class="view-private-photo" id="view_private_photo">
+                                <!-- @if($listprivateimage->request_status == '0')
+                                    <input type="button" class="web-btn" id="active-pending" image_id="{{ $listprivateimage->_id }}" value="Approve">  
+                                    <input type="button" class="web-btn" id="active-pending" image_id="{{ $listprivateimage->_id }}" value="Decline">
+                                @elseif($listprivateimage->request_status == '1')
+                                    <input type="button" class="web-btn"  value="Declined">
+                                @else($listprivateimage->request_status == '2')
+                                    <input type="button" class="web-btn"  value="Accepted">
+                                @endif -->
+                                <input type="button" class="web-btn" id="active-pending" image_id="{{ $listprivateimage->_id }}" value="Approve">  
+                                    <input type="button" class="web-btn" id="active-pending" image_id="{{ $listprivateimage->_id }}" value="Decline">
                             </div>
                         </div>
-                        <div data-cy-user-info="time-stamp">
-                        </div>
                     </div>
-                    <div class="css-13pazyb">
-                        <div class="css-ls6xl3"><p data-cy-user-info="heading" class="css-rb1opn"><?= substr_replace($filter['heading'], "...", 50) ?></p><p data-cy-user-info="age-location-container" class="css-6tpspj"><span data-cy-user-info="age"><?= $filter['userAge'] ?></span>, <span data-cy-user-info="location"><?= $filter['city'] ?></span></p></div>
+                @endforeach
+            @else
+                <div class="event d-flex justify-content-between pb-3 py-2">
+                    <div class="col-sm-12 alert alert-info">
+                        <span>No inbox messages.</span>  
                     </div>
-                    <p class="ConvoRow-body" style="font-weight: normal; margin-top: 0px;"><span>Upgrade to read</span></p>
                 </div>
-            </div>
+            @endif
         </div>
-    </a>
-</div>
-
-@endforeach
-@else
-<div class="event d-flex justify-content-between pb-3 py-2">
-    <div class="col-sm-12 alert alert-info">
-     <span>No inbox messages.</span>  
- </div>
-</div>
-@endif
-</div>
-
+    
 
 <div role="tabpanel" class="tab-pane unreadMessageTab">
  @if(!empty($unreadMessageResponse['data']['messengerUsers']))
@@ -281,7 +298,6 @@
     </div>
 </a>
 </div>
-
 @endforeach
 @else
 <div class="event d-flex justify-content-between pb-3 py-2">
@@ -519,7 +535,7 @@
 
 if(isset($_GET['uid']))
 {
-    ?>    
+    ?>   
     <script type="text/javascript">
 
         $(document).ready(function(){
@@ -541,6 +557,40 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
     return false;
 };
+
+    // $(document).on('click','#active-pending', function (){
+        $('input#active-pending').click(function() {
+            console.log('adjhsadbsahjdvb');
+            var status = $(this).val();
+            var image_id = jQuery(this).attr('image_id'); 
+            console.log('image_id',image_id);
+            $.ajax({
+                type:'post',
+                url:"{{ url('image-approver-update') }}",
+                dataType:'json',
+                data:{
+                    '_token':$('meta[name="csrf-token"]').attr('content'),
+                    'status':status,
+                    'image_id':image_id,
+                },
+                success: function (data) {
+                    console.log('asdsajdsahjdhjasvd');
+                    if(data.msg){
+                        $('.userChatHistory').append(data.msg);
+                    }
+                }
+            });
+            $('input[name=message]').val('');
+
+        });
+
+$(document).on('click','li.nav-item.justify-content-between.text-left.select-drop-down.active', function (){
+    var url = window.location.href;
+    // console.log('url',url);
+    var newUrl = url.slice(1, url.lastIndexOf('?'));
+    console.log(newUrl)
+});
+
 
 $(document).ready(function(){
     setTimeout(realTime, 2000);
@@ -641,8 +691,6 @@ $(".list-btn").click(function(){
       //report 
 
       $("body").on("click", ".user-action-tab", function(e) {
-
-
         e.preventDefault();
         $.ajaxSetup({
           headers: {

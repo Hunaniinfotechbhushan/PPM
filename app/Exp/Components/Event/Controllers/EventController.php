@@ -422,6 +422,7 @@ class EventController extends BaseController
 
         // add notify 
         $event_iddata = Event::where('_id', $request->event_id)->get()->first();
+        
         $getUserDetails = getUserDetails($event_iddata['user_id']);
         $slug = 'event/interested';
         $message = 'Event interested By ' . Auth::user()->username;

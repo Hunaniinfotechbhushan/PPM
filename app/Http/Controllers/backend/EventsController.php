@@ -203,86 +203,82 @@ class EventsController extends Controller
     public function update(Request $request, $id)
 
     {
-     $user = Event::findOrFail($id);
-     
-     $input = $request->all();
+      $user = Event::findOrFail($id);
+      
+      $input = $request->all();
 
-     $validation = Validator::make($input,
-       [
-         'title' => 'required',
-       ]);
+      $validation = Validator::make($input,
+        [
+          'title' => 'required',
+        ]);
 
-     if( $validation->fails() ) {
-       return redirect('/admin/events/'.$id.'/edit')->withErrors($validation->errors());
-     }
-     else
-     {
-
-
-
-      $user->title =$input['title'];
-      $user->event_date = $input['event_date'];
-      $user->featured = $input['featured'];
-      $user->meet_type = $input['meet_type'];
-      $user->description = $input['description'];
-      // $user->location=$input['location'];
-      $user->status=$input['status'];
-      $user->updated_at=Carbon::now();
-      $user->save();
+      if( $validation->fails() ) {
+        return redirect('/admin/events/'.$id.'/edit')->withErrors($validation->errors());
+      }
+      else
+      {
+        $user->title =$input['title'];
+        $user->event_date = $input['event_date'];
+        $user->featured = $input['featured'];
+        $user->meet_type = $input['meet_type'];
+        $user->description = $input['description'];
+        // $user->location=$input['location'];
+        $user->status=$input['status'];
+        $user->updated_at=Carbon::now();
+        $user->save();
 
 
-      if($input['status'] == 2){
+        if($input['status'] == 2){
+          $getUserDetails = getUserDetails($user->user_id);
+          $slug = 'event/reject';
+          $message = 'Your Event ad has been rejected. Please do not use explicit or violent language in your ad. Contact details are also not allowed on your ad.';   
+          $uid = $getUserDetails->_uid;   
+          $status = 2; 
+          $action = url('/').'/@'.$getUserDetails->username;
+          $is_read = 0;
+          $users__id =$user->user_id;
+          $event_status = "Your event is rejected.";
 
-        $getUserDetails = getUserDetails($user->user_id);
-        $slug = 'event/reject';
-        $message = 'Your Event ad has been rejected. Please do not use explicit or violent language in your ad. Contact details are also not allowed on your ad.';   
-        $uid = $getUserDetails->_uid;   
-        $status = 2; 
-        $action = url('/').'/@'.$getUserDetails->username;
-        $is_read = 0;
-        $users__id =$user->user_id;
-         $event_status = "Your event is rejected.";
-
-        notificationUserLog($uid,$slug,$status,$message,$action,$is_read,$users__id,"");
+          notificationUserLog($uid,$slug,$status,$message,$action,$is_read,$users__id,"");
 
 
-      }elseif($input['status'] == 1){
+        }elseif($input['status'] == 1){
 
-        $getUserDetails = getUserDetails($user->user_id);
-        $slug = 'event/approve';
-        $message = 'Your event '.$input['title'].' is approved.';   
-        $uid = $getUserDetails->_uid;   
-        $status = 1; 
-        $action = url('/').'/@'.$getUserDetails->username;
-        $is_read = 0;
-        $users__id = $user->user_id;
-        $event_status = "";
+          $getUserDetails = getUserDetails($user->user_id);
+          $slug = 'event/approve';
+          $message = 'Your event '.$input['title'].' is approved.';   
+          $uid = $getUserDetails->_uid;   
+          $status = 1; 
+          $action = url('/').'/@'.$getUserDetails->username;
+          $is_read = 0;
+          $users__id = $user->user_id;
+          $event_status = "";
 
-        notificationUserLog($uid,$slug,$status,$message,$action,$is_read,$users__id,"");
-      }else{
+          notificationUserLog($uid,$slug,$status,$message,$action,$is_read,$users__id,"");
+        }else{
+
+        }
+  if($input['status'] == 1 || $input['status'] == 2){
+            $urlmain =    URL::to('/');
+          $to = $getUserDetails->email;
+          $info = array(
+            'messagedata' => $message,
+            'username' => $getUserDetails->username,
+            'url' => $urlmain,                           
+            'event_status' => $event_status                       
+          );
+
+          Mail::send('emails.event_reject', $info, function ($message) use($to) {
+            $message->to($to, 'ppmarrangements')
+            ->subject('Event Rejected');
+            $message->from('webtest41@gmail.com', 'ppmarrangements');
+          });
+
+  }
+        Session::flash('success','Update record successfully.');
+        return redirect('admin/events');
 
       }
-if($input['status'] == 1 || $input['status'] == 2){
-          $urlmain =    URL::to('/');
-        $to = $getUserDetails->email;
-        $info = array(
-          'messagedata' => $message,
-          'username' => $getUserDetails->username,
-          'url' => $urlmain,                           
-          'event_status' => $event_status                       
-        );
-
-        Mail::send('emails.event_reject', $info, function ($message) use($to) {
-          $message->to($to, 'ppmarrangements')
-          ->subject('Event Rejected');
-          $message->from('webtest41@gmail.com', 'ppmarrangements');
-        });
-
-}
-      Session::flash('success','Update record successfully.');
-      return redirect('admin/events');
-
-    }
 
   }
 

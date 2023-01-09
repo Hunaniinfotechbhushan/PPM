@@ -1011,19 +1011,16 @@ $MemberView =App\Exp\Components\User\Models\MemberView::where('to_view_id',$user
 <div class="message-like-list-footer_outer">
     <div class="message-like-list-footer d-flex justify-content-start ">
 
- @if($conversation == 0)
-        <div>
-             <a href="{{ url('messenger?uid=') }}{{ $user['_id'] }}" class="text-primary btn-link btn" data-toggle="modal" data-target="#lwReportUserDialogMessage"><button>Message</button></a>
-
-
-            
-        </div>
+        @if($conversation == 0)
+            <div>
+                <a href="{{ url('messenger?uid=') }}{{ $user['_id'] }}" class="text-primary btn-link btn" data-toggle="modal" data-target="#lwReportUserDialogMessage"><button>Message</button></a>
+            </div>
         @else
-         <div>
-             <a href="{{ url('messenger?uid=') }}{{ $user['_id'] }}"><button>View Conversations</button></a>
-        </div>
+            <div>
+                <a href="{{ url('messenger?uid=') }}{{ $user['_id'] }}"><button>View Conversations</button></a>
+            </div>
         @endif
-        <div>
+    <div>
 
                 <?php  if(isset($LikeDislike )){
                                             if($LikeDislike['like'] == 1){

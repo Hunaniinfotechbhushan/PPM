@@ -122,7 +122,7 @@
                                                                             <div class="profile-ud-item">
                                                                                 <div class="profile-ud wider">
                                                                                     <span class="profile-ud-label"></span>
-                                                                                    <span class="profile-ud-value text-center">       {!! Form::submit('Submit', ['class' => 'btn btn-primary waves-effect','id'=>'pagesubmit']) !!}
+                                                                                    <span class="profile-ud-value text-center"> {!! Form::submit('Submit', ['class' => 'btn btn-primary waves-effect','id'=>'pagesubmit']) !!}
                                                                                     </span>
                                                                                 </div>
                                                                             </div>

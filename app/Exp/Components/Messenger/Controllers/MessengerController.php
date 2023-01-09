@@ -12,6 +12,7 @@ use App\Exp\Support\CommonUnsecuredPostRequest;
 use App\Exp\Components\Messenger\Requests\MessageRequest;
 use App\Exp\Components\Messenger\MessengerEngine;
 use Illuminate\Http\Request;
+use App\Exp\Components\Member\Models\ImageShowRequest;
 use DB;
 use Auth;
 
@@ -58,10 +59,11 @@ class MessengerController extends BaseController
         $archiveMessageResponse = $this->messengerEngine->prepareConversationList('archive',null);
         $deletedMessageResponse = $this->messengerEngine->prepareConversationList('deleted',null);
         $filteredMessageResponse = $this->messengerEngine->prepareConversationList('filtered',null);
-// echo "<pre>";
-// print_r($deletedMessageResponse);
-// die;
-        return view('messenger.chat',compact('inboxMessageResponse','sentMessageResponse','archiveMessageResponse','deletedMessageResponse','filteredMessageResponse','unreadMessageResponse'));
+        $userId = Auth::user()->_id;
+        $listprivateimages = ImageShowRequest::where('reciver_id',$userId)->with('userPhotos','users')->get();
+        return view('messenger.chat',compact('inboxMessageResponse','sentMessageResponse',
+                                             'archiveMessageResponse','deletedMessageResponse',
+                                             'filteredMessageResponse','unreadMessageResponse','listprivateimages'));
 
     }
 
