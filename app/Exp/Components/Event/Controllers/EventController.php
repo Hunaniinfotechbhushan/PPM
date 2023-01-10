@@ -42,13 +42,14 @@ class EventController extends BaseController
 
     function distance($lat1, $lon1, $lat2, $lon2, $unit)
     {
-
         $theta = $lon1 - $lon2;
         $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
         $dist = acos($dist);
         $dist = rad2deg($dist);
         $miles = $dist * 60 * 1.1515;
+         
         $unit = strtoupper($unit);
+        $value = 10 * 1.609344;
 
         if ($unit == "K") {
             return round($miles * 1.609344);
@@ -107,7 +108,6 @@ class EventController extends BaseController
         } else {
             $distance = '2';
         }
-
         if ($request->short_by == 'nearest') {
 
             $distance = '1';
@@ -146,7 +146,8 @@ class EventController extends BaseController
     
     
                     $res = array();
-                    $getDistanceKM =  $this->distance($user->location_latitude, $user->location_longitude, $value['location_latitude'], $value['location_longitude'], 'K');
+                    $getDistanceKM =  $this->distance($user->location_latitude, $user->location_longitude, $value['location_latitude'], $value['location_longitude'], 'M');
+                    // return $getDistanceKM;
                     if ($value) {
                         $active_status_time = $this->getUserOnlineStatusAgo($value['created_at']);
                     } else {

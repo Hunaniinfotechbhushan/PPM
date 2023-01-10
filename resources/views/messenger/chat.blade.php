@@ -38,11 +38,6 @@
                <p>Unread Messages</p>
            </a>
        </li>
-       <li role="listprivateimages" data-toggle="tab" class="nav-item justify-content-between text-left select-drop-down">
-            <a class="msg_inbox"href=".listprivateimages" aria-controls="profile" role="tab" data-toggle="tab">
-               <p>List Private Images</p>
-           </a>
-       </li>
        <li role="filterTab" data-toggle="tab" class="nav-item justify-content-between text-left select-drop-down">
         <a class="msg_inbox"href=".inboxTab" aria-controls="profile" role="tab" data-toggle="tab">
             <p>Filter</p>
@@ -209,41 +204,7 @@
             @endif
         </div>
 
-
-    <!-- <div class="tab-content" id="message_inbox_chat_image"> -->
-        <div role="tabpanel" class="tab-pane {{ isset($_GET['uid']) ? '' : 'active' }} listprivateimages">
-            @if(isset($listprivateimages))
-                @foreach($listprivateimages as $listprivateimage)
-                    <div class="event d-flex justify-content-between pb-3 py-2 message_event_chat">
-                        <div class="img-about d-flex justify-content-between w-100 align-items-center">
-                            @foreach($listprivateimage->users as $user)
-                                    <p> This User {{$user->username}} View Your Private Photo</p>
-                            @endforeach
-                            <div class="view-private-photo" id="view_private_photo">
-                                <!-- @if($listprivateimage->request_status == '0')
-                                    <input type="button" class="web-btn" id="active-pending" image_id="{{ $listprivateimage->_id }}" value="Approve">  
-                                    <input type="button" class="web-btn" id="active-pending" image_id="{{ $listprivateimage->_id }}" value="Decline">
-                                @elseif($listprivateimage->request_status == '1')
-                                    <input type="button" class="web-btn"  value="Declined">
-                                @else($listprivateimage->request_status == '2')
-                                    <input type="button" class="web-btn"  value="Accepted">
-                                @endif -->
-                                <input type="button" class="web-btn" id="active-pending" image_id="{{ $listprivateimage->_id }}" value="Approve">  
-                                    <input type="button" class="web-btn" id="active-pending" image_id="{{ $listprivateimage->_id }}" value="Decline">
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            @else
-                <div class="event d-flex justify-content-between pb-3 py-2">
-                    <div class="col-sm-12 alert alert-info">
-                        <span>No inbox messages.</span>  
-                    </div>
-                </div>
-            @endif
-        </div>
     
-
 <div role="tabpanel" class="tab-pane unreadMessageTab">
  @if(!empty($unreadMessageResponse['data']['messengerUsers']))
  @foreach($unreadMessageResponse['data']['messengerUsers'] as $key=>$filter)
@@ -557,32 +518,6 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
     return false;
 };
-
-    // $(document).on('click','#active-pending', function (){
-        $('input#active-pending').click(function() {
-            console.log('adjhsadbsahjdvb');
-            var status = $(this).val();
-            var image_id = jQuery(this).attr('image_id'); 
-            console.log('image_id',image_id);
-            $.ajax({
-                type:'post',
-                url:"{{ url('image-approver-update') }}",
-                dataType:'json',
-                data:{
-                    '_token':$('meta[name="csrf-token"]').attr('content'),
-                    'status':status,
-                    'image_id':image_id,
-                },
-                success: function (data) {
-                    console.log('asdsajdsahjdhjasvd');
-                    if(data.msg){
-                        $('.userChatHistory').append(data.msg);
-                    }
-                }
-            });
-            $('input[name=message]').val('');
-
-        });
 
 $(document).on('click','li.nav-item.justify-content-between.text-left.select-drop-down.active', function (){
     var url = window.location.href;

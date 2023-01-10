@@ -102,9 +102,7 @@
 		
 		?>
 		<div class="row pt-2" id="lwUserFilterContainer">
-
 			<div class="col-12 tab-content">
-
 				<div role="tabpanel" class="tab-pane active viewedMeTab" id="viewedMeTab">
 					@if($myVisitor)
 					@forelse($myVisitor as $key=>$filter)

@@ -59,11 +59,9 @@ class MessengerController extends BaseController
         $archiveMessageResponse = $this->messengerEngine->prepareConversationList('archive',null);
         $deletedMessageResponse = $this->messengerEngine->prepareConversationList('deleted',null);
         $filteredMessageResponse = $this->messengerEngine->prepareConversationList('filtered',null);
-        $userId = Auth::user()->_id;
-        $listprivateimages = ImageShowRequest::where('reciver_id',$userId)->with('userPhotos','users')->get();
         return view('messenger.chat',compact('inboxMessageResponse','sentMessageResponse',
                                              'archiveMessageResponse','deletedMessageResponse',
-                                             'filteredMessageResponse','unreadMessageResponse','listprivateimages'));
+                                             'filteredMessageResponse','unreadMessageResponse'));
 
     }
 

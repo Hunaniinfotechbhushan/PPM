@@ -36,6 +36,7 @@ use App\Exp\Components\UserSetting\Models\UserPhotosModel;
 use App\Exp\Components\Bookmarks\Models\BookMarks;
 use App\Exp\Components\Member\Models\ReportUser;
 use App\Exp\Components\Member\Models\ImageShowRequest;
+use App\Exp\Components\User\Repositories\UserRepository;
 
 class MemberController extends BaseController
 {
@@ -219,8 +220,7 @@ public function getUserProfile($userName)
     public function updateImageApprover(Request $request)
     {
         $imageApprover = ImageShowRequest::where('_id',$request->image_id)->first();
-        // return $imageApprover;
-        if($request->status == 'Active'){
+        if($request->status == 'Accept Request'){
             $status = '2';
         }else{
             $status = '1';  
@@ -240,6 +240,26 @@ public function getUserProfile($userName)
         notificationUserLog($uid,$slug,$status,$message,$action,$is_read,$users__id,"");
 
         return json_encode(array('status'=> 'success'));
+    }
+
+    public function displayRequest()
+    {
+        $userId = Auth::user()->_id;
+
+        $listprivateimages = ImageShowRequest::select('users.username','users._uid','user_profiles.profile_picture', 'image_show_request._id',
+                            'image_show_request.reciver_id','image_show_request.sender_id','image_show_request.request_status',)
+                            ->leftJoin('users', 'users._id', '=', 'image_show_request.sender_id')
+                            ->leftJoin('user_profiles', 'user_profiles.users__id', '=', 'users._id')
+                            ->where('request_status','1')
+                            ->get();
+        $requeststatus = ImageShowRequest::select('users.username','users._uid','user_profiles.profile_picture','image_show_request._id',
+                            'image_show_request.reciver_id','image_show_request.sender_id','image_show_request.request_status',)
+                            ->leftJoin('users', 'users._id', '=', 'image_show_request.sender_id')
+                            ->leftJoin('user_profiles', 'user_profiles.users__id', '=', 'users._id')
+                            ->where('request_status','2')
+                            ->get();
+
+        return view('member/private-image-request',compact('listprivateimages','requeststatus'));
     }
 
 }

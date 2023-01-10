@@ -48,6 +48,7 @@ class UserProfile extends BaseModel
     if(isset($inputData['distance'])){
         $distanceInKm = $inputData['distance'];
     }
+    
     $milesValue = 0.62137119;
     $distance = $distanceInKm * $milesValue;
     $latitude = $inputData['latitude'];

@@ -155,7 +155,11 @@ input::-moz-focus-outer {
       <p>Distance</p>
       <div class="distance-filter">
        <div class="distance-inner">
-          @if(Request::get('distance'))<?php $distanceRange = Request::get('distance'); ?>@else <?php $distanceRange = '1000'; ?> @endif
+          @if(Request::get('distance'))
+            <?php $distanceRange = Request::get('distance'); ?>
+          @else 
+            <?php $distanceRange = '1000'; ?> 
+          @endif
           <div class="range-slider" style="margin:0;display: flex; flex-direction: column-reverse;">
           <input class="range-slider__range "  name="distance" type="range" value="{{ $distanceRange }}" min="0" max="1000">
           <span class="range-slider__value">0 - {{ $distanceRange }} Miles</span>
@@ -198,7 +202,7 @@ input::-moz-focus-outer {
      <p>Meet Type</p>
 
      <select class="select-sidebar" name="meet_type">
-         <option value="">Select Meet Type</option>
+         <option value="">Any</option>
 
         <option value="Dinner/Lunch date" @if(isset($selectedFilter['meet_type'])) @if($selectedFilter['meet_type'] == 'Dinner/Lunch date') selected @endif @endif>Dinner/Lunch date</option>
          <option value="Meet at your place" @if(isset($selectedFilter['meet_type'])) @if($selectedFilter['meet_type'] == 'Social meetup') selected @endif @endif>Meet at your place</option>
@@ -277,11 +281,11 @@ input::-moz-focus-outer {
 
 
 function showVal(newVal){
-console.log(newVal);
+console.log('newVal',newVal);
   document.getElementById("valBox").innerHTML=newVal;
   document.getElementById("distanceKM").value=newVal;
-
 }
+
 </script>
 <script type="text/javascript">
 

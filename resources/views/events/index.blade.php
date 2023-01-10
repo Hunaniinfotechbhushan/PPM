@@ -1404,25 +1404,18 @@
 
 
     const sliders = document.querySelectorAll('.range-slider');
-
-
     Array.prototype.forEach.call(sliders, (slider) => {
-
         slider.querySelector('input').addEventListener('input', (event) => {
-
-            slider.querySelector('span').innerHTML = '0 - ' + event.target.value + ' Km';
-
+            console.log(event.target.value);
+            slider.querySelector('span').innerHTML = '0 - ' + event.target.value + ' Miles';
             applyFill(event.target);
         });
-
         applyFill(slider.querySelector('input'));
     });
 
 
     function applyFill(slider) {
-
         const percentage = 100 * (slider.value - slider.min) / (slider.max - slider.min);
-
         const bg = `linear-gradient(90deg, ${settings.fill} ${percentage}%, ${settings.background} ${percentage+0.1}%)`;
         slider.style.background = bg;
     }

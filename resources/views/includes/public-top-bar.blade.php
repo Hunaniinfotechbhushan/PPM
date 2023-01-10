@@ -202,17 +202,22 @@ z-index: 99;
             ->where('is_read',0)
             ->where('slug','!=',null)->count();
             ?>
+
+            <li class="nav-item dropdown no-arrow d-md-block">
+                <a href="{{url('image-approver-request')}}" class="nav-link"><i class="fa-solid fa-lock"></i></a>
+            </li>
+            
             <li class="nav-item dropdown no-arrow mx-1  d-md-block">
                 <a id="notificationAlertSection" class="nav-link dropdown-toggle lw-ajax-link-action" href="<?= route('user.notification.write.read_all_notification') ?>" data-callback="onReadAllNotificationCallback" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-method="post">
                     <i class="fas fa-bell fa-fw"></i>
                     <span class="badge badge-danger badge-counter" data-model="totalNotificationCount">{{ $getCountNotification }}</span>
                 </a>
+
                 <!-- Dropdown - Alerts -->
                 <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in notify-drop" aria-labelledby="alertsDropdown">
                     <h6 class="dropdown-header">
                         <?= __tr('Notification') ?>
                     </h6>
-
 
                     @forelse($getNotification as $key=>$value)
                     <?php
@@ -231,11 +236,6 @@ z-index: 99;
                         <div class="notifiyuid" idsnotify="{{ $value->_uid }}"></div>
                         <div class="slugdatanotify" slugData="{{ $value->slug }}"></div>
                         <div class="photoidshow" photodata="{{ $value->photo_id }}"></div>
-
-                        
-
-                        
-                        
                         <div>
                             <div class="small text-gray-500">{{ isset($value->created_at) ? date('d M Y', strtotime($value->created_at)) : '' }}</div>
                             <span class="font-weight-bold">{{ isset($value->message) ? $value->message : '' }}</span>
@@ -246,9 +246,6 @@ z-index: 99;
                     @empty
                     <a class="dropdown-item text-center small text-gray-500"><?= __tr('There are no notification.') ?></a>
                     @endforelse
-
-
-                    
                     <!-- /Notification block -->
                 </div>
             </li>

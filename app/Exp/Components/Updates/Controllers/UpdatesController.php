@@ -40,7 +40,9 @@ class UpdatesController extends BaseController
   {
 
     $myVisitor = $this->myVisitor();
+    // return $myVisitor;
     $iVisitedOnPrev = $this->iVisit();
+    // return $iVisitedOnPrev;
     $userFavData = $this->favorites();
     $userFavMeData = $this->favoritesMe();
     return view('updates.updates',compact('myVisitor','iVisitedOnPrev','userFavData','userFavMeData'));

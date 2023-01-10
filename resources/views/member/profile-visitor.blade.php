@@ -236,7 +236,7 @@
 <?php
 $id = Auth::user()->_id;
 $uriSegments = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
-$user = App\Exp\Components\User\Models\User::where('_uid', end($uriSegments))->first();
+$user = App\Exp\Components\User\Models\User::where('_uid', end($uriSegments))->first(); 
 $UserProfile = App\Exp\Components\User\Models\UserProfile::where('users__id', $user['_id'])->first();
 $userProfileGet = \App\Exp\Components\User\Models\UserProfile::where('users__id', $user['_id'])->first();
 $ActivityLog = \App\Exp\Components\User\Models\ActivityLog::where('user_id', $user['_id'])->first();
@@ -246,10 +246,6 @@ $UserLike = App\Exp\Components\User\Models\LikeDislikeModal::where('to_users__id
 $UserLikeBY = App\Exp\Components\User\Models\LikeDislikeModal::where('by_users__id', $id)->where('to_users__id', $user['_id'])->first();
 
 $MemberView = App\Exp\Components\User\Models\MemberView::where('to_view_id', $user['_id'])->first();
-// echo "<pre>";
-// print_r($UserProfile_details);
-// die;
-
 ?>
 <div id="content-wrapper" class="d-flex flex-column lw-page-bg visitor_profile_page">
     <div id="content">
@@ -380,6 +376,9 @@ $MemberView = App\Exp\Components\User\Models\MemberView::where('to_view_id', $us
                         </div>
                     </div>
                     <div class="row imgvid2">
+                        <?php
+                            $privateimagecount = 0;
+                        ?>
                         @foreach ($UserImage as $key => $collections)
                             @if($collections->is_verified == 1)
                                 @if($collections->type == 1)
@@ -413,6 +412,10 @@ $MemberView = App\Exp\Components\User\Models\MemberView::where('to_view_id', $us
                                             @endif
                                         </div>
                                     </div>
+                                @else
+                                    <?php 
+                                        $privateimagecount++; 
+                                    ?>
                                 @endif
                             @endif
                             @endforeach
@@ -436,10 +439,9 @@ $MemberView = App\Exp\Components\User\Models\MemberView::where('to_view_id', $us
                             @endif
                         
                         <div class="col-4 col-sm-4 col-lg-3 col-md-3">
-                            <div class="image-box add-new-img" id="request-box" user_id="{{ Auth::user()->_id }}" profile_user_id="{{ $User->_id }}" request_sent="0">
-                                <p>Private (1)</p>
-                                <i class="fa-solid fa-lock"></i>
-                                <p>Request to View</p>
+                            <div class="image-box add-new-img" id="request-box" user_id="{{ Auth::user()->_id }}" profile_user_id="{{ $User->_id }}" request_sent="1">
+                                <p>Private (<?php echo $privateimagecount; ?>)</p>
+                                <p>Request to View Private Album</p>
                             </div>
                         </div>
                         <div class="col-4 col-sm-4 col-lg-3 col-md-3 p-1 "></div>

@@ -155,7 +155,7 @@ class MessengerEngine extends BaseEngine implements MessengerEngineInterface
         foreach($messengerUserCollection as $user) {
             // dd($user);
             $filter = $this->getFullUserDetails($user->user_id);
-            
+            // return $filter;
             if(isset($filter->users__id)){
                 $fetchAllUserLikeDislike = DB::table('like_dislikes')->where('to_users__id',$filter->users__id)->where('by_users__id',Auth::user()->_id)->first();
                 if (!__isEmpty($fetchAllUserLikeDislike)) {

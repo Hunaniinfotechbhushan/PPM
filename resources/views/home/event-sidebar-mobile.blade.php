@@ -32,7 +32,7 @@
         </li>
         <li class="locationFilterMap">
         <input type = "radio" name = "location" id = "locationsec">
-        
+          
           <label for="city"> Other Locations</label><br> </li>        
         </ul>
         <input id="searchTextField" type="text"   name="location" class="map-input" value="{{ (isset($selectedFilter['location'])) ? $selectedFilter['location'] : '' }}" placeholder="Enter a location" autocomplete="on">
