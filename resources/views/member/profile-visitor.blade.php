@@ -341,7 +341,7 @@ $MemberView = App\Exp\Components\User\Models\MemberView::where('to_view_id', $us
                     <form class="message-box desk-view-main" id="messageBoxForm">
                         @csrf
                         <input type="hidden" class="visitorId" name="visitorId" value="{{ (isset($UserProfile_details['user_id'])) ? $UserProfile_details['user_id'] : '' }}">
-                        <textarea name="msg" placeholder="Type a Message dfdsf" class="message"></textarea><br>
+                        <textarea name="msg" placeholder="Type a Message" class="message"></textarea><br>
                         <button type="submit" class="message-send">Send Meassage</button>
                     </form>
                     @endif
@@ -437,13 +437,21 @@ $MemberView = App\Exp\Components\User\Models\MemberView::where('to_view_id', $us
                                     </div>
                                 @endforeach
                             @endif
-                        
-                        <div class="col-4 col-sm-4 col-lg-3 col-md-3">
-                            <div class="image-box add-new-img" id="request-box" user_id="{{ Auth::user()->_id }}" profile_user_id="{{ $User->_id }}" request_sent="1">
-                                <p>Private (<?php echo $privateimagecount; ?>)</p>
-                                <p>Request to View Private Album</p>
-                            </div>
-                        </div>
+                            
+                                @if(@$imageShow->sender_id != Auth::user()->_id )
+                                    <div class="col-4 col-sm-4 col-lg-3 col-md-3">
+                                        <div class="image-box add-new-img" id="request-box" user_id="{{ Auth::user()->_id }}" profile_user_id="{{ $User->_id }}" request_sent="1">
+                                            <p>Private (<?php echo $privateimagecount; ?>)</p>
+                                            <p>Request to View Private Album</p>
+                                        </div>
+                                    </div>
+                                @else   
+                                <div class="col-4 col-sm-4 col-lg-3 col-md-3">
+                                        <div class="image-box add-new-img">
+                                             <p>Request Sent</p>
+                                        </div>
+                                    </div>
+                                @endif
                         <div class="col-4 col-sm-4 col-lg-3 col-md-3 p-1 "></div>
                         <div class="col-4 col-sm-4 col-lg-3 col-md-3 p-1 "></div>
                     </div>
@@ -517,7 +525,7 @@ $MemberView = App\Exp\Components\User\Models\MemberView::where('to_view_id', $us
 
                             <li class="nav-item d-flex justify-content-between mb-3">
 
-                                <span><i class="fa-solid fa-certificate"></i>Verifications</span><span> </span>
+                                <span><i class="fa-solid fa-certificate"></i></span><span> </span>
 
                             </li>
                         </div>
@@ -1389,6 +1397,10 @@ $MemberView = App\Exp\Components\User\Models\MemberView::where('to_view_id', $us
             success: function(response) {
                 if (response.status == 'success') {
                     showSuccessMessage("Updated Successfully");
+
+                    setInterval(function() {
+                        location.reload();
+                    }, 1000);
                 }
             }
         });

@@ -167,15 +167,12 @@ public function getUserProfile($userName)
                     }
 
                    $user_activity = array('user_viewed_you_time' => $user_viewed_you_time,'you_view_time' => $you_view_time);
-         // echo "<pre>";
-         // print_r($user_activity);
-         // die;
-        $user___id=$User['_id'];
+     
+        $user___id= $User['_id'];
         $userAge = isset($UserProfile_details->dob) ? Carbon::parse($UserProfile_details->dob)->age : null;
-        // return $id;
-        // return ;
-          
-    return view('member/profile-visitor',compact('ImageShowRequest','User','UserImage','UserProfile','BookMarks','LikeDislike','UserProfile_details','user___id','userAge','user_activity','conversation'));
+        $imageShow = ImageShowRequest::where('sender_id',Auth::user()->_id)->first();
+
+        return view('member/profile-visitor',compact('ImageShowRequest','imageShow','User','UserImage','UserProfile','BookMarks','LikeDislike','UserProfile_details','user___id','userAge','user_activity','conversation'));
 }
 
     public function reportUser(request  $request){
@@ -251,15 +248,25 @@ public function getUserProfile($userName)
                             ->leftJoin('users', 'users._id', '=', 'image_show_request.sender_id')
                             ->leftJoin('user_profiles', 'user_profiles.users__id', '=', 'users._id')
                             ->where('request_status','1')
+                            ->where('reciver_id',$userId)
                             ->get();
+
         $requeststatus = ImageShowRequest::select('users.username','users._uid','user_profiles.profile_picture','image_show_request._id',
                             'image_show_request.reciver_id','image_show_request.sender_id','image_show_request.request_status',)
                             ->leftJoin('users', 'users._id', '=', 'image_show_request.sender_id')
                             ->leftJoin('user_profiles', 'user_profiles.users__id', '=', 'users._id')
                             ->where('request_status','2')
+                            ->where('reciver_id',$userId)
                             ->get();
 
-        return view('member/private-image-request',compact('listprivateimages','requeststatus'));
+        $requestSent = ImageShowRequest::select('users.username','users._uid','user_profiles.profile_picture','image_show_request._id',
+                            'image_show_request.reciver_id','image_show_request.sender_id','image_show_request.request_status',)
+                            ->leftJoin('users', 'users._id', '=', 'image_show_request.reciver_id')
+                            ->leftJoin('user_profiles', 'user_profiles.users__id', '=', 'users._id')
+                            ->where('sender_id',$userId)
+                            ->get();
+        
+        return view('member/private-image-request',compact('listprivateimages','requeststatus','requestSent'));
     }
 
 }

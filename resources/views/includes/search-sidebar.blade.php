@@ -332,19 +332,20 @@ li.nav-item.justify-content-between.text-center.search-title-filter {
 </div>
 
 
-
-<div class="accordion_head"><div class="d-flex justify-content-between"><span>Profile Text</span></div></div>
-
-<input placeholder="e.g. hiking, John Doe, shopping" type="text" name="profile_text" value="<?php if(isset($_GET['profile_text'])){ echo $_GET['profile_text']; } ?>">
-
-<div class="accordion_head"><div class="d-flex justify-content-between">
-
-  <span class="d-flex justify-content-between align-items-center my-2">
-    <button type="submit" class="web-button">Search</button>
-  </span>
-
+<div class="accordion_head">
+  <div class="d-flex justify-content-between">
+    <span>Profile Text</span>
+  </div>
 </div>
+<input placeholder="e.g.hiking, John Doe, shopping" type="text" name="profile_text" 
+  value="<?php if(isset($_GET['profile_text'])){ echo $_GET['profile_text']; } ?>">
 
+<div class="accordion_head">
+    <div class="d-flex justify-content-between">
+      <span class="d-flex justify-content-between align-items-center my-2">
+        <button type="submit" class="web-button">Search</button>
+      </span>
+  </div>
 </div>
 
 </li>

@@ -115,6 +115,88 @@ class EventController extends BaseController
 
         $username = User::where('_id',$id)->first();
         // return $username->gender_selection;
+        if(isset($_GET['title']) && !empty($_GET['title'])){
+            $res = array();
+            $dataEvents = array();
+            // return $eventsData;
+            foreach ($eventsData as  $value) {
+                // return $value->featured;
+                
+                $flag = 0;
+                $titlevalue = $value['description'];
+                // return $titlevalue;
+                if($value['title'] == $request->title){$flag = 1;}
+                if(strpos( $titlevalue , $request->title) !== false){
+                    // return '12345';
+                    $flag = 1;}
+                
+                if($flag == 1) {
+                        // return '12345';
+                    if($username->gender_selection!=$value->gender_selection){
+                        $UserPhotosModel = UserPhotosModel::where('users__id', $value['user_id'])->get();
+                        $userProfileImagesData = array();
+                        if ($UserPhotosModel) {
+                            
+                            foreach ($UserPhotosModel as $key => $images) {
+                                $userProfileImages['file'] = $images->file;
+                                $userProfileImages['users__id'] = $images->users__id;
+        
+                                $userProfileImages['extantion_type'] = $images->extantion_type;
+                                $userProfileImages['type'] = $images->type;
+                                $userProfileImages['_uid'] = $images->_uid;
+                                $userProfileImages['video_thumbnail'] = $images->video_thumbnail;
+                                $userProfileImagesData[] = $userProfileImages;
+                            }
+                        }
+                        $userProfileGet = UserProfile::where('users__id', $value['user_id'])->get()->first();
+        
+                        if (!empty($userProfileImagesData)) {
+        
+                            $userProfileImagesData = array(0 => array('file' => $userProfileGet['profile_picture'], 'extantion_type' => 'jpg', 'type' => '1', '_uid' => $value['UID'])) + $userProfileImagesData;
+                        }
+        
+        
+                        $res = array();
+                        $getDistanceKM =  $this->distance($user->location_latitude, $user->location_longitude, $value['location_latitude'], $value['location_longitude'], 'M');
+                        // return $getDistanceKM;
+                        if ($value) {
+                            $active_status_time = $this->getUserOnlineStatusAgo($value['created_at']);
+                        } else {
+                            $active_status_time = '';
+                        }
+        
+        
+                        if ($getDistanceKM >= $distance) {
+        
+                            $user_block_users = DB::table('user_block_users')->where('to_users__id', $value['user_id'])->where('by_users__id', Auth::user()->_id)->first();
+                            if (empty($user_block_users)) {
+                                $dataArray['event_id']  = $value['event_id'];
+                                $dataArray['auth_id']  = $id;
+        
+                                $dataArray['user_photos']['photos']  = $userProfileImagesData;
+                                $dataArray['_uid'] = $value['_uid'];
+                                $dataArray['_id'] = $value['_id'];
+                                $dataArray['UID'] = $value['UID'];
+                                $dataArray['profile_picture'] = $value['profile_picture'];
+                                $dataArray['title']  = $value['title'];
+                                $dataArray['meet_type']  = $value['meet_type'];
+        
+                                $dataArray['event_date']  = $value['event_date'];
+        
+                                $dataArray['created_at']  = $value['created_at'];
+                                $dataArray['location']  = $value['location'];
+                                $dataArray['image']  = $value['image'];
+                                $dataArray['description']  = $value['description'];
+                                $dataArray['block_user']  = $value['block_user'];
+                                $dataArray['user_account']  = $value->user_account;
+                                $dataArray['featured']  = $value->featured;
+                                $dataEvents[] = $dataArray;
+                            }
+                        }
+                    }
+                }
+            }   
+        }else{
             if ($distance) {
                 $res = array();
                 $dataEvents = array();
@@ -156,7 +238,7 @@ class EventController extends BaseController
     
     
                     if ($getDistanceKM >= $distance) {
-    
+
                         $user_block_users = DB::table('user_block_users')->where('to_users__id', $value['user_id'])->where('by_users__id', Auth::user()->_id)->first();
                         if (empty($user_block_users)) {
                             $dataArray['event_id']  = $value['event_id'];
@@ -187,6 +269,8 @@ class EventController extends BaseController
             } else {
                 $dataEvents = array();
             }
+        }  
+           
         
 
         $citydata = $user->city;

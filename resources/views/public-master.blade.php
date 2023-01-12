@@ -64,11 +64,11 @@
 
     <ul class="d-flex justify-content-between">
 
-       <li @if(Request::is('/')) class="active" @endif><i class="fa-solid fa-house"></i><a href="{{url('/home') }}">Home</a></li>
+       <li @if(Request::is('/')) class="active" @endif><i class="fa-solid fa-star"></i><a href="{{url('/home') }}">Updates</a></li>
 
        <li @if(Request::is('search')) class="active" @endif><i class="fa-solid fa-magnifying-glass"></i><a href="{{url('/search') }}">Search</a></li>
 
-           <li @if(Request::is('updates')) class="active" @endif><i class="fa-solid fa-star"></i><a href="{{ url('updates') }}">Updates</a></li>
+        <li @if(Request::is('updates')) class="active" @endif><i class="fa-solid fa-list-check"></i><a href="{{ url('updates') }}">Activities</a></li>
 
         <li @if(Request::is('events')) class="active" @endif><i class="fa-solid fa-photo-film"></i><a href="{{ url('events') }}">Meets</a></li>
         <li @if(Request::is('messenger')) class="active" @endif><i class="fa-solid fa-comment-dots"></i><span class="badge badge-danger badge-counter" >{{ isset($chatMessages) ? $chatMessages : '' }}</span><a href="{{ url('messenger') }}">  Message</a></li>
@@ -154,7 +154,6 @@
 
      @if(isLoggedIn())
     @if(Request::is('search'))
-   
     @include('includes.search-sidebar')
     @endif
     @endif
@@ -217,13 +216,13 @@ aria-hidden="true">
 
           <a class="sidebar-brand d-flex align-items-center" href="home">
 
-            <div class="sidebar-brand-icon">
+            <div class="sidebar-brand-icon sdsadasdsa">
 
-                <img class="lw-logo-img" src="{{ url('/') }}/media-storage/logo/logo.png" alt="PPM">
+                <img class="lw-logo-img" src="" alt="PPM">
 
             </div>
 
-            <img width="100%" src="<?= getStoreSettings('logo_image_url') ?>" alt="PPM-user">
+            <img width="100%" src="{{ url('/') }}/media-storage/logo/logo.png" alt="PPM-user">
 
             <img class="lw-logo-img d-sm-block d-md-none" src="{{ url('/') }}/media-storage/logo/logo.png" alt="PPM">
 

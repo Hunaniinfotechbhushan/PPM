@@ -183,9 +183,9 @@ z-index: 99;
 
 
                 <ul class="d-flex header-menu">
-                    <a href="{{ url('home') }}"> <li @if (Request::is('home')) class="active" @endif> <i class="fa-solid fa-list-check"></i>Activities</li></a>
+                    <a href="{{ url('home') }}"> <li @if (Request::is('home')) class="active" @endif><i class="fa-solid fa-star"></i>Updates</li></a>
                     <a href="{{ url('search') }}"> <li @if (Request::is('search')) class="active" @endif> <i class="fa-solid fa-magnifying-glass"></i>Search</li></a>
-                    <a href="{{ url('updates') }}"><li @if (Request::is('updates')) class="active" @endif><i class="fa-solid fa-star"></i>Updates</li></a>
+                    <a href="{{ url('updates') }}"><li @if (Request::is('updates')) class="active" @endif><i class="fa-solid fa-list-check"></i>Activities</li></a>
                     <a href="{{ url('events') }}"><li @if (Request::is('events')) class="active" @endif><i class="fa-solid fa-photo-film"></i>Meets</li></a>
                     <a href="{{ url('messenger') }}"><li @if (Request::is('messenger')) class="active" @endif><i class="fa-solid fa-comment-dots"></i>Message</li></a>
                 </ul>

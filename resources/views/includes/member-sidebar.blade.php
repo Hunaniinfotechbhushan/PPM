@@ -152,17 +152,14 @@ $gender_selection = 'She';
   <span><i class="fa-solid fa-clock"></i>Last Active</span><span> @if(isset($ActivityLog->created_at)) <?= date("M d, Y", strtotime($ActivityLog->created_at)); ?> @endif</span>
 
 </li>
+
 @if(isset($UserProfile->city))
 <li class="nav-item d-flex justify-content-between">
-
-  <span><i class="fa-solid fa-location-dot"></i> {{(isset($User->recent_login)) ? $User->recent_login : ''}}</span>
-
+  <span><i class="fa-solid fa-location-dot"></i>Recent</span><span>{{(isset($UserProfile->city)) ? $UserProfile->city : ''}}</span>
 </li>
 @endif
 <li class="nav-item d-flex justify-content-between">
-
-    <span><i class="fa-solid fa-certificate"></i>Verifications</span><span>   </span>
-
+    <span><i class="fa-solid fa-certificate"></i>Verifications</span><span>  </span>
     </li>
 
     <!-- head -->

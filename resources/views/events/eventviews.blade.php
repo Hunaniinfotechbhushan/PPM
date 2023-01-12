@@ -4,6 +4,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css">
 <style type="text/css">
+    .form-group.privacy {
+        display: none;
+    }
     .vister p {
         margin-bottom: 2px;
         font-size: 14px;
@@ -434,8 +437,8 @@
                                         <option value="Club meet">Club meet</option>
                                     </select>
                                 </div>
-                                <div class="form-group">
-                                    <label class="event-label" for="display-name"><a href="#" onclick="togglePopup()"> Privacy (stop these users from seeing your event)</a></label>
+                                <div class="form-group privacy">
+                                    <label class="event-label" for="display-name"><a href="#" onclick="togglePopup()">  Privacy (stop these users from seeing your event)</a></label>
                                     <select class="select2 select2-hidden-accessible" name="block_user[]" multiple="" style="width: 100%;" data-select2-id="7" tabindex="-1" aria-hidden="true">
                                     </select>
                                 </div>
@@ -508,7 +511,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <!-- <label class="event-label" for="display-name"><a href="#" onclick="togglePopup()"> Privacy (stop these users from seeing your event)</a></label> -->
+                                    <!-- <label class="event-label" for="display-name"><a href="#" onclick="togglePopup()"> asdadsaddsads Privacy (stop these users from seeing your event)</a></label> -->
                                     <select class="select2 select2-hidden-accessible" name="block_user[]" multiple="" style="width: 100%;" data-select2-id="7" tabindex="-1" aria-hidden="true">
                                     </select>
                                 </div>

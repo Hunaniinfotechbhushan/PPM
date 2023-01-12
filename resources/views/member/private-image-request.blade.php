@@ -1,6 +1,23 @@
 @extends('public-master')
 @section('content')
 <style>
+	.approve{
+		background: lawngreen;
+		padding: 3px 10px;
+		border-radius: 5px;
+		font-weight: 600;
+		font-size: 14px;
+	}
+	.pending{
+		background: #f41c1c;
+		padding: 3px 10px;
+		border-radius: 5px;
+		font-weight: 600;
+		font-size: 14px;
+	}
+	.vister.d-flex.justify-content-between.pb-3.py-2 {
+		cursor: pointer;
+	}
 	@media screen and (max-width: 425px){
 		.interest-tab li>a>h3 {
 			font-size: 11px !important;
@@ -50,7 +67,12 @@
 					</li>
 					<li class="tab-filter-li" role="iVisited" data-toggle="tab" data-filter="iVisitedDropdown">
 						<a href=".iVisited" aria-controls="profile" role="tab" data-toggle="tab">
-							<h3>Sharing Private Photos</h3>
+							<h3>Sharing Private Album with</h3>
+						</a>
+					</li>
+					<li class="tab-filter-li" role="favoritesTab" data-toggle="tab" data-filter="favoritesDropdown">
+						<a href=".favoritesTab" aria-controls="profile" role="tab" data-toggle="tab">
+							<h3>My Access</h3>
 						</a>
 					</li>
 				</ul>
@@ -79,9 +101,9 @@
 											<img class="vister-profile-image" src="{{ (isset($imgURL)) ? $imgURL : '' }}" class="lw-user-thumbnail lw-lazy-img">
 											<i class="fa-solid fa-camera"></i>
 										</div>
-											<p>{{$filter->username}}</p>
+											<p class="user-name">{{$filter->username}}</p>
 										<div>
-											<a href="{{ url('member') }}/{{ $filter['user_uid'] }}">
+											<a href="{{ url('member') }}/{{ $filter['_uid'] }}">
 												<p class="user-name">
 													@if($filter['userOnlineStatus'])
 														@if($filter['userOnlineStatus'] == 1)
@@ -108,10 +130,9 @@
 						@endif
 					
 				</div>
-					<!-- I visited Section -->
+				<!-- sharing Private Photo  Section -->
 				<div role="tabpanel" class="tab-pane iVisited" id="iVisited">
-				@if(count($requeststatus) > 0)
-			
+					@if(count($requeststatus) > 0)
 					@forelse($requeststatus as $filter)
 							<?php
 								if ($filter->profile_picture) {
@@ -128,7 +149,7 @@
 											<img class="vister-profile-image" src="{{ (isset($imgURL)) ? $imgURL : '' }}" class="lw-user-thumbnail lw-lazy-img">
 											<i class="fa-solid fa-camera"></i>
 										</div>
-											<p>{{$filter->username}}</p>
+											<p class="user-name">{{$filter->username}}</p>
 										<div>
 											<a href="{{ url('member') }}/{{ $filter['user_uid'] }}">
 												<p class="user-name">
@@ -151,22 +172,89 @@
 								</div>
 						
 					@endforeach
-				@else
-					<div class="col-sm-12 alert alert-info">
-						There are no records found.
-					</div>
-				@endif			
+					@else
+						<div class="col-sm-12 alert alert-info">
+							There are no records found.
+						</div>
+					@endif			
 				</div>
+				<!-- End sharing Private Photo  Section -->
+				<div role="tabpanel" class="tab-pane favoritesTab" id="favoritesTab">
+				@if(count($requestSent) > 0)
+					@forelse($requestSent as $filter)
+							<?php
+								if ($filter->profile_picture) {
+									print_r($user);
+									$imgURL = url('/') . '/media-storage/users/' . $filter->_uid . '/' . $filter->profile_picture;
+								} else {
+									$imgURL =  url('/imgs/default-image.png');
+								}         
+							?>
+								<input type="hidden" id="uid" name="uid"  value="{{$filter->_uid}}">
+								<div class="vister d-flex justify-content-between pb-3 py-2">
+									<div class="img-about d-flex align-items-flex-start">
+										<div class="vister-image-icon">
+											<img class="vister-profile-image" src="{{ (isset($imgURL)) ? $imgURL : '' }}" class="lw-user-thumbnail lw-lazy-img">
+											<i class="fa-solid fa-camera"></i>
+										</div>
+										<div class="nameandapprove">
+											<a href="{{ url('member') }}/{{ $filter->_uid }}">
+												<p class="user-name">{{$filter->username}}</p>
+											</a>
+											@if($filter->request_status == 2)
+												<div class="approve">Approver</div>
+											@else
+												<span class="pending">Pending</span>
+											@endif
+											</div>
+										<div>
+											<a href="{{ url('member') }}/{{ $filter['user_uid'] }}">
+												<p class="user-name">
+													@if($filter['userOnlineStatus'])
+														@if($filter['userOnlineStatus'] == 1)
+															<span class="lw-dot lw-dot-success" title="Online"></span>
+														@elseif($filter['userOnlineStatus'] == 2)
+															<span class="lw-dot lw-dot-warning" title="Idle"></span>
+														@elseif($filter['userOnlineStatus'] == 3)
+															<span class="lw-dot lw-dot-danger" title="Offline"></span>
+														@endif
+													@endif
+												</p>
+											</a>
+										</div>
+									</div>
+									<!-- <div class="time">
+										<input type="button" class="web-btn" id="active-pending" image_id="{{$filter->_id}}" value="Send Request">  
+									</div> -->
+								</div>
+						
+					@endforeach
+					@else
+						<div class="col-sm-12 alert alert-info">
+							There are no records found.
+						</div>
+					@endif	
 				</div>
-				</div>
+				<!-- End Favorite Section -->
+				<!-- Favorite Me Section -->
 			</div>
 		</div>
+		</div>
+	</div>
+	</div>
 	</div>
 </div>
 </div>
 </section>
 
 <script type="text/javascript">
+
+		 $('div#favoritesTab').on('click', function () {
+			var uid = $('#uid').val();
+			var url = "{{url('member', '')}}"+"/"+uid;
+			window.location.href = url;
+		});
+
 
 		$('input#active-pending').click(function() {
             var status = $(this).val();

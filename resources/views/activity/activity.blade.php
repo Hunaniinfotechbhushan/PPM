@@ -168,15 +168,15 @@
 				@forelse($getUserStory as $key=>$value)
 
 
-				<a href="{{ url('/') }}/public/frontend/story/{{ $value->file }}" class="glightbox4">
+				<a href="{{ url('/') }}/frontend/story/{{ $value->file }}" class="glightbox4">
 
 					<div class="carousel-cell">					
 						<span>{{ $value->username }}</span> 
 						@if($value->type == 'image')
-						<img class="story-media-src" src="{{ url('/') }}/public/frontend/story/{{ $value->file }}"alt="GeeksforGeeks logo">
+						<img class="story-media-src" src="{{ url('/') }}/frontend/story/{{ $value->file }}"alt="Story">
 						@else
 
-						<img class="story-media-src test" src="{{ url('/') }}/public/frontend/story/video-icon-1.png"alt="GeeksforGeeks logo">
+						<img class="story-media-src test" src="{{ url('/') }}/frontend/story/video-icon-1.png"alt="Story">
 
 						@endif
 

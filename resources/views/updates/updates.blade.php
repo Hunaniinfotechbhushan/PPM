@@ -33,7 +33,7 @@
 
 					<li class="tab-filter-li active" role="viewedMeTab" data-toggle="tab" data-filter="viewedMeDropdown"><a href=".viewedMeTab" aria-controls="profile" role="tab" data-toggle="tab"><h3>My visitors</h3></a></li>
 
-					<li class="tab-filter-li" role="iVisited" data-toggle="tab" data-filter="iVisitedDropdown"><a href=".iVisited" aria-controls="profile" role="tab" data-toggle="tab"><h3>I visited</h3></a></li>
+					<li class="tab-filter-li" role="iVisited" data-toggle="tab" data-filter="iVisitedDropdown"><a href=".iVisited" aria-controls="profile" role="tab" data-toggle="tab"><h3>Liked Meets</h3></a></li>
 
 					<li class="tab-filter-li" role="favoritesTab" data-toggle="tab" data-filter="favoritesDropdown"><a href=".favoritesTab" aria-controls="profile" role="tab" data-toggle="tab"><h3>Favorited</h3></a></li>
 
